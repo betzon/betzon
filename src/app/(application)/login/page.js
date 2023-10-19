@@ -84,7 +84,7 @@ const Login = () => {
           gap: '6px'
         }}>
           <Typography variant='body1' color={theme.palette.dark.otherlight}>
-            Don't have an account?
+            Don&apos;t have an account?
           </Typography>
 
           <MUILink color={theme.palette.neutral.main} href="/signup" sx={{ fontWeight: 700 }}>

@@ -22,7 +22,7 @@ const page = () => {
                     sx={{
                         fontWeight: 700
                     }}>
-                    IT'S ON!
+                    IT&apos;S ON!
                 </Typography>
 
 
