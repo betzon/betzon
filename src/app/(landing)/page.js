@@ -3,7 +3,6 @@ import React from 'react'
 
 const page = () => {
     return (
-        <>
 
             <Box id='page-header' sx={{
                 height: '100vh',
@@ -29,8 +28,6 @@ const page = () => {
                 <Typography variant='body2'>No more house bets. Wager with friends.</Typography>
 
             </Box>
-
-        </>
     )
 }
 
