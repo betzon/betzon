@@ -4,11 +4,14 @@ import theme from '@/app/styles/theme'
 import { useTheme } from '@emotion/react'
 import { Box, TextField, Typography, Link as MUILink, Button } from '@mui/material'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const SignUp = () => {
 
   const theme = useTheme()
+
+  const router = useRouter()
 
   const boxStyles = {
     width: '100%',
@@ -78,6 +81,7 @@ const SignUp = () => {
           sx={{
             width: '100%'
           }}
+          onClick={() => router.push('/onboarding/team-select')}
           color='primary'
           size='large'
           variant='contained'>
