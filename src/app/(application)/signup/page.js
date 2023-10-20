@@ -97,6 +97,10 @@ const SignUp = () => {
           </MUILink>
         </Box>
 
+        <MUILink color={theme.palette.neutral.main} href="/" sx={{ fontWeight: 700 }}>
+          Go back to Home Page
+        </MUILink>
+
       </Box>
 
     </Box>

@@ -53,7 +53,7 @@ const MainNavigation = () => {
     };
 
     return (
-        <AppBar position="fixed">
+        <AppBar position="fixed" sx={{ background: 'black' }}>
             <MenuMobileDropDown toggle={toggleMobileMenu} toggleDrawer={toggleDrawer} />
             <Container maxWidth="xl" sx={{
                 backgroundColor: "#000000"
