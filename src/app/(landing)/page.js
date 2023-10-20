@@ -16,7 +16,7 @@ const page = () => {
                 <Typography variant='h6'>Leave Fantasy in the dust.</Typography>
 
                 <Typography
-                    variant='h1'
+                    variant='h2'
                     component='h1'
                     sx={{
                         fontWeight: 700
