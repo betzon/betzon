@@ -1,7 +1,15 @@
-import { Box, Typography } from '@mui/material'
+"use client"
 import React from 'react'
+import { Typography, useMediaQuery, useTheme, Box } from '@mui/material';
 
 const page = () => {
+
+    const theme = useTheme();
+
+    const isMediumUp = useMediaQuery(theme.breakpoints.up('md'));
+
+    const variant = isMediumUp ? 'h1' : 'h3';
+
     return (
 
         <Box id='page-header' sx={{
@@ -10,6 +18,7 @@ const page = () => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
+            textAlign: 'center'
             //    background: 'red'
         }}>
 
@@ -17,9 +26,9 @@ const page = () => {
 
             <Typography
                 component='h1'
-                variant='h2'
+                variant={variant}
                 sx={{
-                    
+
                     fontWeight: 700
                 }}>
                 IT&apos;S ON!
