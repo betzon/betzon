@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
-import { Typography, useMediaQuery, useTheme, Box } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from '@emotion/react';
 
-const LnadingPage = () => {
+const LandingPage = () => {
 
     const theme = useTheme();
 

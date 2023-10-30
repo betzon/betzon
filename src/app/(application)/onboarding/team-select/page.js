@@ -1,7 +1,7 @@
 "use client"
 import LeagueBar from '@/app/components/onboarding/team-select/league-bar'
 import LeagueGrid from '@/app/components/onboarding/team-select/league-grid'
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Divider, Typography } from '@mui/material'
 import React, { useState } from 'react'
 
 const TeamSelect = () => {
@@ -90,6 +90,7 @@ const TeamSelect = () => {
         <>
 
             <Typography variant='h6' fontWeight={700}>Select your favorite teams!</Typography>
+            <Typography variant='caption'>Select teams you&apos;re rooting for. Don&apos;t Worry, you can change this later!</Typography>
 
 
             <LeagueBar
@@ -98,8 +99,7 @@ const TeamSelect = () => {
                 selected={selected} />
 
 
-            <Typography variant='caption'>Select teams you&apos;re rooting for. Don&apos;t Worry, you can change this later!</Typography>
-
+            <Divider />
 
             <Box
                 sx={{
