@@ -2,7 +2,7 @@
 import React from 'react'
 import { Typography, useMediaQuery, useTheme, Box } from '@mui/material';
 
-const page = () => {
+const LnadingPage = () => {
 
     const theme = useTheme();
 
@@ -41,4 +41,4 @@ const page = () => {
     )
 }
 
-export default page
+export default LandingPage
