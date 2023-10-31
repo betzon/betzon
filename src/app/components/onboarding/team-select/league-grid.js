@@ -18,7 +18,7 @@ const LeagueGrid = ({ list, addOrRemoveTeamHandler, teamsSelected }) => {
                 flexWrap: 'wrap',
                 gap: '8px 24px', // vertical gap of 8px and horizontal gap of 24px
                 // spacing between grid items, adjust as needed
-                justifyContent: "space-between",  // horizontally centers the items within the grid container
+                justifyContent: { xs: 'center', sm: 'sspace-between' },  // horizontally centers the items within the grid container
                 alignItems: 'flex-start',
                 paddingBottom: '24px',
                 paddingTop: '12px'

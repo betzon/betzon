@@ -2,9 +2,12 @@
 import LeagueBar from '@/app/components/onboarding/team-select/league-bar'
 import LeagueGrid from '@/app/components/onboarding/team-select/league-grid'
 import { Box, Button, Divider, Typography } from '@mui/material'
+import { useRouter } from 'next/navigation'
 import React, { useCallback, useState } from 'react'
 
 const TeamSelect = () => {
+
+    const router = useRouter()
 
     const leagues = ['nba', 'nfl', 'mlb', 'nhl']
 
@@ -79,7 +82,6 @@ const TeamSelect = () => {
     });
 
     const handleLeagueSelection = (event, newLeague) => {
-        console.log(newLeague)
         setSelected(newLeague);
     };
 
@@ -114,16 +116,19 @@ const TeamSelect = () => {
         setTeamsSelected(updatedTeamsSelected);
     }, [teamsSelected, leagueTeams, selected]);
 
-
-
-    console.log(teamsSelected)
     //console.log(teamsSelected)
     return (
         <>
 
-            <Typography variant='h6' fontWeight={700}>Select your favorite teams!</Typography>
-            <Typography variant='caption'>Select teams you&apos;re rooting for. Don&apos;t Worry, you can change this later!</Typography>
+            <Box sx={{
+                marginBottom: '24px'
+            }}>
 
+                <Typography variant='h6' fontWeight={700}>Select your favorite teams!</Typography>
+                <Typography variant='caption'>Select teams you&apos;re rooting for. Don&apos;t Worry, you can change this later!</Typography>
+
+
+            </Box>
 
             <LeagueBar
                 leagues={leagues}
@@ -131,7 +136,10 @@ const TeamSelect = () => {
                 selected={selected} />
 
 
-            <Divider />
+            <Divider sx={{
+                marginTop: '24px',
+                marginBottom: '24px'
+            }} />
 
             <Box
                 sx={{
@@ -154,6 +162,7 @@ const TeamSelect = () => {
                     sx={{
                         width: '100%'
                     }}
+                    onClick={() => router.push('/onboarding/billing')}
                     variant='contained'>
                     CONTINUE
                 </Button>

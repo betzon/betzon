@@ -10,8 +10,7 @@ const Layout = ({ children }) => {
     return (
         <Box
             sx={{
-                padding: '12px',
-                borderBottom: `1px solid ${theme.palette.dark.otherlight}`
+                padding: '12px'
             }}>
             {children}
         </Box>

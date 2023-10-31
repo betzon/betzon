@@ -1,8 +1,14 @@
+import LeagueHeaders from '@/app/components/headers/leagues'
+import DashboardHeader from '@/app/components/headers/main'
 import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <>
+      <DashboardHeader title={'BetzOn'} />
+
+      <LeagueHeaders />
+    </>
   )
 }
 

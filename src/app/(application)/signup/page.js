@@ -81,7 +81,7 @@ const SignUp = () => {
           sx={{
             width: '100%'
           }}
-          onClick={() => router.push('/onboarding/team-select')}
+          onClick={() => router.push('/onboarding/email-verification')}
           color='primary'
           size='large'
           variant='contained'>
