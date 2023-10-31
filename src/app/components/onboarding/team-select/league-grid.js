@@ -8,33 +8,7 @@ import Image from 'next/image'
 
 import nba from '../../../assets/nba.svg'
 
-const LeagueGrid = ({ list }) => {
-
-    const ImageSize = '96px'
-
-    const [formats, setFormats] = React.useState(() => ['one']);
-
-    const handleFormat = (event, newFormats) => {
-        console.log(newFormats)
-        setFormats([...newFormats]);
-    };
-
-    const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
-        '& .MuiToggleButtonGroup-grouped': {
-            margin: theme.spacing(0.5),
-            border: 0,
-            '&.Mui-disabled': {
-                border: 0,
-            },
-            '&:not(:first-of-type)': {
-                borderRadius: theme.shape.borderRadius,
-            },
-            '&:first-of-type': {
-                borderRadius: theme.shape.borderRadius,
-            },
-        },
-    }));
-
+const LeagueGrid = ({ list, addOrRemoveTeamHandler, teamsSelected }) => {
 
     return (
 
@@ -46,13 +20,16 @@ const LeagueGrid = ({ list }) => {
                 // spacing between grid items, adjust as needed
                 justifyContent: "space-between",  // horizontally centers the items within the grid container
                 alignItems: 'flex-start',
-                paddingBottom: '24px'
+                paddingBottom: '24px',
+                paddingTop: '12px'
             }}
         >
 
             {
                 list.map((team, index) => (
                     <LeagueTeamItem
+                        teamsSelected={teamsSelected}
+                        addOrRemoveTeamHandler={addOrRemoveTeamHandler}
                         data={team}
                         index={index}
                         key={index}
