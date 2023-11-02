@@ -12,8 +12,10 @@ const WagerTags = (props) => {
                 backgroundColor: theme.palette.dark.main,
                 color: theme.palette.dark.light,
                 textTransform: 'uppercase',
-                paddingTop:'1px !important',
-                paddingBottom:'1px !important'
+                paddingTop: '.5px !important',
+                paddingBottom: '.5px !important', 
+                fontSize: '0.7rem'  // adjust this value as per your requirement
+
             }}
             size='small'
             label={props.title} />

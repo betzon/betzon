@@ -82,7 +82,7 @@ const TeamSelect = () => {
     });
 
     const handleLeagueSelection = (event, newLeague) => {
-        setSelected(newLeague);
+        if (newLeague != null) setSelected(newLeague);
     };
 
     const addOrRemoveTeamHandler = useCallback((teamName, index) => {
@@ -111,9 +111,10 @@ const TeamSelect = () => {
         }
 
         // Update the teamsSelected state.
-        console.log(leagueTeams)
         setleagueTeams(newLeagueTeams)
+
         setTeamsSelected(updatedTeamsSelected);
+        
     }, [teamsSelected, leagueTeams, selected]);
 
     //console.log(teamsSelected)
@@ -143,8 +144,8 @@ const TeamSelect = () => {
 
             <Box
                 sx={{
-                    overflowY: 'scroll',
-                    height: '75%'
+                    flexGrow: 1,
+                    paddingBottom: '48px'
                 }}>
                 <LeagueGrid
                     teamsSelected={teamsSelected}
@@ -154,8 +155,11 @@ const TeamSelect = () => {
 
 
             <Box sx={{
-                position: 'relative',
-                width: 'inherit'
+                position: 'fixed',
+                width: '95%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                bottom: '12px',
             }}>
 
                 <Button

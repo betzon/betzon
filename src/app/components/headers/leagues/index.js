@@ -59,6 +59,12 @@ const LeagueHeaders = () => {
                 sx={{
                     width: '100%',
                     overflow: 'auto',
+                    top: 0,
+                    backgroundColor: 'black',
+                    zIndex: '99',
+                    paddingTop: '12px',
+                    paddingBottom: '12px',
+                    position: 'sticky',
                     // Hide scrollbar for Chrome, Safari and Opera
                     '&::-webkit-scrollbar': {
                         display: 'none'
@@ -133,7 +139,7 @@ const LeagueHeaders = () => {
                 </Box>
 
             </Box>
-            
+
         </>
 
     )

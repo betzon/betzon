@@ -30,7 +30,7 @@ const theme = createTheme({
   buttonStyles: {
     iconButton: {
       borderRadius: '100px',
-      padding: '1px 22px'
+      padding: '4px 22px'
     }
   },
   components: {

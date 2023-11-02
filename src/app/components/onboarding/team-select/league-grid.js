@@ -20,7 +20,7 @@ const LeagueGrid = ({ list, addOrRemoveTeamHandler, teamsSelected }) => {
                 // spacing between grid items, adjust as needed
                 justifyContent: { xs: 'center', sm: 'sspace-between' },  // horizontally centers the items within the grid container
                 alignItems: 'flex-start',
-                paddingBottom: '24px',
+                paddingBottom: '36px',
                 paddingTop: '12px'
             }}
         >

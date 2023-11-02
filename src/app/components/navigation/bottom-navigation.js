@@ -21,17 +21,22 @@ const MobileBottomNavigation = () => {
 
     return (
         <Box sx={{
-            position:'fixed',
-            bottom:0,
-            left:0,
-            boxSizing:'border-box',
-            width:'100%'
+            display: {
+                xs: 'inline-block',
+                sm:'inline-block',
+                
+            },
+            position: 'fixed',
+            bottom: 0,
+            left: 0,
+            boxSizing: 'border-box',
+            width: '100%'
         }}>
             <BottomNavigation
                 sx={{
                     borderTop: `1px solid ${theme.palette.dark.main}`,
-                    position:'relative',
-                    width:'100%'
+                    position: 'relative',
+                    width: '100%'
                 }}
                 showLabels
                 value={value}

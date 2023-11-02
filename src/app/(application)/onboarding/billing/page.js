@@ -31,7 +31,7 @@ const BillingInformationPage = () => {
                 flexDirection: 'column',
                 justifyContent: { xs: 'space-between', md: 'center' },
                 alignItems: 'center',
-                gap: '84px',
+                gap: '84px'
             }}
         >
 

@@ -32,7 +32,13 @@ const LeagueBar = ({ leagues, handleLeagueSelection, selected }) => {
             sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
-                borderRadius: 0
+                borderRadius: 0,
+                position: 'sticky',
+                top: 0,  // <-- This is the key for sticking the element at the top
+                zIndex: 1000,
+                background: 'black',
+                paddingTop:'12px',
+                paddingBottom:'12px'
             }}>
 
             {

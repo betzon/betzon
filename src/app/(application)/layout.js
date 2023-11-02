@@ -24,7 +24,7 @@ const DashboardLayout = ({ children }) => {
     return (
         <Container
             sx={{
-                height: '100vh',
+                height: 'auto',
                 position: 'relative',
                 boxSizing: 'border-box',
                 paddingTop: '16px',
