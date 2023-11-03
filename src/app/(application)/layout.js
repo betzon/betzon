@@ -35,8 +35,9 @@ const DashboardLayout = ({ children }) => {
                 paddingTop: '16px',
                 paddingBottom: '16px',
                 overflow: 'visible',
-                paddingLeft:'0',
-                paddingRight:'0'
+                paddingLeft: allowedRoutes.includes(pathname) ? '0' : '24px',
+                paddingRight: allowedRoutes.includes(pathname) ? '0' : '24px'
+
             }}
         >
             {children}
