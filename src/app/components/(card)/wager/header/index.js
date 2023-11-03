@@ -14,7 +14,7 @@ const WagerHeader = () => {
 
             <Stack spacing={1} direction="row" >
                 <Avatar
-                    sx={{ width: 48, height: 48 }}
+                    sx={{ width: 42, height: 42 }}
                 />
                 <Stack spacing={.5}>
                     <Typography sx={{

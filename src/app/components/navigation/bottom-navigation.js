@@ -12,19 +12,32 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 import AddIcon from '@mui/icons-material/Add';
 import SavingsIcon from '@mui/icons-material/Savings';
 import PersonIcon from '@mui/icons-material/Person';
+import { useRouter } from 'next/navigation';
 
-const MobileBottomNavigation = () => {
+const MobileBottomNavigation = ({pathname}) => {
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(pathname);
 
     const theme = useTheme()
+
+    const router = useRouter()
+
+    const changeScreensHandler = (event, newValue) => {
+        console.log(newValue)
+        setValue(newValue);
+        setTimeout(() => {
+            router.push(newValue)
+        }, 200); // adjust the delay as needed
+    }
+
+    console.log(value)
 
     return (
         <Box sx={{
             display: {
                 xs: 'inline-block',
-                sm:'inline-block',
-                
+                sm: 'inline-block',
+
             },
             position: 'fixed',
             bottom: 0,
@@ -40,15 +53,13 @@ const MobileBottomNavigation = () => {
                 }}
                 showLabels
                 value={value}
-                onChange={(event, newValue) => {
-                    setValue(newValue);
-                }}
+                onChange={changeScreensHandler}
             >
-                <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-                <BottomNavigationAction label="Wagers" icon={<HandshakeIcon />} />
-                <BottomNavigationAction label="Create" icon={<AddIcon />} />
-                <BottomNavigationAction label="Bank" icon={<SavingsIcon />} />
-                <BottomNavigationAction label="Profile" icon={<PersonIcon />} />
+                <BottomNavigationAction value='/dashboard' label="Home" icon={<HomeIcon />} />
+                <BottomNavigationAction value='/wagers' label="Wagers" icon={<HandshakeIcon />} />
+                <BottomNavigationAction value='/create' label="Create" icon={<AddIcon />} />
+                <BottomNavigationAction value='/chipbank' label="Bank" icon={<SavingsIcon />} />
+                <BottomNavigationAction value='/profile' label="Profile" icon={<PersonIcon />} />
             </BottomNavigation>
         </Box>
     );

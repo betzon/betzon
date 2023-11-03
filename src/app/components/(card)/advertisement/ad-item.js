@@ -50,7 +50,7 @@ const AdItem = () => {
                 </Stack>
 
                 <Typography variant='caption' sx={{ lineHeight: '' }}>
-                    Don't miss out on the trendiest hats, exclusively at LIDS!
+                    Don&apos;t miss out on the trendiest hats, exclusively at LIDS!
                 </Typography>
 
             </Box>

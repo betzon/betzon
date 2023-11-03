@@ -1,33 +1,37 @@
-import { Box, List } from '@mui/material'
+import { Box, Divider, List, Typography } from '@mui/material'
 import React from 'react'
 import WagerCardItem from './item'
 
-const WagerFeed = ({ feed }) => {
+const WagerFeed = ({ feed, grouped }) => {
+
     return (
-        <Box
-            sx={{
-                width: '100%',
-                height: '100%',
-                overflow: 'scroll'
-            }}>
-
-            <List sx={{
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '24px'
-            }}>
-
-                {
-                    feed.map((item, index) => (
-                        <WagerCardItem key={index} />
-                    ))
+        <>
+            <Box
+                sx={{
+                    width: '100%',
+                    height: '100%',
+                    overflow: 'scroll'
                 }
-            </List>
+                } >
 
-        </Box>
+                <List sx={{
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '24px'
+                }}>
+                    {
+                        feed.map((item, index) => (
+
+                            <WagerCardItem key={index} grouped={grouped} showDivider={feed.length - 1 === index} />
+                        ))
+                    }
+                </List>
+
+            </Box >
+        </>
     )
 }
 

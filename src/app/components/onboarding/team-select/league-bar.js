@@ -1,3 +1,4 @@
+"use client"// Because we're inside a server component
 import React, { useState } from 'react'
 import { styled } from '@mui/material/styles';
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
@@ -37,8 +38,8 @@ const LeagueBar = ({ leagues, handleLeagueSelection, selected }) => {
                 top: 0,  // <-- This is the key for sticking the element at the top
                 zIndex: 1000,
                 background: 'black',
-                paddingTop:'12px',
-                paddingBottom:'12px'
+                paddingTop: '12px',
+                paddingBottom: '12px'
             }}>
 
             {

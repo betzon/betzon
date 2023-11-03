@@ -1,57 +1,18 @@
-'use client'
 import React, { useState } from 'react'
 import Layout from '../layout'
 import { Box, Button, Divider, Typography } from '@mui/material'
+import { useSelector, useDispatch } from "react-redux"
+import { setCurrentLeague } from '@/app/redux/actions/leagueBarAction';
 import FestivalIcon from '@mui/icons-material/Festival';
+import DateBarHeader from './date-bar';
 
-const LeagueHeaders = () => {
+const LeagueHeaders = ({ leagues }) => {
 
-    const [leagues, setLeagues] = useState([
-
-        {
-            title: 'Trending Events',
-            status: true,
-            icon: <FestivalIcon fontSize='small' />
-
-        },
-        {
-            title: 'NBA',
-            status: false,
-            icon: <FestivalIcon fontSize='small' />
-
-        },
-        {
-            title: 'NFL',
-            status: false,
-            icon: <FestivalIcon fontSize='small' />
-        },
-        {
-            title: 'MLB',
-            status: false,
-            icon: <FestivalIcon fontSize='small' />
-        },
-        {
-            title: 'NHL',
-            status: false,
-            icon: <FestivalIcon fontSize='small' />
-        }
-    ])
+    const dispatch = useDispatch();
 
     const addOrRemoveTeamHandler = (index) => {
-        // Create a deep copy of the current leagues state.
-        let newLeagues = [...leagues];
-
-        // If the clicked league is already true, we leave it as it is. 
-        // Otherwise, set the clicked one to true and all others to false.
-        if (!newLeagues[index].status) {
-            newLeagues.forEach((league, i) => {
-                league.status = i === index;
-            });
-        }
-
-        setLeagues(newLeagues);
-    };
-
+        dispatch(setCurrentLeague(index))
+    }
 
     return (
         <>
@@ -62,8 +23,7 @@ const LeagueHeaders = () => {
                     top: 0,
                     backgroundColor: 'black',
                     zIndex: '99',
-                    paddingTop: '12px',
-                    paddingBottom: '12px',
+                    padding: '12px 16px',
                     position: 'sticky',
                     // Hide scrollbar for Chrome, Safari and Opera
                     '&::-webkit-scrollbar': {
@@ -100,7 +60,7 @@ const LeagueHeaders = () => {
                         variant='outlined'
                     >
 
-                        {leagues[0].icon}
+                        <FestivalIcon fontSize='small' />
 
                         <Typography variant='caption1'>
                             {leagues[0].title}
@@ -139,7 +99,9 @@ const LeagueHeaders = () => {
                 </Box>
 
             </Box>
-
+            {
+                leagues[0].status ? '' : <DateBarHeader />
+            }
         </>
 
     )

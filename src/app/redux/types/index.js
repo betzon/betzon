@@ -1,0 +1,6 @@
+// Action Types
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
+export const INCREMENT_BY_AMOUNT = 'INCREMENT_BY_AMOUNT';
+export const SET_CURRENT_LEAGUE = 'SET_CURRENT_LEAGUE'
+export const SET_CALENDAR_DATE = 'SET_CALENDAR_DATE'

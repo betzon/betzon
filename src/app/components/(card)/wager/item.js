@@ -1,13 +1,13 @@
 'use client'
 import { useTheme } from '@emotion/react'
-import { Box, ListItem, Stack } from '@mui/material'
+import { Box, Divider, ListItem, Stack } from '@mui/material'
 import React, { useState } from 'react'
 import WagerHeader from './header'
 import WagerCardTeamStack from './teams/team-stack'
 import WagerCardEngagementBar from './engagement-bar'
 import CardLayout from '../layout'
 
-const WagerCardItem = () => {
+const WagerCardItem = ({ grouped, showDivider }) => {
 
     const theme = useTheme()
 
@@ -27,25 +27,27 @@ const WagerCardItem = () => {
     };
 
     return (
+        <>
+            <ListItem sx={{
+                width: '100%',
+                padding: 0
+            }}>
+                <CardLayout spacing={2} grouped={grouped}>
 
-        <ListItem sx={{
-            width: '100%',
-            padding: 0
-        }}>
-            <CardLayout spacing={2}>
+                    <WagerHeader
+                        user />
 
-                <WagerHeader
-                    user />
+                    <WagerCardTeamStack />
 
-                <WagerCardTeamStack />
+                    <WagerCardEngagementBar
+                        toggleLiked={handleLikedToggle}
+                        likes={likes}
+                        liked={liked} />
 
-                <WagerCardEngagementBar
-                    toggleLiked={handleLikedToggle}
-                    likes={likes}
-                    liked={liked} />
-
-            </CardLayout>
-        </ListItem>
+                </CardLayout>
+            </ListItem>
+            {showDivider || !grouped ? '' : <Divider sx={{ width: '100%' }} />}
+        </>
     )
 }
 

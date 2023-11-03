@@ -15,7 +15,12 @@ const DashboardLayout = ({ children }) => {
     const pathname = usePathname()
 
     // List of routes where MobileBottomNavigation should be visible
-    const allowedRoutes = ['/dashboard']; // replace with your routes
+    const allowedRoutes = [
+        '/dashboard',
+        '/wagers',
+        '/chipbank',
+        '/profile'
+    ]; // replace with your routes
 
     const shouldShowNavigation =
         allowedRoutes.includes(pathname) &&
@@ -24,12 +29,14 @@ const DashboardLayout = ({ children }) => {
     return (
         <Container
             sx={{
-                height: 'auto',
+                height: '100vh',
                 position: 'relative',
                 boxSizing: 'border-box',
                 paddingTop: '16px',
                 paddingBottom: '16px',
-                overflow: 'visible'
+                overflow: 'visible',
+                paddingLeft:'0',
+                paddingRight:'0'
             }}
         >
             {children}
@@ -37,7 +44,7 @@ const DashboardLayout = ({ children }) => {
             {
                 //<Bulge />
             }
-            {shouldShowNavigation && <MobileBottomNavigation />}
+            {shouldShowNavigation && <MobileBottomNavigation pathname={pathname} />}
         </Container>
     )
 }
