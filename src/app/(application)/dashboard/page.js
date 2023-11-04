@@ -56,13 +56,14 @@ const Dashboard = () => {
         <WagerSectionTitleList
           title={'My Wagers'}
           link={{
-            name: 'Go Home',
+            name: 'See more',
             path: '/'
           }}
           feed={[...feed]}
           grouped={!leagues[0].status} />
 
       </DashboardFeed>
+
     </>
   )
 }

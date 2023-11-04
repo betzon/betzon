@@ -6,8 +6,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { Stack, Typography } from '@mui/material';
+import { useTheme } from '@emotion/react';
 
 const DateItem = ({ data }) => {
+
+    const theme = useTheme()
+
     return (
         <Stack
             spacing={-1}>
@@ -19,6 +23,14 @@ const DateItem = ({ data }) => {
                 <Typography variant='overline'>{data.date}</Typography>
             </Stack>
 
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '-6px !important' }}>
+                <Box sx={{
+                    backgroundColor: data.hasData ? theme.palette.primary.main : 'black',
+                    width: '6px',
+                    height: '6px',
+                    borderRadius: '100px'
+                }}></Box>
+            </Box>
         </Stack>
     )
 }
@@ -150,11 +162,14 @@ const DateBarHeader = () => {
                             <Tab
                                 key={key}
                                 onClick={() => dateClick(key)}
-                                label={<DateItem data={{
-                                    date: item.date.getDate(),
-                                    month: item.date.toLocaleString('default', { month: 'short' }),
-                                    day: item.date.toLocaleString('default', { weekday: 'short' })
-                                }} />} />
+                                label={
+                                    <DateItem
+                                        data={{
+                                            hasData: key % 2 === 0,
+                                            date: item.date.getDate(),
+                                            month: item.date.toLocaleString('default', { month: 'short' }),
+                                            day: item.date.toLocaleString('default', { weekday: 'short' })
+                                        }} />} />
                         ))
                     }
                 </Tabs>
