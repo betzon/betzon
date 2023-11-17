@@ -50,12 +50,12 @@ const ChipBankSuccessPage = () => {
                         }}>
                             {
                                 ['ITEMS', 'QUANTITY', 'PRICE'].map((items, index) => (
-                                    <Typography sx={{ fontSize: '10px' }}>{items}</Typography>
+                                    <Typography sx={{ fontSize: '10px' }} key={index}>{items}</Typography>
                                 ))
                             }
                             {
                                 ['Tawnt Chips', '20', '$25', 'Stripe Fee', '0.03%', '$3'].map((items, index) => (
-                                    <Typography variant='caption' sx={{ fontWeight: 700 }}>{items}</Typography>
+                                    <Typography variant='caption' sx={{ fontWeight: 700 }} key={index}>{items}</Typography>
                                 ))
                             }
                         </Box>
