@@ -44,7 +44,9 @@ const DashboardLayout = ({ children }) => {
             {
                 //<Bulge />
             }
+
             {shouldShowNavigation && <MobileBottomNavigation pathname={pathname} />}
+            
         </Container>
     )
 }

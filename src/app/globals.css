@@ -72,3 +72,68 @@ body {
   text-decoration: none;
   color: inherit;
 }
+
+#toggle-switch-wrapper {
+  display: flex;
+  width: 100%;
+  height: 62px;
+  border-radius: 200px;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+  border: 1px solid white;
+}
+
+#toggle-switch-button {
+  position: absolute;
+  background: #FF9121;
+  z-index: 1;
+  border: 0;
+  width: 50%;
+  height: 62px;
+  border-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s ease-in-out;
+}
+
+.toggle-switch-item {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 50%;
+  height: 100%;
+}
+
+.toggle-left {
+  transition: .3s ease-in-out;
+  transform: translateX(0);
+}
+
+.toggle-right {
+  transition: .3s ease-in-out;
+  transform: translateX(100%);
+}
+
+#buy-chips-input {
+  background: black;
+  color: white;
+  border: 2px solid white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+}
+
+#buy-chips-input:focus {
+  outline: none;
+}

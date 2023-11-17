@@ -47,6 +47,7 @@ function leagueBarReducer(state = initialState, action) {
                 dateSelected: action.payload.date,
                 indexSelected: action.payload.index
             };
+            
         default:
             return state;
     }

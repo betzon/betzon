@@ -97,7 +97,7 @@ const theme = createTheme({
             transform: 'translate(14px, -6px) scale(0.75)',  // Transform for focused state
           },
           "&.MuiInputLabel-shrink": {
-            transform: 'translate(14px, -6px) scale(0.75)',  // Keep the label in its "shrunk" position when the input has content
+            transform: 'translate(14px, -9px) scale(0.75)',  // Keep the label in its "shrunk" position when the input has content
           },
         },
       },

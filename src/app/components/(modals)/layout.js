@@ -4,6 +4,8 @@ import { Box } from '@mui/system'
 import React, { useState } from 'react'
 import { styled } from '@mui/system';
 import theme from '@/app/styles/theme';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeModal, openModal } from '@/app/redux/actions/modalAction';
 
 const MySwipeableDrawer = styled(SwipeableDrawer)(({ theme }) => ({
     '& .MuiBackdrop-root': {
@@ -23,43 +25,41 @@ const Puller = styled(Box)(({ theme }) => ({
 
 const Layout = ({ children }) => {
 
-    const [toggle, setToggle] = useState(false)
+    const dispatch = useDispatch()
 
-
+    const toggle = useSelector((state) => state.modal.toggle);
 
     return (
-        <>
 
-            <Button onClick={() => setToggle(!toggle)}>Drawer Test</Button>
+        <MySwipeableDrawer
+            anchor={'bottom'}
+            open={toggle}
+            onClose={() => dispatch(closeModal())}
+            onOpen={() => dispatch(openModal())}
+            PaperProps={{
+                style: {
+                    backgroundColor: 'transparent',
+                    boxShadow: 'none',
+                    borderTop: 0,
+                    borderRadius: '8px 8px 0 0',
+                    borderTop: `solid 1px ${theme.palette.dark.main}`,
+                    borderBottom: '0 !important'
+                },
+            }}
+        >
 
-            <MySwipeableDrawer
-                anchor={'bottom'}
-                open={toggle}
-                onClose={() => setToggle(false)}
-                onOpen={() => setToggle(true)}
-                PaperProps={{
-                    style: {
-                        backgroundColor: 'transparent',
-                        boxShadow: 'none',
-                        borderTop: 0,
-                        borderRadius: '8px 8px 0 0',
-                        borderTop: `solid 1px ${theme.palette.dark.main}`,
-                        borderBottom: '0 !important'
-                    },
-                }}
-            >
+            <Puller />
 
-                <Puller />
-                <Box
-                    sx={{
-                        padding: '16px',
-                        backgroundColor: 'black' // or any other color you want
-                    }}>
-                    {children}
-                </Box>
-            </MySwipeableDrawer>
+            <Box
+                sx={{
+                    padding: '32px 24px 24px 24px',
+                    backgroundColor: 'black' // or any other color you want
+                }}>
+                {children}
+            </Box>
 
-        </>
+        </MySwipeableDrawer>
+
     )
 }
 

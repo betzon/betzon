@@ -29,23 +29,19 @@ const BillingInformationPage = () => {
                 height: 'auto',
                 position: 'relative',
                 flexDirection: 'column',
-                justifyContent: { xs: 'space-between', md: 'center' },
+                justifyContent: 'center',
                 alignItems: 'center',
-                gap: '84px',
+                gap: '36px',
                 paddingBottom: '24px'
             }}
         >
 
-            {
-
-                <Typography
-                    sx={{
-                        textAlign: 'center'
-                    }}>
-                    NEW LOGO HERE BC CHAD HATED MINE
-                </Typography>
-
-            }
+            <Typography
+                sx={{
+                    textAlign: 'center'
+                }}>
+                NEW LOGO HERE BC CHAD HATED MINE
+            </Typography>
 
             <Box sx={{
                 ...boxStyles,
@@ -88,7 +84,6 @@ const BillingInformationPage = () => {
                         width: '100%'
                     }}>
 
-
                         <TextField
                             label='Name on card'
                         />
@@ -96,7 +91,6 @@ const BillingInformationPage = () => {
                         <TextField
                             label='Card Number'
                         />
-
 
                         <Box
                             sx={{

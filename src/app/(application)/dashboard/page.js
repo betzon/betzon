@@ -20,7 +20,7 @@ const DashboardFeed = ({ children }) => {
       alignItems: 'center',
       gap: '60px',
       marginTop: '24px',
-      paddingBottom: '60px',
+      paddingBottom: '84px',
 
     }}>
       {children}

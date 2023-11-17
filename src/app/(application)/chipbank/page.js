@@ -3,10 +3,11 @@ import TitleHeader from '@/app/components/headers/title'
 import Image from 'next/image'
 import React from 'react'
 import chips from '../../assets/chips.svg'
-import { Box, Divider, Stack, Typography } from '@mui/material'
+import { Box, Divider, List, ListItem, ListItemButton, Stack, Typography } from '@mui/material'
 import styled from '@emotion/styled'
 import { useTheme } from '@emotion/react'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { useRouter } from 'next/navigation'
 
 //testing
 
@@ -16,31 +17,38 @@ const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 const ChipBankItem = ({ data }) => {
+
   return (
-    <Box sx={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      width: '100%'
-    }}>
+    <ListItem
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%'
+      }}>
       <Typography variant='caption'>{data.title}</Typography>
       <Typography variant='caption'>{data.data}</Typography>
-    </Box>
+    </ListItem>
   )
 }
 
 
 const ChipBankLinkItem = ({ data }) => {
+
+  const router = useRouter()
+
   return (
-    <Box sx={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      width: '100%'
-    }}>
+    <ListItemButton
+      onClick={() => router.push(`/chipbank/${data.path}`)}
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%'
+      }}>
       <Typography variant='caption' sx={{ fontWeight: 700 }}>{data.title}</Typography>
       <KeyboardArrowRightIcon fontSize='small' />
-    </Box>
+    </ListItemButton>
   )
 }
 
@@ -70,11 +78,11 @@ const ChipBank = () => {
   const dataLinks = [
     {
       title: 'Transfer History',
-      path: '/'
+      path: '/transfer-history'
     },
     {
       title: 'Get more chips',
-      path: '/'
+      path: '/buy'
     },
     {
       title: 'Cash out my chipss',
@@ -127,15 +135,15 @@ const ChipBank = () => {
 
           </Box>
 
-          <Box sx={{
+          <List sx={{
             //background: 'pink',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center',
-            gap: '12px'
+            alignItems: 'center'
           }}>
             <Divider sx={{ width: '100%', marginBottom: '12px' }} />
+
             {
               data.map((item, index) => (
                 <ChipBankItem data={item} key={index} />
@@ -149,7 +157,8 @@ const ChipBank = () => {
             }
 
             <Divider sx={{ width: '100%', marginTop: '12px' }} />
-          </Box>
+          </List>
+
         </Box>
 
       </Box>

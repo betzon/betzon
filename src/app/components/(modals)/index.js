@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from './layout'
 
-const DrawerComponent = (props) => {
+const DrawerComponent = ({children}) => {
     return (
         <Layout>
-            <div>ModalContent</div>
+            {children}
         </Layout>
     )
 }
