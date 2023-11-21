@@ -137,3 +137,8 @@ body {
 #buy-chips-input:focus {
   outline: none;
 }
+
+.no-link-decor {
+  color: white;
+  text-decoration: none;
+}

@@ -16,8 +16,18 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useTheme } from '@emotion/react';
 import MenuMobileDropDown from './main-mobile-drawer';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
-const pages = ['ABOUT', 'SUPPORT'];
+const pages = [
+    {
+        title: 'ABOUT',
+        path: '/about'
+    },
+    {
+        title: 'SUPPORT',
+        path: '/support'
+    }
+];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -52,27 +62,33 @@ const MainNavigation = () => {
         setToggleMobileMenu(!toggleMobileMenu)
     };
 
+    const routeHandler = (path) => {
+        router.push(path)
+    }
+
     return (
-        <AppBar position="fixed" sx={{ background: 'black' }}>
+        <AppBar position="fixed" sx={{ background: 'black', borderBottom:'1px solid gray' }}>
             <MenuMobileDropDown toggle={toggleMobileMenu} toggleDrawer={toggleDrawer} />
             <Container maxWidth="xl" sx={{
                 backgroundColor: "#000000"
             }}>
                 <Toolbar disableGutters>
 
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontWeight: 700,
-                            color: 'inherit',
-                        }}
-                    >
-                        BETZON
-                    </Typography>
-
+                    <Link href='/' className='no-link-decor'>
+                        <Typography
+                            onClick={() => routeHandler('/')}
+                            variant="h6"
+                            noWrap
+                            sx={{
+                                mr: 2,
+                                display: { xs: 'none', md: 'flex' },
+                                fontWeight: 700,
+                                color: 'inherit',
+                            }}
+                        >
+                            BETZON
+                        </Typography>
+                    </Link>
 
                     <Typography
                         variant="h5"
@@ -107,10 +123,10 @@ const MainNavigation = () => {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                //  onClick={toggleDrawer}
+                                onClick={() => routeHandler(page.path)}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.title}
                             </Button>
                         ))}
                     </Box>
@@ -118,26 +134,35 @@ const MainNavigation = () => {
                     <Box sx={{
                         display: { xs: 'none', md: 'flex' }
                     }}>
+                        <Tooltip title="Coming Soon!">
+                            <span>
+                                <Button
+                                    sx={{
+                                        fontWeight: 700
+                                    }}
+                                    disabled
+                                    onClick={() => router.push('/signup')}
+                                    color='neutral'
+                                    variant='text'>
+                                    SIGN UP
+                                </Button>
+                            </span>
+                        </Tooltip>
 
-                        <Button
-                            sx={{
-                                fontWeight: 700
-                            }}
-                            onClick={() => router.push('/signup')}
-                            color='neutral'
-                            variant='text'>
-                            SIGN UP
-                        </Button>
-
-                        <Button
-                            onClick={() => router.push('/login')}
-                            sx={{
-                                marginLeft: '12px',
-                                fontWeight: 700
-                            }}
-                            variant='contained'>
-                            LOGIN
-                        </Button>
+                        <Tooltip title="Coming Soon!">
+                            <span>
+                                <Button
+                                    disabled
+                                    onClick={() => router.push('/login')}
+                                    sx={{
+                                        marginLeft: '12px',
+                                        fontWeight: 700
+                                    }}
+                                    variant='contained'>
+                                    LOGIN
+                                </Button>
+                            </span>
+                        </Tooltip>
 
                     </Box>
 
