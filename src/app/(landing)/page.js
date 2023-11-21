@@ -26,23 +26,25 @@ const LandingPage = () => {
             background: 'red'
         }}>
 
-
-            <Box sx={{
-                //background: 'blue',
-                width: '100%',
-                textAlign: 'left'
-            }}>
-                <Typography
-                    component='h1'
-                    variant={variant}
-                    sx={{
-
-                        fontWeight: 700
-                    }}>
-                    Take your friends money on any game.
-                </Typography>
-            </Box>
-
+            {
+                /*
+                        <Box sx={{
+                            //background: 'blue',
+                            width: '100%',
+                            textAlign: 'left'
+                        }}>
+                            <Typography
+                                component='h1'
+                                variant={variant}
+                                sx={{
+            
+                                    fontWeight: 700
+                                }}>
+                                Take your friends money on any game.
+                            </Typography>
+                        </Box>
+                        */
+            }
 
         </Box>
     )

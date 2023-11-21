@@ -13,7 +13,9 @@ const MainLayout = ({ children }) => {
         }}>
             <MainNavigation />
             {children}
-            <LandingFooter />
+            {
+                //<LandingFooter />
+            }
         </Container>
     )
 }
