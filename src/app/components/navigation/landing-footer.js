@@ -47,7 +47,7 @@ const LandingFooter = () => {
 
                             <Stack spacing={1}>
                                 {
-                                    footerItems.map((item, index) =>
+                                    footerItems.map((item, index) => (
                                         <Link
                                             key={index}
                                             href='#'
@@ -58,7 +58,7 @@ const LandingFooter = () => {
                                             <Typography
                                                 key={index} sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
                                         </Link>
-                                    )
+                                    ))
                                 }
                             </Stack>
                         </Stack>
