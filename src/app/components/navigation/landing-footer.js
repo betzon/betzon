@@ -53,7 +53,8 @@ const LandingFooter = () => {
                                                 color: 'white',
                                                 textDecoration: 'none'
                                             }}>
-                                            <Typography sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
+                                            <Typography 
+                                            key={index} sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
                                         </Link>
                                     ))
                                 }
