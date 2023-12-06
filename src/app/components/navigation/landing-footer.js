@@ -67,18 +67,6 @@ const LandingFooter = () => {
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Follow Us</Typography>
 
                             <Stack spacing={3} direction='row'>
-                                {
-                                    icons.map((item, index) =>
-                                        <IconButton
-                                            key={index}
-                                            sx={{
-                                                padding: 0, color: theme.palette.dark.otherlight,
-                                            }}>
-                                            {item}
-                                        </IconButton>
-
-                                    )
-                                }
                             </Stack>
                         </Stack>
                         <Stack spacing={2}>
