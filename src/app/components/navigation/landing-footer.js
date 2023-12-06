@@ -11,6 +11,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const LandingFooter = () => {
     const theme = useTheme()
+    const icons = [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />]
+    const footerItems = ['Home', 'About us']
     return (
         <Box sx={{
             // background: 'red',
@@ -45,7 +47,7 @@ const LandingFooter = () => {
 
                             <Stack spacing={1}>
                                 {
-                                    ['Home', 'About us'].map((item, index) =>
+                                    footerItems.map((item, index) =>
                                         <Link
                                             key={index}
                                             href='#'
@@ -66,7 +68,7 @@ const LandingFooter = () => {
 
                             <Stack spacing={3} direction='row'>
                                 {
-                                    [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />].map((item, index) =>
+                                    icons.map((item, index) =>
                                         <IconButton
                                             key={index}
                                             sx={{
