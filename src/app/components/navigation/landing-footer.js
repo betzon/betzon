@@ -45,7 +45,7 @@ const LandingFooter = () => {
 
                             <Stack spacing={1}>
                                 {
-                                    ['Home', 'About us'].map((item, index) => (
+                                    ['Home', 'About us'].map((item, index) =>
                                         <Link
                                             key={index}
                                             href='#'
@@ -56,7 +56,7 @@ const LandingFooter = () => {
                                             <Typography
                                                 key={index} sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
                                         </Link>
-                                    ))
+                                    )
                                 }
                             </Stack>
                         </Stack>
@@ -66,7 +66,7 @@ const LandingFooter = () => {
 
                             <Stack spacing={3} direction='row'>
                                 {
-                                    [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />].map((item, index) => (
+                                    [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />].map((item, index) =>
                                         <IconButton
                                             key={index}
                                             sx={{
@@ -74,7 +74,7 @@ const LandingFooter = () => {
                                             }}>
                                             {item}
                                         </IconButton>
-                                    )
+
                                     )
                                 }
                             </Stack>
