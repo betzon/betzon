@@ -44,20 +44,6 @@ const LandingFooter = () => {
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Links</Typography>
 
                             <Stack spacing={1}>
-                                {
-                                    ['Home', 'About us'].map((item, index) => (
-                                        <Link
-                                            key={index}
-                                            href='#'
-                                            style={{
-                                                color: 'white',
-                                                textDecoration: 'none'
-                                            }}>
-                                            <Typography 
-                                            key={index} sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
-                                        </Link>
-                                    ))
-                                }
                             </Stack>
                         </Stack>
 
@@ -65,16 +51,6 @@ const LandingFooter = () => {
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Follow Us</Typography>
 
                             <Stack spacing={3} direction='row'>
-                                {
-                                    [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />].map((item, index) =>
-                                        <IconButton key={index}
-                                            sx={{
-                                                padding: 0, color: theme.palette.dark.otherlight,
-                                            }}>
-                                            {item}
-                                        </IconButton>
-                                    )
-                                }
                             </Stack>
                         </Stack>
                         <Stack spacing={2}>
