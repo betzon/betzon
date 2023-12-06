@@ -49,7 +49,7 @@ const StatusHandler = () => {
                     <Box sx={{
                         textAlign: 'center'
                     }}>
-                        <Typography variant='h4' sx={{ fontWeight: 700 }}>Be part of what's next</Typography>
+                        <Typography variant='h4' sx={{ fontWeight: 700 }}>Be part of what&apos;s next</Typography>
                         <Typography variant='body2'>Join our waitlist caption</Typography>
                     </Box>
 
