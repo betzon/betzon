@@ -67,7 +67,7 @@ const MainNavigation = () => {
     }
 
     return (
-        <AppBar position="fixed" sx={{ background: 'black', borderBottom:'1px solid gray' }}>
+        <AppBar position="fixed" sx={{ background: 'black', borderBottom: `1px solid ${theme.palette.primary.main}` }}>
             <MenuMobileDropDown toggle={toggleMobileMenu} toggleDrawer={toggleDrawer} />
             <Container maxWidth="xl" sx={{
                 backgroundColor: "#000000"
@@ -83,7 +83,7 @@ const MainNavigation = () => {
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
                                 fontWeight: 700,
-                                color: 'inherit',
+                                color: 'white'
                             }}
                         >
                             BETZON

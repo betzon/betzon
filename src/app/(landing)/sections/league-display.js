@@ -1,0 +1,390 @@
+import { useTheme } from '@emotion/react'
+import { Box, Button, Card, Stack, Typography } from '@mui/material'
+import React from 'react'
+import LinearProgress from '@mui/material/LinearProgress';
+
+
+const LeaguePillEngagementBar = ({ status, completion }) => {
+    const statusSpacing = -.5
+
+    const contentButtonSpacing = 3
+    switch (status) {
+
+        case 'in-development':
+            return (
+                <Stack spacing={contentButtonSpacing}>
+                    <Stack
+                        spacing={statusSpacing}>
+                        <Typography
+                            variant='subtitle1'>
+                            Status: <span style={{ fontWeight: 700 }}>In Development</span>
+                        </Typography>
+                        <Typography
+                            variant='subtitle1'>
+                            Release Date: <span style={{ fontWeight: 700 }}> October 2024!</span>
+                        </Typography>
+                    </Stack>
+
+                    <LinearProgress variant="determinate" value={completion} />
+
+                </Stack>
+            )
+
+        case 'live':
+            return (
+                <Stack spacing={contentButtonSpacing}>
+
+                    <Stack
+                        spacing={statusSpacing}>
+                        <Typography
+                            variant='subtitle1'>
+                            Status: <span style={{ fontWeight: 700 }}>LIVE!</span>
+                        </Typography>
+
+                        <Typography
+                            variant='subtitle1'>
+                            Wagers: <span style={{ fontWeight: 700 }}>+200</span>
+                        </Typography>
+                    </Stack>
+
+                </Stack>
+            );
+
+        case 'idle':
+            return (
+                <>
+                    <Stack spacing={contentButtonSpacing}>
+                        <Stack
+                            spacing={statusSpacing}
+                            sx={{
+
+                            }}>
+                            <Typography
+                                variant='subtitle1'>
+                                Status: <span style={{ fontWeight: 700 }}>Coming Soon</span>
+                            </Typography>
+
+                            <Typography
+                                variant='subtitle1'>
+                                Upvotes: <span style={{ fontWeight: 700 }}>10</span>
+                            </Typography>
+
+                            <Typography
+                                variant='subtitle1'>
+                                Downvotes: <span style={{ fontWeight: 700 }}>8</span>
+                            </Typography>
+                        </Stack>
+
+                        <Box sx={{
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'space-between'
+                        }}>
+                            <Button variant='outlined'>Downvote</Button>
+                            <Button variant='outlined'>Upvote</Button>
+                        </Box>
+                    </Stack>
+                </>
+            )
+
+        default:
+            return '';
+
+    }
+}
+
+const LeaguePill = ({ title, status, completion }) => {
+
+    const theme = useTheme()
+    const active = status === 'live' ? {
+        background: theme.palette.primary.main,
+    } : {}
+
+    return (
+        <Card
+            sx={{
+                minWidth: '350px',
+                height: 'auto',
+                width: 'fit-content',
+                padding: '24px', // top right bottom left
+                borderRadius: '12px',
+                width: '100%',
+                opacity: status === 'in-development' ? .65 : 1,
+                ...active
+            }}>
+
+            <Stack
+                spacing={3}
+                sx={{
+                    //background: 'green',
+                    width: '100%',
+                }}>
+                <Box sx={{
+                    width: '60px',
+                    height: '60px',
+                    background: 'white',
+                    borderRadius: '100px'
+                }}>
+
+                </Box>
+
+                <Stack spacing={1}>
+
+                    <Typography
+                        sx={{
+                            fontWeight: 700
+                        }}
+                        variant="h4">
+                        {title}
+                    </Typography>
+
+                    <LeaguePillEngagementBar status={status} completion={completion} />
+
+                </Stack>
+
+
+            </Stack>
+
+        </Card>
+    )
+}
+
+const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
+
+    const theme = useTheme()
+    return (
+        <Stack spacing={4} sx={{
+            width: '100%',
+            background: 'greem'
+        }}>
+
+            {
+                caption ?
+                    <Stack spacing={1}>
+
+                        <Typography variant="h3" sx={{
+                            fontWeight: 700
+                        }}>
+                            {title}
+                        </Typography>
+                        <Typography variant="subtitle1" color={theme.palette.dark.light}>
+                            {caption}
+                        </Typography>
+
+                    </Stack>
+                    :
+                    <Typography variant="h3" sx={{
+                        fontWeight: 700
+                    }}>
+                        {title}
+                    </Typography>
+            }
+
+
+            <Box sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' },
+                gap: '24px',
+                height: 'auto',
+                width: '100%'
+            }}>
+                {
+                    list.map((item, index) => (
+                        <LeaguePill key={index} title={item.sport} status={item.status} completion={item.completion} />
+                    ))
+                }
+            </Box>
+
+
+
+
+
+            {
+
+                status === 'live' ?
+                    <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Check it out!</Button>
+                    : ''
+            }
+
+            {
+
+                status === 'idle' ?
+                    <Stack spacing={1.5}>
+                        <Typography color={theme.palette.dark.light}>Don&apos;t see a certain sport?</Typography>
+                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Contact Support</Button>
+                    </Stack>
+                    : ''
+            }
+
+        </Stack>
+    )
+}
+
+const LeagueDisplaySection = () => {
+
+    const live = [
+        {
+            sport: 'Basketball',
+            status: 'live'
+        },
+        {
+            sport: 'Soccer',
+            status: 'live'
+        },
+        {
+            sport: 'Football',
+            status: 'live'
+        },
+        {
+            sport: 'Slap Box',
+            status: 'live'
+        },
+        {
+            sport: 'E-Sports',
+            status: 'live'
+        },
+        {
+            sport: 'Golf',
+            status: 'live'
+        }
+    ]
+
+    const dev = [
+        {
+            sport: 'Basketball',
+            status: 'in-development',
+            completion: 10
+        },
+        {
+            sport: 'Hockey',
+            status: 'in-development',
+            completion: 15
+        },
+        {
+            sport: 'Football',
+            status: 'in-development',
+            completion: 55
+        },
+        {
+            sport: 'Soccer',
+            status: 'in-development',
+            completion: 55
+        }
+    ]
+
+    const idle = [
+        {
+            sport: 'MMA',
+            status: 'idle'
+        }
+    ]
+    return (
+        <Box sx={{
+            display: 'grid',
+            gridTemplateRows: 'auto auto auto',
+            rowGap: '120px',
+            overflowX: 'show'
+        }}>
+            <LeagueDisplaySectionRows list={[...live]} title='Wager on the following sports!' status='live' />
+            <LeagueDisplaySectionRows list={[...dev]} title='Coming soon.' />
+            <LeagueDisplaySectionRows
+                status='idle'
+                list={[...idle]}
+                title='Your favorites.'
+                caption='We check this weekly! Upvote the sport you would like to see on BetzOn!' />
+        </Box>
+    )
+}
+
+export default LeagueDisplaySection
+
+
+/*
+SCROLLABLE
+
+
+const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
+
+    const theme = useTheme()
+    return (
+        <Stack spacing={4} sx={{
+            width: '100vh'
+        }}>
+
+            {
+                caption ?
+                    <Stack spacing={1}>
+
+                        <Typography variant="h3" sx={{
+                            fontWeight: 700
+                        }}>
+                            {title}
+                        </Typography>
+                        <Typography variant="subtitle1" color={theme.palette.dark.light}>
+                            {caption}
+                        </Typography>
+
+                    </Stack>
+                    :
+                    <Typography variant="h3" sx={{
+                        fontWeight: 700
+                    }}>
+                        {title}
+                    </Typography>
+            }
+
+            <Box sx={{
+                position: 'relative',
+                overflow: 'show',
+                left: '-24px'
+            }}>
+
+                <Box sx={{
+                    //background: 'red',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'flex-start',
+                    justifyContent: "flex-start",
+                    gap: '36px',
+                    height: 'auto',
+                    overflowX: 'scroll',
+                    width: '100vw',
+                    paddingLeft: '24px',
+                    paddingRight: '24px',
+                    '&::-webkit-scrollbar': {
+                        display: 'none', // hides the scrollbar
+                    }
+                }}>
+                    {
+                        list.map((item, index) => (
+                            <LeaguePill key={index} title={item.sport} status={item.status} completion={item.completion} />
+                        ))
+                    }
+                </Box>
+
+            </Box>
+
+
+
+
+            {
+
+                status === 'live' ?
+                    <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Check it out!</Button>
+                    : ''
+            }
+
+            {
+
+                status === 'idle' ?
+                    <Stack spacing={1.5}>
+                        <Typography color={theme.palette.dark.light}>Don&apos;t see a certain sport?</Typography>
+                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Contact Support</Button>
+                    </Stack>
+                    : ''
+            }
+
+        </Stack>
+    )
+}
+*/

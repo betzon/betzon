@@ -3,14 +3,15 @@ import { useTheme } from '@emotion/react'
 import { Stack } from '@mui/material'
 import React from 'react'
 
-const CardLayout = ({ children, spacing, grouped }) => {
+const CardLayout = ({ children, spacing, grouped, fake }) => {
     const theme = useTheme()
+    
     return (
         <Stack
             spacing={spacing}
             sx={{
                 // background: 'red',
-                width: { xs: '100%', sm: '100%', md: '400px', lg: '400px' },
+                width: fake ? '100%' : { xs: '100%', sm: '100%', md: '400px', lg: '400px' },
                 padding: grouped ? '' :'12px',
                 boxSizing: 'border-box',
                 borderRadius: '8px',

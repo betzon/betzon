@@ -2,7 +2,7 @@ import { Box, Divider, List, Typography } from '@mui/material'
 import React from 'react'
 import WagerCardItem from './item'
 
-const WagerFeed = ({ feed, grouped }) => {
+const WagerFeed = ({ feed, grouped, fake }) => {
 
     return (
         <Box
@@ -24,7 +24,7 @@ const WagerFeed = ({ feed, grouped }) => {
                 {
                     feed.map((item, index) => (
 
-                        <WagerCardItem key={index} grouped={grouped} showDivider={feed.length - 1 === index} />
+                        <WagerCardItem key={index} fake={fake} grouped={grouped} showDivider={feed.length - 1 === index} />
                     ))
                 }
             </List>

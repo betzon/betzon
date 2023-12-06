@@ -16,13 +16,21 @@ const theme = createTheme({
       main: '#FF9121',
     },
     secondary: {
-      main: '#19857b',
+      main: '#000000',
     },
     neutral: {
       main: '#FFFFFF',
     },
+    background: {
+      default: '#000000', // Set background to black
+      paper: '#141414', // Adjust this if you also want paper components to have a different background
+    },
+    error: {
+      main: '#F86666'
+    },
     dark: {
-      main: '#141414',
+      // main: '#141414',
+      main: '#000000',
       light: '#B7B7B7',
       otherlight: '#808080'
     }
@@ -107,3 +115,45 @@ const theme = createTheme({
 });
 
 export default theme;
+
+
+/*
+
+<Box sx={{
+                    alignSelf: 'center',
+                    //theme.palette.primary.main
+                    width: '100%',
+                    borderRadius: '16px',
+                    position: 'relative',
+                }}>
+
+
+                    <Box sx={{
+                        //theme.palette.primary.main
+                        background: 'white',
+                        width: '100%',
+                        paddingTop: '100%',
+                        borderRadius: '16px',
+                        overflow: 'hidden',
+                        position: 'relative'
+                    }}>
+                        <Box sx={{
+                            right: '-16px',
+                            bottom: '-16px',
+                            background: 'white',
+                            width: '400px',
+                            height: '500px',
+                            position: 'absolute',
+                            borderRadius: '72px 0 0 0',
+                            border: '16px solid gray'
+                        }}>
+                            
+                        </Box>
+                    </Box>
+
+
+
+
+                </Box>
+                   
+*/

@@ -3,8 +3,34 @@
 }
 
 body {
-  color: white;
-  background-color: #000000 !important;
+  background: 'black'
+}
+
+
+.shadow-1 {
+  top: -50%;
+  left: 0;
+  position: fixed;
+  z-index: -99;
+  width: 900px;
+  height: 900px;
+  flex-shrink: 0;
+  border-radius: 904px;
+  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(96, 121, 254, 0.40) 0%, rgba(217, 217, 217, 0.00) 100%);
+
+}
+
+.shadow-2 {
+  bottom: -40%;
+  right: 0;
+  position: fixed;
+  z-index: -99;
+  width: 900px;
+  height: 900px;
+  flex-shrink: 0;
+  border-radius: 904px;
+  border-radius: 875px;
+  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(250, 114, 103, 0.40) 0%, rgba(96, 121, 254, 0.02) 72.40%, rgba(217, 217, 217, 0.00) 100%);
 }
 
 #messaging-input-wrapper {
@@ -33,34 +59,6 @@ body {
 
 #messaging-input:focus {
   outline: none;
-}
-
-
-.shadow-1 {
-  top: -50%;
-  left: 3%;
-  position: fixed;
-  z-index: -1;
-  width: 900px;
-  height: 900px;
-  flex-shrink: 0;
-  border-radius: 904px;
-  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(96, 121, 254, 0.40) 0%, rgba(217, 217, 217, 0.00) 100%);
-
-}
-
-.shadow-2 {
-  bottom: -40%;
-  right: 20%;
-  position: fixed;
-  z-index: -1;
-  width: 900px;
-  height: 900px;
-  flex-shrink: 0;
-  border-radius: 904px;
-  border-radius: 875px;
-  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(250, 114, 103, 0.40) 0%, rgba(96, 121, 254, 0.02) 72.40%, rgba(217, 217, 217, 0.00) 100%);
-
 }
 
 .link-1 {

@@ -1,8 +1,9 @@
 import { SET_CALENDAR_DATE, SET_CURRENT_LEAGUE } from "../types";
+
 const initialState = {
     league: [
         {
-            title: 'Trending Events',
+            title: 'Home',
             status: true
 
         },

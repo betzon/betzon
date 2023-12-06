@@ -7,7 +7,7 @@ import WagerCardTeamStack from './teams/team-stack'
 import WagerCardEngagementBar from './engagement-bar'
 import CardLayout from '../layout'
 
-const WagerCardItem = ({ grouped, showDivider }) => {
+const WagerCardItem = ({ grouped, showDivider, fake }) => {
 
     const theme = useTheme()
 
@@ -32,7 +32,7 @@ const WagerCardItem = ({ grouped, showDivider }) => {
                 width: '100%',
                 padding: 0
             }}>
-                <CardLayout spacing={2} grouped={grouped}>
+                <CardLayout spacing={2} grouped={grouped} fake={fake}>
 
                     <WagerHeader
                         user />
