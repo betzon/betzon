@@ -46,6 +46,21 @@ const LandingFooter = () => {
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Links</Typography>
 
                             <Stack spacing={1}>
+                                {
+                                    footerItems.map((item, index) => (
+                                        <Link
+                                            key={index}
+                                            href='#'
+                                            style={{
+                                                color: 'white',
+                                                textDecoration: 'none'
+                                            }}>
+                                            <Typography
+                                                key={index} sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
+                                        </Link>
+                                    
+                                    ))
+                                }
                             </Stack>
                         </Stack>
 
@@ -63,6 +78,8 @@ const LandingFooter = () => {
                                             }}>
                                             {item}
                                         </IconButton>
+
+
                                     ))
                                 }
                             </Stack>
