@@ -12,9 +12,9 @@ export const waitListSignUpRequest = (userInfo) => {
                 last_name: userInfo.last_name,
                 email: userInfo.email
             };
-
-            await api.post(`${process.env.API_URL}/api/landing/waitlist/add`, update)
-
+            //const response = await api.post(`${process.env.API_URL}:3001/api/landing/waitlist/add`, update)
+            const response = await api.post(`/api/landing/waitlist/add`, update)
+            console.log(response)
             dispatch(setWaitlistSuccess());
         } catch (error) {
             console.log('ERROR HERE')

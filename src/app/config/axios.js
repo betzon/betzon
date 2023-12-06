@@ -4,7 +4,7 @@ axios.interceptors.request.use(
     config => {
 
         //config.baseURL = 'https://13.52.120.52'
-        config.baseURL = 'https://api.campuscupids.com'
+        config.baseURL = 'https://api.betzon.com'
         //config.baseURL = 'http://localhost:3001'
         return config
     },
