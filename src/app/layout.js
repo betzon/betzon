@@ -5,9 +5,6 @@ import ReduxProvider from "./redux/ReduxProvider";
 import store from './redux/store'
 
 export default function RootLayout(props) {
-  console.log(process.env)
-  console.log(process.env.API_URL)
-  console.log(process.env.NEXT_PUBLIC_API_URL)
   const { children } = props;
   return (
     <html lang="en">

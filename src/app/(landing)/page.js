@@ -1,17 +1,20 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import HomeHeaderSection from './sections/header';
 import LeagueDisplaySection from './sections/league-display';
 import { Divider } from '@mui/material';
 import OurResponsibilitiesSection from './sections/responsibilities';
 import ContactSection from './sections/contact';
 import { Box, Container, Tab, Tabs } from '@mui/material';
-import SmoothScroll from 'smooth-scroll';
 import { useTheme } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import ValuePropositionSection from './sections/value-proposition';
 import { useRouter } from 'next/navigation';
-
+import dynamic from 'next/dynamic';
+const SmoothScroll = dynamic(
+    () => import('smooth-scroll'),
+    { ssr: false }
+);
 
 const StyledTabs = styled((props) => <Tabs {...props} scrollButtons="auto" variant="scrollable" allowScrollButtonsMobile TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }} />)(
     ({ theme }) => ({
@@ -57,19 +60,26 @@ const LandingPage = () => {
 
 
     // Initialize SmoothScroll
-    const scroll = new SmoothScroll();
+
+    const scrollRef = useRef(null);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            // Initialize SmoothScroll and assign to ref
+            scrollRef.current = new SmoothScroll();
+        }
+    }, []);
 
     const smoothScrollTo = (elementId) => {
         const targetElement = document.getElementById(elementId);
-        if (targetElement) {
-            scroll.animateScroll(targetElement, null, {
-                speed: 500, easing: 'easeInOutCubic', offset: 125 // 50 pixels offset from the top
+        if (targetElement && scrollRef.current) {
+            scrollRef.current.animateScroll(targetElement, null, {
+                speed: 500,
+                easing: 'easeInOutCubic',
+                offset: 125 // 50 pixels offset from the top
             });
         }
     };
-
-
-
 
     const handleChange = (event, newValue) => {
         setIsScrollingFromHandleChange(true); // Set flag to true
