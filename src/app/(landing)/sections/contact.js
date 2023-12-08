@@ -143,8 +143,9 @@ const ContactSection = () => {
 
     return (
         <Box
-            id='waitlist-form'
+            id="contact"
             sx={{
+
                 //background: 'green',
                 paddingTop: '120px',
                 paddingBottom: '120px',
@@ -154,12 +155,14 @@ const ContactSection = () => {
             }}>
 
             <Card sx={{
+                backdropFilter: 'blur(100px)', // Apply blur effect
+
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 gap: '24px',
-                background: 'black',
-                border: `2px solid ${theme.palette.primary.main}`,
+                background: 'transparent',
+                border: `1px solid ${theme.palette.dark.otherlight}`,
                 p: '36px 24px',
                 borderRadius: '12px',
                 width: { sm: '100%', md: '100%', lg: '450px', xl: '450px' }

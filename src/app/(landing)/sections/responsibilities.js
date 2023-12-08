@@ -49,15 +49,18 @@ const OurResponsibilitiesSection = () => {
 
     return (
         <Stack
+            id="why-betzon"
             spacing={6}
             sx={{
-                background: theme.palette.primary.main,
+                //background: theme.palette.primary.main,
+                backdropFilter: 'blur(100px)', // Apply blur effect
+                border: `1px solid ${theme.palette.dark.otherlight}`,
                 padding: '48px 24px',
                 borderRadius: '8px',
                 textAlign: 'center'
             }}>
 
-            <Typography variant='h3' sx={{ fontWeight: 700 }}>Why BetzOn?</Typography>
+            <Typography variant='h3'>Why BetzOn?</Typography>
 
             <Box
                 sx={{

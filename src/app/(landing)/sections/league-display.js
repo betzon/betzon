@@ -1,7 +1,8 @@
 import { useTheme } from '@emotion/react'
-import { Box, Button, Card, Stack, Typography } from '@mui/material'
+import { Box, Button, Card, Stack, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import LinearProgress from '@mui/material/LinearProgress';
+import { useRouter } from 'next/navigation';
 
 
 const LeaguePillEngagementBar = ({ status, completion }) => {
@@ -21,7 +22,7 @@ const LeaguePillEngagementBar = ({ status, completion }) => {
                         </Typography>
                         <Typography
                             variant='subtitle1'>
-                            Release Date: <span style={{ fontWeight: 700 }}> October 2024!</span>
+                            Release Date: <span style={{ fontWeight: 700 }}>October 2024!</span>
                         </Typography>
                     </Stack>
 
@@ -152,52 +153,54 @@ const LeaguePill = ({ title, status, completion }) => {
 const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
 
     const theme = useTheme()
+
+    const router = useRouter()
+
+    const isMediumUp = useMediaQuery(theme.breakpoints.up('lg'));
     return (
-        <Stack spacing={4} sx={{
+        <Stack spacing={6} sx={{
             width: '100%',
-            background: 'greem'
         }}>
 
-            {
-                caption ?
-                    <Stack spacing={1}>
 
-                        <Typography variant="h3" sx={{
-                            fontWeight: 700
-                        }}>
-                            {title}
-                        </Typography>
+            <Stack spacing={1} sx={{
+                textAlign: 'center'
+            }}>
+
+                <Typography variant="h3">
+                    {title}
+                </Typography>
+                {
+                    caption ?
                         <Typography variant="subtitle1" color={theme.palette.dark.light}>
                             {caption}
                         </Typography>
 
-                    </Stack>
-                    :
-                    <Typography variant="h3" sx={{
-                        fontWeight: 700
-                    }}>
-                        {title}
-                    </Typography>
-            }
+                        : ''
+                }
+
+            </Stack>
 
 
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' },
+                gridTemplateColumns: list.length < 4 ? { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr 1fr', xl: list.length === 2 ? '1fr 1fr 1fr 1fr' : `repeat(${list.length}, 1fr)` } : { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' },
                 gap: '24px',
                 height: 'auto',
-                width: '100%'
+                width: '100%',
             }}>
+                {
+                    list.length === 2 && isMediumUp? <div></div>:''
+                }
                 {
                     list.map((item, index) => (
                         <LeaguePill key={index} title={item.sport} status={item.status} completion={item.completion} />
                     ))
                 }
+                {
+                    list.length === 2 && isMediumUp? <div></div>:''
+                }
             </Box>
-
-
-
-
 
             {
 
@@ -209,9 +212,14 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
             {
 
                 status === 'idle' ?
-                    <Stack spacing={1.5}>
+                    <Stack spacing={1.5} sx={{
+                        dispaly: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+
+                    }}>
                         <Typography color={theme.palette.dark.light}>Don&apos;t see a certain sport?</Typography>
-                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Contact Support</Button>
+                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }} onClick={() => router.push('#contact')}>Contact Support</Button>
                     </Stack>
                     : ''
             }
@@ -221,33 +229,36 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
 }
 
 const LeagueDisplaySection = () => {
+    /*
+        const live = [
+            {
+                sport: 'Basketball',
+                status: 'live'
+            },
+            {
+                sport: 'Soccer',
+                status: 'live'
+            },
+            {
+                sport: 'Football',
+                status: 'live'
+            },
+            {
+                sport: 'Slap Box',
+                status: 'live'
+            },
+            {
+                sport: 'E-Sports',
+                status: 'live'
+            },
+            {
+                sport: 'Golf',
+                status: 'live'
+            }
+        ]
+        */
 
-    const live = [
-        {
-            sport: 'Basketball',
-            status: 'live'
-        },
-        {
-            sport: 'Soccer',
-            status: 'live'
-        },
-        {
-            sport: 'Football',
-            status: 'live'
-        },
-        {
-            sport: 'Slap Box',
-            status: 'live'
-        },
-        {
-            sport: 'E-Sports',
-            status: 'live'
-        },
-        {
-            sport: 'Golf',
-            status: 'live'
-        }
-    ]
+    const live = []
 
     const dev = [
         {
@@ -276,16 +287,26 @@ const LeagueDisplaySection = () => {
         {
             sport: 'MMA',
             status: 'idle'
+        },
+
+        {
+            sport: 'Golf',
+            status: 'idle'
         }
     ]
+
     return (
-        <Box sx={{
-            display: 'grid',
-            gridTemplateRows: 'auto auto auto',
-            rowGap: '120px',
-            overflowX: 'show'
-        }}>
-            <LeagueDisplaySectionRows list={[...live]} title='Wager on the following sports!' status='live' />
+        <Box
+            id="our-sports"
+            sx={{
+                display: 'grid',
+                gridTemplateRows: 'auto auto auto',
+                rowGap: '120px',
+                overflowX: 'show'
+            }}>
+            {
+                live.length != 0 ? <LeagueDisplaySectionRows list={[...live]} title='Wager on the following sports!' status='live' /> : ''
+            }
             <LeagueDisplaySectionRows list={[...dev]} title='Coming soon.' />
             <LeagueDisplaySectionRows
                 status='idle'

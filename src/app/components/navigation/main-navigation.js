@@ -67,10 +67,14 @@ const MainNavigation = () => {
     }
 
     return (
-        <AppBar position="fixed" sx={{ background: 'black', borderBottom: `1px solid ${theme.palette.primary.main}` }}>
+        <AppBar position="absolute" sx={{
+            background: 'transparent',
+            boxShadow:'none'
+            //borderBottom: `1px solid ${theme.palette.primary.main}` 
+        }}>
             <MenuMobileDropDown toggle={toggleMobileMenu} toggleDrawer={toggleDrawer} />
             <Container maxWidth="xl" sx={{
-                backgroundColor: "#000000"
+                backgroundColor: "transparent"
             }}>
                 <Toolbar disableGutters>
 

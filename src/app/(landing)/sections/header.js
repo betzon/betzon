@@ -1,9 +1,45 @@
 "use client"
-import React from 'react'
-import { Box, Button, Stack, Typography, useMediaQuery } from '@mui/material';
+import React, { useEffect, useRef, useState } from 'react'
+import { Box, Button, Stack, Tab, Tabs, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import Phone from '../components/phone';
 import { useRouter } from 'next/navigation';
+
+import { styled } from '@mui/material/styles';
+
+
+const StyledTabs = styled((props) => <Tabs {...props} TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }} />)(
+    ({ theme }) => ({
+        '& .MuiTabs-indicator': {
+            display: 'flex',
+            justifyContent: 'center',
+            backgroundColor: 'transparent',
+        },
+        '& .MuiTabs-indicatorSpan': {
+            maxWidth: 40,
+            width: '100%',
+            backgroundColor: theme.palette.primary.main,
+        },
+    }),
+);
+
+
+const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
+    ({ theme }) => ({
+        textTransform: 'none',
+        fontWeight: theme.typography.fontWeightRegular,
+        fontSize: theme.typography.pxToRem(15),
+        marginRight: theme.spacing(1),
+        color: theme.palette.dark.otherlight,
+        fontWeight: 700,
+        '&.Mui-selected': {
+            color: '#fff',
+        },
+        '&.Mui-focusVisible': {
+            backgroundColor: theme.palette.dark.otherlight,
+        },
+    }),
+);
 
 const HomeHeaderSection = () => {
 
@@ -14,6 +50,10 @@ const HomeHeaderSection = () => {
     const isMediumUp = useMediaQuery(theme.breakpoints.up('lg'));
 
     const variant = isMediumUp ? 'h1' : 'h3';
+
+
+
+
     /*
     ALLOW PEOIPLE TO CHECK OUT THE APP WUITHOUT CREATING AN ACCOUNT BUT LIMIT A LOT OF THINGS
     */
@@ -23,7 +63,70 @@ const HomeHeaderSection = () => {
         router.push('#waitlist-form')
     }
 
+
+    const [value, setValue] = useState(2);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
     return (
+        <Box
+            id="top"
+            sx={{
+                left: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                boxSizing: 'border-box',
+                position: 'relative',
+                height: '100vh'
+            }}>
+
+            <Typography
+                sx={{
+                    fontWeight: 700
+                }}
+                //color={theme.palette.dark.light}
+
+                variant="h1">
+                Sports Wagering Meets <br /> Social Media
+            </Typography>
+
+        </Box >
+    )
+}
+//IT&apos;S ON!
+export default HomeHeaderSection
+
+
+/*
+
+
+
+            <Box ref={headerRef} sx={{
+                position: isSticky ? 'fixed' : 'absolute',
+                zIndex: 999,
+                bgcolor: theme.palette.dark.dark,
+                borderRadius: '8px',
+                top: isSticky ? '24px' : 'auto',
+                bottom: isSticky ? 'auto' : '48px',
+            }}>
+                <StyledTabs
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="styled tabs example"
+                >
+                    <StyledTab label="Workflows" />
+                    <StyledTab label="Datasets" />
+                    <StyledTab label="Connections" />
+                </StyledTabs>
+            </Box>
+
+
+
         <Box sx={{
             left: 0,
             display: 'flex',
@@ -96,7 +199,5 @@ const HomeHeaderSection = () => {
 
             </Box>
         </Box >
-    )
-}
-//IT&apos;S ON!
-export default HomeHeaderSection
+
+*/

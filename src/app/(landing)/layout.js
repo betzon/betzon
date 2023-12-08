@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import MainNavigation from '../components/navigation/main-navigation.js';
@@ -22,11 +22,11 @@ const MainLayout = ({ children }) => {
         <Container maxWidth="xl" sx={{
             paddingTop: 0,
             boxSizing: 'border-box',
-            overflow: 'show'
+            overflow: 'show',
         }}>
             <MainNavigation />
-            <button onClick={(e) => scrollToSection(e, 'target-section')}>Go to Section</button>
             {children}
+
             <Bulge />
             <LandingFooter />
         </Container>

@@ -20,6 +20,7 @@ const LandingFooter = () => {
             position: 'absolute',
             left: 0,
             background: 'black',
+            //backdropFilter: 'blur(200px)', // Apply blur effect
             paddingTop: '84px',
             paddingBottom: '48px',
             borderTop: `1px solid ${theme.palette.primary.main}`
@@ -27,7 +28,8 @@ const LandingFooter = () => {
             <Container maxWidth='xl'>
                 <Stack spacing={6}>
                     <Box sx={{
-                        display: 'grid',
+                        display: { xs: 'flex', sm: 'flex', md: 'grid', lg: 'grid', xl: 'grid' },
+                        flexDirection: 'column',
                         gridTemplateColumns: '.5fr 1fr 1fr 1fr',
                         gap: '48px'
                     }}>
@@ -58,7 +60,7 @@ const LandingFooter = () => {
                                             <Typography
                                                 key={index} sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
                                         </Link>
-                                    
+
                                     ))
                                 }
                             </Stack>
