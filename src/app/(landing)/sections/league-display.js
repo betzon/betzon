@@ -3,7 +3,12 @@ import { Box, Button, Card, Stack, Typography, useMediaQuery } from '@mui/materi
 import React from 'react'
 import LinearProgress from '@mui/material/LinearProgress';
 import { useRouter } from 'next/navigation';
-
+import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
+import SportsHockeyIcon from '@mui/icons-material/SportsHockey';
+import SportsFootballIcon from '@mui/icons-material/SportsFootball';
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import SportsMmaIcon from '@mui/icons-material/SportsMma';
+import GolfCourseIcon from '@mui/icons-material/GolfCourse';
 
 const LeaguePillEngagementBar = ({ status, completion }) => {
     const statusSpacing = -.5
@@ -94,13 +99,12 @@ const LeaguePillEngagementBar = ({ status, completion }) => {
     }
 }
 
-const LeaguePill = ({ title, status, completion }) => {
+const LeaguePill = ({ title, status, completion, icon }) => {
 
     const theme = useTheme()
     const active = status === 'live' ? {
         background: theme.palette.primary.main,
     } : {}
-
     return (
         <Card
             sx={{
@@ -123,10 +127,13 @@ const LeaguePill = ({ title, status, completion }) => {
                 <Box sx={{
                     width: '60px',
                     height: '60px',
-                    background: 'white',
-                    borderRadius: '100px'
+                    borderRadius: '100px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    border: '4px solid white'
                 }}>
-
+                    {icon}
                 </Box>
 
                 <Stack spacing={1}>
@@ -190,15 +197,15 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
                 width: '100%',
             }}>
                 {
-                    list.length === 2 && isMediumUp? <div></div>:''
+                    list.length === 2 && isMediumUp ? <div></div> : ''
                 }
                 {
                     list.map((item, index) => (
-                        <LeaguePill key={index} title={item.sport} status={item.status} completion={item.completion} />
+                        <LeaguePill key={index} title={item.sport} status={item.status} completion={item.completion} icon={item.icon} />
                     ))
                 }
                 {
-                    list.length === 2 && isMediumUp? <div></div>:''
+                    list.length === 2 && isMediumUp ? <div></div> : ''
                 }
             </Box>
 
@@ -264,21 +271,25 @@ const LeagueDisplaySection = () => {
         {
             sport: 'Basketball',
             status: 'in-development',
+            icon: <SportsBasketballIcon fontSize='large' />,
             completion: 10
         },
         {
             sport: 'Hockey',
             status: 'in-development',
+            icon: <SportsHockeyIcon fontSize='large' />,
             completion: 15
         },
         {
             sport: 'Football',
             status: 'in-development',
+            icon: <SportsFootballIcon fontSize='large' />,
             completion: 55
         },
         {
             sport: 'Soccer',
             status: 'in-development',
+            icon: <SportsSoccerIcon fontSize='large' />,
             completion: 55
         }
     ]
@@ -286,11 +297,13 @@ const LeagueDisplaySection = () => {
     const idle = [
         {
             sport: 'MMA',
+            icon: <SportsMmaIcon fontSize='large' />,
             status: 'idle'
         },
 
         {
             sport: 'Golf',
+            icon: <GolfCourseIcon fontSize='large' />,
             status: 'idle'
         }
     ]

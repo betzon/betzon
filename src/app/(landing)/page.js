@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import HomeHeaderSection from './sections/header';
 import LeagueDisplaySection from './sections/league-display';
-import { Divider } from '@mui/material';
+import { Divider, useMediaQuery } from '@mui/material';
 import OurResponsibilitiesSection from './sections/responsibilities';
 import ContactSection from './sections/contact';
 import { Box, Container, Tab, Tabs } from '@mui/material';
@@ -11,6 +11,7 @@ import { styled } from '@mui/material/styles';
 import ValuePropositionSection from './sections/value-proposition';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
+
 const SmoothScroll = dynamic(
     () => import('smooth-scroll'),
     { ssr: false }
@@ -55,7 +56,7 @@ const LandingPage = () => {
     const [value, setValue] = useState(0);
     const router = useRouter()
     const [isScrollingFromHandleChange, setIsScrollingFromHandleChange] = useState(false);
-
+    const [isSmoothScrollLoaded, setIsSmoothScrollLoaded] = useState(false);
 
 
 
@@ -65,14 +66,16 @@ const LandingPage = () => {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            // Initialize SmoothScroll and assign to ref
-            scrollRef.current = new SmoothScroll();
+            import('smooth-scroll').then((SmoothScrollModule) => {
+                scrollRef.current = new SmoothScrollModule.default();
+                setIsSmoothScrollLoaded(true);
+            });
         }
     }, []);
 
     const smoothScrollTo = (elementId) => {
         const targetElement = document.getElementById(elementId);
-        if (targetElement && scrollRef.current) {
+        if (targetElement && scrollRef.current && isSmoothScrollLoaded) {
             scrollRef.current.animateScroll(targetElement, null, {
                 speed: 500,
                 easing: 'easeInOutCubic',
@@ -80,6 +83,7 @@ const LandingPage = () => {
             });
         }
     };
+
 
     const handleChange = (event, newValue) => {
         setIsScrollingFromHandleChange(true); // Set flag to true

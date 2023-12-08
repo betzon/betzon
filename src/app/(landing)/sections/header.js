@@ -47,9 +47,9 @@ const HomeHeaderSection = () => {
 
     const theme = useTheme();
 
-    const isMediumUp = useMediaQuery(theme.breakpoints.up('lg'));
+    const isMediumUp = useMediaQuery(theme.breakpoints.up('md'));
 
-    const variant = isMediumUp ? 'h1' : 'h3';
+    const variant = isMediumUp ? 'h1' : 'h2';
 
 
 
@@ -91,7 +91,7 @@ const HomeHeaderSection = () => {
                 }}
                 //color={theme.palette.dark.light}
 
-                variant="h1">
+                variant={variant}>
                 Sports Wagering Meets <br /> Social Media
             </Typography>
 
