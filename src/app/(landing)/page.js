@@ -89,9 +89,11 @@ const LandingPage = () => {
         setIsScrollingFromHandleChange(true); // Set flag to true
         setValue(newValue);
         smoothScrollTo(event.target.name);
+
         setTimeout(() => {
-            setIsScrollingFromHandleChange(false);
-        }, 500);
+
+        setIsScrollingFromHandleChange(false);
+        }, 2500);
     };
 
     useEffect(() => {
@@ -112,7 +114,7 @@ const LandingPage = () => {
                     if (typeof window !== "undefined") {
                         // browser code
                         // Check if any part of the section is within the viewport
-                        const isSectionInView = sectionRect.top < window.innerHeight && sectionRect.bottom >= 0;
+                        const isSectionInView = sectionRect.top < window.innerHeight && sectionRect.bottom >= 205;
 
                         return isSectionInView;
                     }
