@@ -147,8 +147,6 @@ const ContactSection = () => {
             sx={{
 
                 //background: 'green',
-                paddingTop: '120px',
-                paddingBottom: '120px',
                 display: 'flex',
                 justifyContent: 'center',
                 borderRadius: '8px'

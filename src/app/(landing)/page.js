@@ -95,11 +95,13 @@ const LandingPage = () => {
             const currentSection = sections.findIndex((section) => {
                 if (section) {
                     const sectionRect = section.getBoundingClientRect();
+                    if (typeof window !== "undefined") {
+                        // browser code
+                        // Check if any part of the section is within the viewport
+                        const isSectionInView = sectionRect.top < window.innerHeight && sectionRect.bottom >= 0;
 
-                    // Check if any part of the section is within the viewport
-                    const isSectionInView = sectionRect.top < window.innerHeight && sectionRect.bottom >= 0;
-
-                    return isSectionInView;
+                        return isSectionInView;
+                    }
                 }
                 return false;
             });
@@ -119,7 +121,9 @@ const LandingPage = () => {
 
     useEffect(() => {
         // Scroll to the top of the page on page load/refresh
-        window.scrollTo(0, 0);
+        if (typeof window !== "undefined") {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     //<Divider sx={{ marginBottom: '120px', marginTop: '120px' }} />
