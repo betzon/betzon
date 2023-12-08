@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef, useState } from 'react'
 
 const Bulge = () => {
@@ -12,36 +13,42 @@ const Bulge = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.pageYOffset;
-            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-            const scrollRatio = scrollPosition / pageHeight;
-            const newLocation = Math.round(50 - (scrollRatio * 100));
+            if (typeof window !== "undefined") {
+                const scrollPosition = window.pageYOffset;
+                const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-            // Interpolate from blue to light orange-red
-            const redOne = Math.min(255, Math.round(255 * scrollRatio));
-            const greenOne = Math.min(165, Math.round(165 * scrollRatio));
-            const blueOne = Math.max(0, 255 - Math.round(255 * scrollRatio));
-            const newColorOne = `rgba(${redOne}, ${greenOne}, ${blueOne}, 1)`;
+                const scrollRatio = scrollPosition / pageHeight;
+                const newLocation = Math.round(50 - (scrollRatio * 100));
 
-            const newSize = 1000 + (scrollRatio * 200); // Adjust multiplier for more/less growth
+                // Interpolate from blue to light orange-red
+                const redOne = Math.min(255, Math.round(255 * scrollRatio));
+                const greenOne = Math.min(165, Math.round(165 * scrollRatio));
+                const blueOne = Math.max(0, 255 - Math.round(255 * scrollRatio));
+                const newColorOne = `rgba(${redOne}, ${greenOne}, ${blueOne}, 1)`;
 
-            // Interpolate from light green to orange
-            const redTwo = Math.min(255, 144 + Math.round(111 * scrollRatio));
-            const greenTwo = Math.max(165, 238 - Math.round(73 * scrollRatio));
-            const blueTwo = Math.max(0, 144 - Math.round(144 * scrollRatio));
-            const newColorTwo = `rgba(${redTwo}, ${greenTwo}, ${blueTwo}, 1)`;
+                const newSize = 1000 + (scrollRatio * 200); // Adjust multiplier for more/less growth
 
-            setLocation(newLocation);
-            setSize(newSize);
-            setBgColorOne(newColorOne);
-            setBgColorTwo(newColorTwo);
+                // Interpolate from light green to orange
+                const redTwo = Math.min(255, 144 + Math.round(111 * scrollRatio));
+                const greenTwo = Math.max(165, 238 - Math.round(73 * scrollRatio));
+                const blueTwo = Math.max(0, 144 - Math.round(144 * scrollRatio));
+                const newColorTwo = `rgba(${redTwo}, ${greenTwo}, ${blueTwo}, 1)`;
+
+                setLocation(newLocation);
+                setSize(newSize);
+                setBgColorOne(newColorOne);
+                setBgColorTwo(newColorTwo);
+            }
         };
 
-        window.addEventListener('scroll', handleScroll);
-
+        if (typeof window !== "undefined") {
+            window.addEventListener('scroll', handleScroll);
+        }
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            if (typeof window !== "undefined") {
+                window.removeEventListener('scroll', handleScroll);
+            }
         };
     }, []);
 
