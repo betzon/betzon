@@ -2,7 +2,7 @@
 "use client"
 import { setWaitlistDefault, waitListSignUpRequest } from '@/app/redux/actions/landingPageAction'
 import { useTheme } from '@emotion/react'
-import { Box, Button, Card, TextField, Typography } from '@mui/material'
+import { Box, Button, Card, TextField, Typography, useMediaQuery } from '@mui/material'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckIcon from '@mui/icons-material/Check';
@@ -42,6 +42,11 @@ const StatusHandler = () => {
         setInputs({ ...temp })
     }
 
+    const isMediumUp = useMediaQuery(theme.breakpoints.up('sm'));
+
+    const variant = isMediumUp ? 'h4' : 'h5';
+
+
     switch (status) {
         case 0:
             return (
@@ -49,7 +54,7 @@ const StatusHandler = () => {
                     <Box sx={{
                         textAlign: 'center'
                     }}>
-                        <Typography variant='h4' sx={{ fontWeight: 700 }}>Be part of what&apos;s next</Typography>
+                        <Typography variant={variant} sx={{ fontWeight: 700 }}>Be part of what&apos;s next</Typography>
                         <Typography variant='body2'>Join our waitlist</Typography>
                     </Box>
 
