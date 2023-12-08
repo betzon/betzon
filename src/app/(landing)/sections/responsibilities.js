@@ -8,7 +8,7 @@ const ContentBox = ({ data }) => {
             spacing={1}
             sx={{
                 //background: 'red',
-                textAlign: 'left',
+                textAlign: { xs: 'center', sm: 'left', md: 'left', lg: 'left', xl: 'left' },
                 width: '100%'
             }}>
             <Typography variant='h5' sx={{ fontWeight: 700 }}>{data.title}</Typography>

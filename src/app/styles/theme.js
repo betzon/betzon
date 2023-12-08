@@ -25,9 +25,6 @@ const theme = createTheme({
       default: '#000000', // Set background to black
       paper: '#141414', // Adjust this if you also want paper components to have a different background
     },
-    error: {
-      main: '#F86666'
-    },
     dark: {
       dark:'#141414',
       // main: '#141414',

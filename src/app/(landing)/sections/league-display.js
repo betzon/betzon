@@ -1,6 +1,7 @@
+'use client'
 import { useTheme } from '@emotion/react'
 import { Box, Button, Card, Stack, Typography, useMediaQuery } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import LinearProgress from '@mui/material/LinearProgress';
 import { useRouter } from 'next/navigation';
 import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
@@ -27,7 +28,7 @@ const LeaguePillEngagementBar = ({ status, completion }) => {
                         </Typography>
                         <Typography
                             variant='subtitle1'>
-                            Release Date: <span style={{ fontWeight: 700 }}>October 2024!</span>
+                            Planned Release Date: <span style={{ fontWeight: 700 }}>October 2024!</span>
                         </Typography>
                     </Stack>
 
@@ -164,6 +165,39 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
     const router = useRouter()
 
     const isMediumUp = useMediaQuery(theme.breakpoints.up('lg'));
+    const [isSmoothScrollLoaded, setIsSmoothScrollLoaded] = useState(false);
+
+
+
+    // Initialize SmoothScroll
+
+    const scrollRef = useRef(null);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            import('smooth-scroll').then((SmoothScrollModule) => {
+                scrollRef.current = new SmoothScrollModule.default();
+                setIsSmoothScrollLoaded(true);
+            });
+        }
+    }, []);
+
+    const smoothScrollTo = () => {
+        const targetElement = document.getElementById('contact');
+        if (targetElement && scrollRef.current && isSmoothScrollLoaded) {
+            scrollRef.current.animateScroll(targetElement, null, {
+                speed: 500,
+                easing: 'easeInOutCubic',
+                offset: 125 // 50 pixels offset from the top
+            });
+        }
+    };
+
+
+    const handleChange = () => {
+        smoothScrollTo('#contact');
+    };
+
     return (
         <Stack spacing={6} sx={{
             width: '100%',
@@ -226,7 +260,7 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
 
                     }}>
                         <Typography color={theme.palette.dark.light}>Don&apos;t see a certain sport?</Typography>
-                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }} onClick={() => router.push('#contact')}>Contact Support</Button>
+                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }} onClick={() => handleChange()}>Contact Support</Button>
                     </Stack>
                     : ''
             }
@@ -278,19 +312,19 @@ const LeagueDisplaySection = () => {
             sport: 'Hockey',
             status: 'in-development',
             icon: <SportsHockeyIcon fontSize='large' />,
-            completion: 15
+            completion: 10
         },
         {
             sport: 'Football',
             status: 'in-development',
             icon: <SportsFootballIcon fontSize='large' />,
-            completion: 55
+            completion: 10
         },
         {
             sport: 'Soccer',
             status: 'in-development',
             icon: <SportsSoccerIcon fontSize='large' />,
-            completion: 55
+            completion: 10
         }
     ]
 
@@ -316,7 +350,7 @@ const LeagueDisplaySection = () => {
                 gridTemplateRows: 'auto auto auto',
                 rowGap: '120px',
                 overflowX: 'show',
-                marginBottom:'-120px'
+                marginBottom: '-120px'
             }}>
             {
                 live.length != 0 ? <LeagueDisplaySectionRows list={[...live]} title='Wager on the following sports!' status='live' /> : ''

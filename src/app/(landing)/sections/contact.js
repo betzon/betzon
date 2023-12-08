@@ -50,7 +50,7 @@ const StatusHandler = () => {
                         textAlign: 'center'
                     }}>
                         <Typography variant='h4' sx={{ fontWeight: 700 }}>Be part of what&apos;s next</Typography>
-                        <Typography variant='body2'>Join our waitlist caption</Typography>
+                        <Typography variant='body2'>Join our waitlist</Typography>
                     </Box>
 
                     {
@@ -153,13 +153,12 @@ const ContactSection = () => {
             }}>
 
             <Card sx={{
-                backdropFilter: 'blur(100px)', // Apply blur effect
-
+                //backdropFilter: 'blur(500px)', // Apply blur effect
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 gap: '24px',
-                background: 'transparent',
+                background: 'black',
                 border: `1px solid ${theme.palette.dark.otherlight}`,
                 p: '36px 24px',
                 borderRadius: '12px',
