@@ -92,7 +92,7 @@ const HomeHeaderSection = () => {
                 //color={theme.palette.dark.light}
 
                 variant={variant}>
-                Sports Wagering Meets <br /> Social Media
+                Sports Betting Meets <br /> Social Media
             </Typography>
 
         </Box >
