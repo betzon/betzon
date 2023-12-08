@@ -53,6 +53,7 @@ const OurResponsibilitiesSection = () => {
             spacing={6}
             sx={{
                 //background: theme.palette.primary.main,
+                margin:0,
                 backdropFilter: 'blur(100px)', // Apply blur effect
                 border: `1px solid ${theme.palette.dark.otherlight}`,
                 padding: '48px 24px',

@@ -181,10 +181,8 @@ const LandingPage = () => {
             <LeagueDisplaySection />
             <div style={{ marginBottom: '84px' }} />
             <OurResponsibilitiesSection />
-
             <div style={{ marginBottom: '84px' }} />
             <ContactSection />
-
             <div style={{ marginBottom: '84px' }} />
         </>
     )

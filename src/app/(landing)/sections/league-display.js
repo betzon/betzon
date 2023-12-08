@@ -315,7 +315,8 @@ const LeagueDisplaySection = () => {
                 display: 'grid',
                 gridTemplateRows: 'auto auto auto',
                 rowGap: '120px',
-                overflowX: 'show'
+                overflowX: 'show',
+                marginBottom:'-120px'
             }}>
             {
                 live.length != 0 ? <LeagueDisplaySectionRows list={[...live]} title='Wager on the following sports!' status='live' /> : ''
