@@ -49,7 +49,7 @@ const HomeHeaderSection = () => {
 
     const isMediumUp = useMediaQuery(theme.breakpoints.up('md'));
 
-    const variant = isMediumUp ? 'h1' : 'h4';
+    const variant = isMediumUp ? 'h1' : 'h3';
 
 
 
