@@ -2,7 +2,7 @@ import ThemeRegistry from "./ThemeRegistry";
 import './globals.css'
 import ReduxProvider from "./redux/ReduxProvider";
 
-import store from './redux/store'
+//import store from './redux/store'
 export default function RootLayout(props) {
   const { children } = props;
   return (
