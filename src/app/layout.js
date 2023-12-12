@@ -3,7 +3,6 @@ import './globals.css'
 import ReduxProvider from "./redux/ReduxProvider";
 
 import store from './redux/store'
-
 export default function RootLayout(props) {
   const { children } = props;
   return (
@@ -23,3 +22,4 @@ export default function RootLayout(props) {
     </html>
   );
 }
+

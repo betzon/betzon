@@ -82,6 +82,9 @@ const MainNavigation = () => {
                 <Toolbar disableGutters>
                     <Box sx={{
                         flexGrow: 1,
+                        display:'flex',
+                        justifyContent:'flex-start',
+                        alignItems:'center'
                     }}>
                         <Box sx={{
                             ///background: theme.palette.primary.main,
@@ -96,24 +99,23 @@ const MainNavigation = () => {
                         }}>
                             <Image src={logo} height={20} />
                         </Box>
-                    </Box>
 
-                    <Link href='/' className='no-link-decor'>
-                        <Typography
-                            onClick={() => routeHandler('/')}
-                            variant="h6"
-                            noWrap
-                            sx={{
-                                ml: 1,
-                                mr: 2,
-                                display: { xs: 'none', md: 'flex' },
-                                fontWeight: 700,
-                                color: 'white'
-                            }}
-                        >
-                            BETZON
-                        </Typography>
-                    </Link>
+                        <Link href='/' className='no-link-decor'>
+                            <Typography
+                                onClick={() => routeHandler('/')}
+                                variant="h6"
+                                noWrap
+                                sx={{
+                                    ml: 1,
+                                    fontWeight: 700,
+                                    color: 'white'
+                                }}
+                            >
+                                BETZON
+                            </Typography>
+                        </Link>
+
+                    </Box>
                     {
                         /*
                     

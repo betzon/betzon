@@ -16,9 +16,8 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
 const MainLayout = ({ children }) => {
+    
     const [shouldShowLoader, setShouldShowLoader] = useState(null);
-
-    const router = useRouter()
 
     const theme = useTheme()
 
