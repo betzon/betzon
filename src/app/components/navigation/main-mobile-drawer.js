@@ -68,10 +68,10 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            width: '48px',
-                            height: '48px'
+                            width: '40px',
+                            height: '40px'
                         }}>
-                            <Image src={logo} height={24} />
+                            <Image src={logo} height={20} />
                         </Box>
 
                         <Typography sx={{ fontWeight: 700 }} variant='h6'>BETZON</Typography>

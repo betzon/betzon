@@ -81,17 +81,21 @@ const MainNavigation = () => {
             }}>
                 <Toolbar disableGutters>
                     <Box sx={{
-                        ///background: theme.palette.primary.main,
-                        border: `3px solid ${theme.palette.primary.main}`,
-                        background: "black",
-                        borderRadius: '8px 8px 8px 0',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        width: '48px',
-                        height: '48px'
+                        flexGrow: 1,
                     }}>
-                        <Image src={logo} height={24} />
+                        <Box sx={{
+                            ///background: theme.palette.primary.main,
+                            border: `3px solid ${theme.palette.primary.main}`,
+                            background: "black",
+                            borderRadius: '8px 8px 8px 0',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            width: '40px',
+                            height: '40px'
+                        }}>
+                            <Image src={logo} height={20} />
+                        </Box>
                     </Box>
 
                     <Link href='/' className='no-link-decor'>
