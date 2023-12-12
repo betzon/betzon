@@ -8,11 +8,28 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Image from 'next/image'
+import logo from "../../assets/betzon_logo.png"
 
 const LandingFooter = () => {
     const theme = useTheme()
-    const icons = [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />]
-    const footerItems = ['Home', 'About us']
+    //const icons = [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />]
+    const icons = []
+    const footerItems = [
+        {
+            title: 'Home',
+            path: '/'
+        }
+    ]
+
+    const handleEmailClick = () => {
+        if (typeof window !== "undefined") {
+            window.location.href = 'mailto:info@betzon.com';
+        }
+    };
+
+    const isPolcyAndTermUseReady = false
+
     return (
         <Box sx={{
             // background: 'red',
@@ -34,15 +51,17 @@ const LandingFooter = () => {
                         gap: '48px'
                     }}>
                         <Box sx={{
-                            background: theme.palette.primary.main,
-                            borderRadius: '8px',
+                            ///background: theme.palette.primary.main,
+                            border: `6px solid ${theme.palette.primary.main}`,
+                            background: "black",
+                            borderRadius: '12px 12px 12px 0',
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
                             width: '100px',
                             height: '100px'
                         }}>
-                            <Typography sx={{ fontWeight: 700 }}>LOGO</Typography>
+                            <Image src={logo} height={50} />
                         </Box>
                         <Stack spacing={2}>
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Links</Typography>
@@ -52,13 +71,13 @@ const LandingFooter = () => {
                                     footerItems.map((item, index) => (
                                         <Link
                                             key={index}
-                                            href='#'
+                                            href={item.path}
                                             style={{
                                                 color: 'white',
                                                 textDecoration: 'none'
                                             }}>
                                             <Typography
-                                                key={index} sx={{ color: theme.palette.dark.otherlight }}>{item}</Typography>
+                                                key={index} sx={{ color: theme.palette.dark.otherlight }}>{item.title}</Typography>
                                         </Link>
 
                                     ))
@@ -66,43 +85,48 @@ const LandingFooter = () => {
                             </Stack>
                         </Stack>
 
-                        <Stack spacing={2}>
-                            <Typography variant='h6' sx={{ fontWeight: 700 }}>Follow Us</Typography>
+                        {
+                            icons.length === 0 ? '' : <Stack spacing={2}>
+                                <Typography variant='h6' sx={{ fontWeight: 700 }}>Follow Us</Typography>
 
-                            <Stack spacing={3} direction='row'>
-                                {
-                                    icons.map((item, index) => (
+                                <Stack spacing={3} direction='row'>
+                                    {
+                                        icons.map((item, index) => (
 
-                                        <IconButton
-                                            key={index}
-                                            sx={{
-                                                padding: 0, color: theme.palette.dark.otherlight,
-                                            }}>
-                                            {item}
-                                        </IconButton>
+                                            <IconButton
+                                                key={index}
+                                                sx={{
+                                                    padding: 0, color: theme.palette.dark.otherlight,
+                                                }}>
+                                                {item}
+                                            </IconButton>
 
 
-                                    ))
-                                }
+                                        ))
+                                    }
+                                </Stack>
                             </Stack>
-                        </Stack>
+                        }
+
                         <Stack spacing={2}>
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Contact Details</Typography>
                             <Typography variant='body2' sx={{ color: theme.palette.dark.otherlight }}>If you have any questions, feel free to contact our team!</Typography>
 
                             <List spacing={1}>
 
-                                <ListItemButton sx={{
-                                    color: theme.palette.dark.otherlight,
-                                    display: 'flex',
-                                    justifyContent: 'flex-start',
-                                    gap: '16px'
-                                }}>
+                                <ListItemButton
+                                    onClick={handleEmailClick} // Add this line
+                                    sx={{
+                                        color: theme.palette.dark.otherlight,
+                                        display: 'flex',
+                                        justifyContent: 'flex-start',
+                                        gap: '16px'
+                                    }}>
                                     <LocalPhoneIcon />
                                     <Typography>info@betzon.com</Typography>
                                 </ListItemButton>
 
-                                <ListItemButton sx={{
+                                <ListItem sx={{
                                     color: theme.palette.dark.otherlight,
                                     display: 'flex',
                                     justifyContent: 'flex-start',
@@ -110,43 +134,52 @@ const LandingFooter = () => {
                                 }}>
                                     <LocationOnIcon />
                                     <Typography>611 N. Brand Blvd, <br /> Glendale, California</Typography>
-                                </ListItemButton>
+                                </ListItem>
 
                             </List>
                         </Stack>
                     </Box>
-                    <Divider />
-                    <Box sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        pt: '24px',
-                        pb: '24px'
-                    }}>
-                        <Typography sx={{ color: theme.palette.dark.otherlight }}>© 2024 BetzOn Inc.</Typography>
+                    {
+                        isPolcyAndTermUseReady ?
+                            <>
+                                <Divider />
 
-                        <Stack spacing={1} direction='row'>
-                            <Link
-                                href='#'
-                                style={{
-                                    color: 'white',
-                                    textDecoration: 'none'
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' },
+                                    gap: '16px',
+                                    justifyContent: 'space-between',
+                                    pt: '24px',
+                                    pb: '24px'
                                 }}>
-                                <Typography sx={{ color: theme.palette.dark.otherlight }}>Privacy Policy</Typography>
-                            </Link>
+                                    <Typography sx={{ color: theme.palette.dark.otherlight }}>© 2024 BetzOn Inc.</Typography>
 
-                            <Typography sx={{ color: theme.palette.dark.otherlight }}>•</Typography>
+                                    <Stack spacing={1} direction='row'>
+                                        <Link
+                                            href='#'
+                                            style={{
+                                                color: 'white',
+                                                textDecoration: 'none'
+                                            }}>
+                                            <Typography sx={{ color: theme.palette.dark.otherlight }}>Privacy Policy</Typography>
+                                        </Link>
 
-                            <Link
-                                href='#'
-                                style={{
-                                    color: 'white',
-                                    textDecoration: 'none'
-                                }}>
-                                <Typography sx={{ color: theme.palette.dark.otherlight }}>Terms of Use</Typography>
-                            </Link>
-                        </Stack>
+                                        <Typography sx={{ color: theme.palette.dark.otherlight }}>•</Typography>
 
-                    </Box>
+                                        <Link
+                                            href='#'
+                                            style={{
+                                                color: 'white',
+                                                textDecoration: 'none'
+                                            }}>
+                                            <Typography sx={{ color: theme.palette.dark.otherlight }}>Terms of Use</Typography>
+                                        </Link>
+                                    </Stack>
+
+                                </Box>
+                            </>
+                            : ''
+                    }
                 </Stack>
             </Container>
         </Box>

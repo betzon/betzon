@@ -131,7 +131,6 @@ const LandingPage = () => {
             window.addEventListener('scroll', handleScroll);
         }
         return () => {
-
             if (typeof window !== "undefined") {
                 window.removeEventListener('scroll', handleScroll);
             }
@@ -177,13 +176,13 @@ const LandingPage = () => {
                     <StyledTab label="Waitlist" name='contact' />
                 </StyledTabs>
             </Box>
-            <div style={{ marginBottom: '84px' }} />
+            <div style={{ marginBottom: '120px' }} />
             <LeagueDisplaySection />
-            <div style={{ marginBottom: '84px' }} />
+            <div style={{ marginBottom: '120px' }} />
             <OurResponsibilitiesSection />
-            <div style={{ marginBottom: '84px' }} />
+            <div style={{ marginBottom: '120px' }} />
             <ContactSection />
-            <div style={{ marginBottom: '84px' }} />
+            <div style={{ marginBottom: '120px' }} />
         </>
     )
 }

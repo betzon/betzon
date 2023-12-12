@@ -71,25 +71,30 @@ const LeaguePillEngagementBar = ({ status, completion }) => {
                                 Status: <span style={{ fontWeight: 700 }}>Coming Soon</span>
                             </Typography>
 
-                            <Typography
-                                variant='subtitle1'>
-                                Upvotes: <span style={{ fontWeight: 700 }}>10</span>
-                            </Typography>
-
-                            <Typography
-                                variant='subtitle1'>
-                                Downvotes: <span style={{ fontWeight: 700 }}>8</span>
-                            </Typography>
+                            {
+                                /*
+     <Typography
+                                    variant='subtitle1'>
+                                    Upvotes: <span style={{ fontWeight: 700 }}>10</span>
+                                </Typography>
+    
+                                <Typography
+                                    variant='subtitle1'>
+                                    Downvotes: <span style={{ fontWeight: 700 }}>8</span>
+                                </Typography>
+                            </Stack>
+    
+                            <Box sx={{
+                                width: '100%',
+                                display: 'flex',
+                                justifyContent: 'space-between'
+                            }}>
+                                <Button variant='outlined'>Downvote</Button>
+                                <Button variant='outlined'>Upvote</Button>
+                            </Box>
+                                */
+                            }
                         </Stack>
-
-                        <Box sx={{
-                            width: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}>
-                            <Button variant='outlined'>Downvote</Button>
-                            <Button variant='outlined'>Upvote</Button>
-                        </Box>
                     </Stack>
                 </>
             )
@@ -271,33 +276,33 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
 
 const LeagueDisplaySection = () => {
     /*
-        const live = [
-            {
-                sport: 'Basketball',
-                status: 'live'
+                    const live = [
+                    {
+                        sport: 'Basketball',
+                    status: 'live'
             },
-            {
-                sport: 'Soccer',
-                status: 'live'
+                    {
+                        sport: 'Soccer',
+                    status: 'live'
             },
-            {
-                sport: 'Football',
-                status: 'live'
+                    {
+                        sport: 'Football',
+                    status: 'live'
             },
-            {
-                sport: 'Slap Box',
-                status: 'live'
+                    {
+                        sport: 'Slap Box',
+                    status: 'live'
             },
-            {
-                sport: 'E-Sports',
-                status: 'live'
+                    {
+                        sport: 'E-Sports',
+                    status: 'live'
             },
-            {
-                sport: 'Golf',
-                status: 'live'
+                    {
+                        sport: 'Golf',
+                    status: 'live'
             }
-        ]
-        */
+                    ]
+                    */
 
     const live = []
 

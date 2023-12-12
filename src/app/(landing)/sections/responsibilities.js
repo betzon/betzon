@@ -22,29 +22,17 @@ const OurResponsibilitiesSection = () => {
 
     const content = [
         {
-            title: 'No House',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
+            title: 'Direct Betting, No Middleman',
+            content: "At BetzOn, you're not placing bets against the house but directly with other genuine fans and enthusiasts. Whether you're clashing with fans of the Lakers or the Steelers, BetzOn is your go-to platform for authentic, fan-to-fan wagering."
         },
         {
-            title: 'No Fees',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
+            title: 'Enjoy Full Winnings - Zero Fees!',
+            content: "That's right, BetzOn ensures that you keep 100% of your winnings. We don't take a cut. To start or accept a bet, simply buy wager credits and dive into the action!"
         },
         {
-            title: 'User Centric',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            title: 'Value 4',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            title: 'Value 5',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            title: 'Value 6',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
+            title: 'Focusing on You, the User',
+            content: "Our goal is to craft a platform that you'll absolutely love. Have a feature in mind that BetzOn should include, or a sport you're eager to bet on? Drop us a message at our support email. We're committed to replying within 12 hours, because your input shapes BetzOn."
+        }
     ]
 
     return (
@@ -53,7 +41,7 @@ const OurResponsibilitiesSection = () => {
             spacing={6}
             sx={{
                 //background: theme.palette.primary.main,
-                margin:0,
+                margin: 0,
                 backdropFilter: 'blur(100px)', // Apply blur effect
                 border: `1px solid ${theme.palette.dark.otherlight}`,
                 padding: '48px 24px',
@@ -69,7 +57,7 @@ const OurResponsibilitiesSection = () => {
                     flexDirection: 'column',
                     justifyContent: 'center',
                     gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr' },
-                    gridTemplateRows: '1fr 1fr',
+                    gridTemplateRows: '1fr',
                     columnGap: '60px',
                     rowGap: '60px',
                     gap: '48px'

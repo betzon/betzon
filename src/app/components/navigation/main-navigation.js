@@ -17,8 +17,11 @@ import { useTheme } from '@emotion/react';
 import MenuMobileDropDown from './main-mobile-drawer';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image'
+import logo from "../../assets/betzon_logo.png"
 
 const pages = [
+    /*
     {
         title: 'ABOUT',
         path: '/about'
@@ -26,7 +29,7 @@ const pages = [
     {
         title: 'SUPPORT',
         path: '/support'
-    }
+    }*/
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -69,7 +72,7 @@ const MainNavigation = () => {
     return (
         <AppBar position="absolute" sx={{
             background: 'transparent',
-            boxShadow:'none'
+            boxShadow: 'none'
             //borderBottom: `1px solid ${theme.palette.primary.main}` 
         }}>
             <MenuMobileDropDown toggle={toggleMobileMenu} toggleDrawer={toggleDrawer} />
@@ -77,6 +80,19 @@ const MainNavigation = () => {
                 backgroundColor: "transparent"
             }}>
                 <Toolbar disableGutters>
+                    <Box sx={{
+                        ///background: theme.palette.primary.main,
+                        border: `3px solid ${theme.palette.primary.main}`,
+                        background: "black",
+                        borderRadius: '8px 8px 8px 0',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '48px',
+                        height: '48px'
+                    }}>
+                        <Image src={logo} height={24} />
+                    </Box>
 
                     <Link href='/' className='no-link-decor'>
                         <Typography
@@ -84,6 +100,7 @@ const MainNavigation = () => {
                             variant="h6"
                             noWrap
                             sx={{
+                                ml: 1,
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
                                 fontWeight: 700,
@@ -116,6 +133,9 @@ const MainNavigation = () => {
                             aria-haspopup="true"
                             onClick={toggleDrawer}
                             color="inherit"
+                            sx={{
+                                padding: 0
+                            }}
                         >
                             <MenuIcon />
                         </IconButton>

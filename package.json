@@ -24,6 +24,7 @@
     "@mui/system": "^5.14.13",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.2",
+    "gsap": "^3.12.3",
     "next": "13.5.4",
     "next-redux-wrapper": "^8.1.0",
     "react": "^18",

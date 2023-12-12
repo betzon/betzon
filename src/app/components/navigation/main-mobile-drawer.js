@@ -61,7 +61,7 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
 
                 </ListItem>
 
-                {['HOME', 'ABOUT', 'SUPPORT'].map((text, index) => (
+                {[].map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
                             <ListItemText primary={text} sx={{ fontWeight: 700 }} />
