@@ -1,0 +1,18 @@
+export default function manifest() {
+    return {
+        name: 'Betzon',
+        short_name: 'Betzon',
+        description: 'Sports Betting Meets Social Media',
+        start_url: '/',
+        display: 'standalone',
+        background_color: '#000',
+        theme_color: '#000',
+        icons: [
+            {
+                src: '/favicon.ico',
+                sizes: 'any',
+                type: 'image/x-icon',
+            },
+        ],
+    }
+}
