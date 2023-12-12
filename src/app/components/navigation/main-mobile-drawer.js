@@ -11,12 +11,14 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { IconButton, Tooltip, Typography } from '@mui/material';
+import { IconButton, Stack, Tooltip, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import CloseIcon from '@mui/icons-material/Close';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useRouter } from 'next/navigation';
 
+import Image from 'next/image'
+import logo from "../../assets/betzon_logo.png"
 
 const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
 
@@ -52,8 +54,28 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
                     display: 'flex',
                     justifyContent: 'space-between'
                 }}>
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        alignItems: 'center',
+                        gap: 1
+                    }}>
+                        <Box sx={{
+                            ///background: theme.palette.primary.main,
+                            border: `3px solid ${theme.palette.primary.main}`,
+                            background: "black",
+                            borderRadius: '8px 8px 8px 0',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            width: '48px',
+                            height: '48px'
+                        }}>
+                            <Image src={logo} height={24} />
+                        </Box>
 
-                    <Typography sx={{ fontWeight: 700 }} variant='h6'>BETZON</Typography>
+                        <Typography sx={{ fontWeight: 700 }} variant='h6'>BETZON</Typography>
+                    </Box>
 
                     <IconButton>
                         <CloseIcon />
@@ -120,7 +142,6 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
                 </ListItem>
 
 
-                <Divider />
             </List>
 
         </Box >

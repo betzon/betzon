@@ -110,19 +110,23 @@ const MainNavigation = () => {
                             BETZON
                         </Typography>
                     </Link>
-
-                    <Typography
-                        variant="h5"
-                        sx={{
-                            ml: 1,
-                            display: { xs: 'flex', md: 'none' },
-                            color: 'inherit',
-                            fontWeight: 700,
-                            flexGrow: 1,
-                        }}
-                    >
-                        BETZON
-                    </Typography>
+                    {
+                        /*
+                    
+                                        <Typography
+                                            variant="h5"
+                                            sx={{
+                                                ml: 1,
+                                                display: { xs: 'flex', md: 'none' },
+                                                color: 'inherit',
+                                                fontWeight: 700,
+                                                flexGrow: 1,
+                                            }}
+                                        >
+                                            BETZON
+                                        </Typography>
+                        */
+                    }
 
 
 
