@@ -114,6 +114,7 @@ const MainNavigation = () => {
                     <Typography
                         variant="h5"
                         sx={{
+                            ml: 1,
                             display: { xs: 'flex', md: 'none' },
                             color: 'inherit',
                             fontWeight: 700,
