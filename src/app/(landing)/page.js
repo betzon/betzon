@@ -150,7 +150,6 @@ const LandingPage = () => {
         <>
             <HomeHeaderSection />
 
-
             <Box sx={{
                 position: 'sticky',
                 zIndex: 999,

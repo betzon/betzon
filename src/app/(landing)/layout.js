@@ -16,7 +16,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 
 const MainLayout = ({ children }) => {
-    
+
     const [shouldShowLoader, setShouldShowLoader] = useState(null);
 
     const theme = useTheme()
@@ -24,6 +24,7 @@ const MainLayout = ({ children }) => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const hasVisited = !!!sessionStorage.getItem('hasVisited');
+            console.log('Checking: ', hasVisited)
             if (hasVisited) {
                 gsap.fromTo("#logo-container", { height: 0, width: 0, opacity: 0 }, { height: '220px', opacity: 1, width: '220px', duration: 2, ease: "elastic" });
                 gsap.fromTo("#logo", { opacity: 0 }, { opacity: 1, duration: 1 });
@@ -38,7 +39,10 @@ const MainLayout = ({ children }) => {
                                 onComplete: () => {
                                     sessionStorage.setItem('hasVisited', 'true');
                                     setShouldShowLoader(!hasVisited);
-                                    //setIsClientSide(!!!sessionStorage.getItem('hasVisited'));
+                                    gsap.to('#loader-body',
+                                        {
+                                            display: 'none'
+                                        })
                                 }
                             })
                     }
