@@ -2,6 +2,22 @@ import ThemeRegistry from "./ThemeRegistry";
 import './globals.css'
 import ReduxProvider from "./redux/ReduxProvider";
 
+export const metadata = {
+  name: 'Betzon',
+  short_name: 'Betzon',
+  description: 'Sports Betting Meets Social Media',
+  start_url: '/',
+  display: 'standalone',
+  background_color: '#000',
+  theme_color: '#000',
+  icons: [
+    {
+      src: '/favicon.ico',
+      sizes: 'any',
+      type: 'image/x-icon',
+    },
+  ],
+}
 //import store from './redux/store'
 export default function RootLayout(props) {
   const { children } = props;
