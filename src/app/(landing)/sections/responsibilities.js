@@ -21,9 +21,11 @@ const ContentBox = ({ data }) => {
 }
 
 const OurResponsibilitiesSection = () => {
+    
     const theme = useTheme()
 
     const isSmallScreen = useMediaQuery('md');
+
     const content = [
         {
             title: isSmallScreen ?
