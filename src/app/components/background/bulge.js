@@ -1,12 +1,13 @@
 "use client"
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
 
 const Bulge = () => {
-
+    const pathname = usePathname()
     const bugleOne = useRef(null);
     const bugleTwo = useRef(null);
     const [size, setSize] = useState(1000); // Initial size
-
+    const whiteList = ['/help-center']
     const [location, setLocation] = useState(50);
     const [bgColorOne, setBgColorOne] = useState('rgba(0, 0, 255, 1)'); // Start with blue
     const [bgColorTwo, setBgColorTwo] = useState('rgba(144, 238, 144, 1)'); // Start with light green
@@ -52,39 +53,50 @@ const Bulge = () => {
         };
     }, []);
 
+    useEffect(() => {
+        console.log(pathname)
+    }, []);
+
     return (
         <>
-            <div
-                ref={bugleOne}
-                style={{
-                    bottom: `${location}%`,
-                    right: -500,
-                    position: 'fixed',
-                    zIndex: -99,
-                    width: `${size}px`, // Dynamically updated size
-                    height: `${size}px`, // Dynamically updated size
-                    flexShrink: 0,
-                    borderRadius: 904,
-                    background: `radial-gradient(50% 50% at 50% 50%, ${bgColorOne} 0%, transparent 100%)`,
-                    filter: 'blur(100px)'
-                }}>
-            </div>
+            {
+                !whiteList.includes(pathname) ?
+                    <>
+                        < div
+                            ref={bugleOne}
+                            style={{
+                                bottom: `${location}%`,
+                                right: -500,
+                                position: 'fixed',
+                                zIndex: -99,
+                                width: `${size}px`, // Dynamically updated size
+                                height: `${size}px`, // Dynamically updated size
+                                flexShrink: 0,
+                                borderRadius: 904,
+                                background: `radial-gradient(50% 50% at 50% 50%, ${bgColorOne} 0%, transparent 100%)`,
+                                filter: 'blur(100px)'
+                            }
+                            }>
+                        </div >
 
-            <div
-                ref={bugleTwo}
-                style={{
-                    top: `${location}%`,
-                    left: -500,
-                    position: 'fixed',
-                    zIndex: -99,
-                    width: `${size}px`, // Dynamically updated size
-                    height: `${size}px`, // Dynamically updated size
-                    flexShrink: 0,
-                    borderRadius: 875,
-                    background: `radial-gradient(50% 50% at 50% 50%, ${bgColorTwo} 0%, transparent 100%)`,
-                    filter: 'blur(100px)'
-                }}>
-            </div>
+                        <div
+                            ref={bugleTwo}
+                            style={{
+                                top: `${location}%`,
+                                left: -500,
+                                position: 'fixed',
+                                zIndex: -99,
+                                width: `${size}px`, // Dynamically updated size
+                                height: `${size}px`, // Dynamically updated size
+                                flexShrink: 0,
+                                borderRadius: 875,
+                                background: `radial-gradient(50% 50% at 50% 50%, ${bgColorTwo} 0%, transparent 100%)`,
+                                filter: 'blur(100px)'
+                            }}>
+                        </div>
+                    </>
+                    : ''
+            }
         </>
     )
 }

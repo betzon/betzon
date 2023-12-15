@@ -50,8 +50,8 @@ const ContactSupport = () => {
         }}>
 
             <Box sx={{
-                background: theme.palette.dark.dark,
-                border: `2px solid ${theme.palette.primary.main}`,
+                //background: theme.palette.dark.dark,
+                border: { xs: '', sm: `2px solid ${theme.palette.dark.otherlight}`, md: `2px solid ${theme.palette.dark.otherlight}`, lg: `2px solid ${theme.palette.dark.otherlight}`, xl: `2px solid ${theme.palette.dark.otherlight}` },
                 borderRadius: '12px',
                 width: 'fit-content',
                 width: { xs: '100%', sm: '450px', md: '450px', lg: '450px', xl: '450px' },
@@ -59,7 +59,7 @@ const ContactSupport = () => {
                 flexDirection: 'column',
                 textAlign: 'center',
                 gap: '16px',
-                padding: '24px'
+                padding: { xs: '0', sm: '24px', md: '24px', lg: '24px', xl: '24px' },
             }}>
                 {
                     status ?

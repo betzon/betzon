@@ -31,7 +31,7 @@ const StyledTabs = styled((props) =>
         '& .MuiTabs-indicatorSpan': {
             maxWidth: 40,
             width: '100%',
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: 'white'//theme.palette.primary.main,
         },
     })
     )
@@ -41,7 +41,7 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
         textTransform: 'none',
         fontSize: theme.typography.pxToRem(18),
         marginRight: theme.spacing(1),
-        color: theme.palette.dark.otherlight,
+        color: theme.palette.primary.dark,
         '&.Mui-selected': {
             color: '#fff',
             fontWeight: 700,
@@ -64,7 +64,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box sx={{ pt: 3, pb: 3}}>
+                <Box sx={{ pt: 3, pb: 3 }}>
                     {children}
                 </Box>
             )}
@@ -102,8 +102,8 @@ const HelpCenterPage = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                border: `1px solid ${theme.palette.dark.otherlight}`,
-                backgroundColor: theme.palette.dark.dark, // Adjust the alpha value for darkness
+                //border: `3px solid ${theme.palette.primary.main}`,
+                backgroundColor: theme.palette.primary.main, // Adjust the alpha value for darkness
                 position: 'relative',
                 height: '350px',
                 marginTop: isMediumUp ? '96px' : '72px',
