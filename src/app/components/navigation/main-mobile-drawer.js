@@ -20,6 +20,24 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image'
 import logo from "../../assets/betzon_logo.png"
 
+const pages = [
+    {
+        title: 'Home',
+        path: '/'
+    },
+    {
+        title: 'Help Center',
+        path: '/help-center'
+    }
+    /*
+    ,
+    {
+        title: 'SUPPORT',
+        path: '/support'
+    }
+    */
+];
+
 const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
 
     const theme = useTheme()
@@ -83,10 +101,10 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
 
                 </ListItem>
 
-                {[].map((text, index) => (
+                {pages.map((text, index) => (
                     <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={text} sx={{ fontWeight: 700 }} />
+                        <ListItemButton onClick={() => router.push(text.path)}>
+                            <ListItemText primary={text.title} sx={{ fontWeight: 700 }} />
                         </ListItemButton>
                     </ListItem>
                 ))}

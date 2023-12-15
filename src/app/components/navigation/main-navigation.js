@@ -46,26 +46,7 @@ const MainNavigation = () => {
 
     const router = useRouter()
 
-    const [anchorElNav, setAnchorElNav] = useState(null);
-
-    const [anchorElUser, setAnchorElUser] = useState(null);
-
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
 
     const toggleDrawer = () => {
         setToggleMobileMenu(!toggleMobileMenu)
@@ -87,7 +68,7 @@ const MainNavigation = () => {
             }}>
                 <Toolbar disableGutters>
                     <Box sx={{
-                        flexGrow: 0,
+                        flexGrow: { xs: 1, md: 0, lg: 0, xl: 0 },
                         display: 'flex',
                         justifyContent: 'flex-start',
                         alignItems: 'center'
