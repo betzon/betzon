@@ -21,15 +21,21 @@ import Image from 'next/image'
 import logo from "../../assets/betzon_logo.png"
 
 const pages = [
-    /*
     {
-        title: 'ABOUT',
-        path: '/about'
+        title: 'Home',
+        path: '/'
     },
+    {
+        title: 'Help Center',
+        path: '/help-center'
+    }
+    /*
+    ,
     {
         title: 'SUPPORT',
         path: '/support'
-    }*/
+    }
+    */
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -81,10 +87,10 @@ const MainNavigation = () => {
             }}>
                 <Toolbar disableGutters>
                     <Box sx={{
-                        flexGrow: 1,
-                        display:'flex',
-                        justifyContent:'flex-start',
-                        alignItems:'center'
+                        flexGrow: 0,
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        alignItems: 'center'
                     }}>
                         <Box sx={{
                             ///background: theme.palette.primary.main,
@@ -154,7 +160,7 @@ const MainNavigation = () => {
 
 
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: 2 }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}

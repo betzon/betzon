@@ -6,7 +6,6 @@ import { Box, Button, Card, TextField, Typography, useMediaQuery } from '@mui/ma
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckIcon from '@mui/icons-material/Check';
-import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 
 const StatusHandler = () => {
 
@@ -14,9 +13,9 @@ const StatusHandler = () => {
 
     const dispatch = useDispatch()
 
-    const status = useSelector(state => state.landing.status);
+    const status = useSelector(state => state.landing.waitlist.status);
 
-    const error = useSelector(state => state.landing.error);
+    const error = useSelector(state => state.landing.waitlist.error);
 
     const [inputs, setInputs] = useState({
         first_name: '',
@@ -25,15 +24,10 @@ const StatusHandler = () => {
     })
 
     const submitWaitlistRequest = async () => {
-        dispatch(waitListSignUpRequest({
-            first_name: inputs.first_name,
-            last_name: inputs.last_name,
-            email: inputs.email
-        }))
+        dispatch(waitListSignUpRequest(inputs))
     }
 
     const handleInputs = (event) => {
-
         if (error.status) {
             dispatch(setWaitlistDefault())
         }
@@ -45,7 +39,6 @@ const StatusHandler = () => {
     const isMediumUp = useMediaQuery(theme.breakpoints.up('sm'));
 
     const variant = isMediumUp ? 'h4' : 'h5';
-
 
     switch (status) {
         case 0:

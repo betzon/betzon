@@ -53,7 +53,7 @@ const Grid = ({ data }) => {
             display: 'grid',
             gap: isMediumUp ? 'h2' : 'h3',
             gap:'48px',
-            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' }
+            gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' }
         }}>
             {
                 data.map((item, index) => <Item data={item} key={index} />)

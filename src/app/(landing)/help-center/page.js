@@ -8,6 +8,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Grid from './component/grid';
 import { helpCenterContent } from './content';
+import ContactSupport from './component/support';
 
 const StyledTabs = styled((props) =>
     <Tabs
@@ -63,7 +64,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box sx={{ pt: 3, pb: 3}}>
                     {children}
                 </Box>
             )}
@@ -83,7 +84,7 @@ const HelpCenterPage = () => {
 
     const isMediumUp = useMediaQuery(theme.breakpoints.up('md'));
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -115,8 +116,7 @@ const HelpCenterPage = () => {
                     aria-label="styled tabs example"
                 >
                     <StyledTab label="Rules" />
-                    <StyledTab label="Datasets" />
-                    <StyledTab label="Connections" />
+                    <StyledTab label=" Support" />
                 </StyledTabs>
             </Box>
 
@@ -127,10 +127,7 @@ const HelpCenterPage = () => {
                     <Grid data={helpCenterContent} />
                 </TabPanel>
                 <TabPanel value={value} index={1} >
-                    Item Two
-                </TabPanel>
-                <TabPanel value={value} index={2} >
-                    Item Three
+                    <ContactSupport />
                 </TabPanel>
             </Box>
 

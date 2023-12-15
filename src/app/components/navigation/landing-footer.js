@@ -19,6 +19,10 @@ const LandingFooter = () => {
         {
             title: 'Home',
             path: '/'
+        },
+        {
+            title: 'Help Center',
+            path: '/help-center'
         }
     ]
 
