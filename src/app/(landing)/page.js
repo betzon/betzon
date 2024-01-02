@@ -157,7 +157,7 @@ const LandingPage = () => {
                 borderRadius: '8px',
                 top: '24px',
                 bottom: '48px',
-                border: `1px solid ${theme.palette.dark.dark}`,
+                border: `1px solid ${theme.palette.dark.light}`,
                 width: { xs: '100%', sm: 'fit-content', md: 'fit-content', lg: 'fit-content', xl: 'fit-content' },
                 margin: 'auto',
                 overflow: 'hidden',
@@ -172,7 +172,6 @@ const LandingPage = () => {
                     <StyledTab label="Scroll to Top" name='top' />
                     <StyledTab label="Our Sports" name='our-sports' />
                     <StyledTab label="Why Motobookie?" name='why-motobookie' />
-                    <StyledTab label="Waitlist" name='contact' />
                 </StyledTabs>
             </Box>
             <div style={{ marginBottom: '120px' }} />

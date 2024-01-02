@@ -73,7 +73,7 @@ const OurResponsibilitiesSection = () => {
                 textAlign: 'center'
             }}>
 
-            <Typography variant='h3'>Why Motobookie?</Typography>
+            <Typography variant='h3' sx={{ fontWeight: 700 }}>Why Motobookie?</Typography>
 
             <Box
                 sx={{

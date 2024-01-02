@@ -220,7 +220,7 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
                 textAlign: 'center'
             }}>
 
-                <Typography variant="h3">
+                <Typography variant="h3" sx={{ fontWeight: 700 }}>
                     {title}
                 </Typography>
                 {
