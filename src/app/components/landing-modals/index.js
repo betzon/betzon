@@ -78,7 +78,7 @@ const AlertModal = () => {
 
                 <Stack spacing={1}>
                     <Typography variant='h5' sx={{ fontWeight: 700 }}>Rules</Typography>
-                    <Typography>Sign up and we’ll supercharge your start with 1,000 free chips to wager against other contestants!</Typography>
+                    <Typography>Sign up and we&apos;ll supercharge your start with 1,000 free chips to wager against other contestants!</Typography>
                     <Typography>Gather as many wins as you can each month.</Typography>
                     <Typography>The top 3 users with the highest win count for each month will walk away with amazing rewards.</Typography>
                 </Stack>

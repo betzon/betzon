@@ -79,7 +79,7 @@ const OnboardingAgeVerificationProcess = () => {
                             variant='filled' />
                     </Stack>
                     <Stack spacing={2}>
-                        <Typography variant='body1' sx={{ fontWeight: 700 }}>What's your date of birth?</Typography>
+                        <Typography variant='body1' sx={{ fontWeight: 700 }}>What&apos;s your date of birth?</Typography>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DemoItem >
                                 <DatePicker
