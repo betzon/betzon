@@ -18,18 +18,20 @@ import MenuMobileDropDown from './main-mobile-drawer';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image'
-import logo from "../../assets/betzon_logo.png"
+import logo from "../../assets/mb.png"
 
 const pages = [
     {
         title: 'Home',
         path: '/'
-    },
+    }
+    
+    /*
+    ,
     {
         title: 'Help Center',
         path: '/help-center'
     }
-    /*
     ,
     {
         title: 'SUPPORT',
@@ -73,19 +75,24 @@ const MainNavigation = () => {
                         justifyContent: 'flex-start',
                         alignItems: 'center'
                     }}>
-                        <Box sx={{
-                            ///background: theme.palette.primary.main,
-                            border: `3px solid ${theme.palette.primary.main}`,
-                            background: "black",
-                            borderRadius: '8px 8px 8px 0',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: '40px',
-                            height: '40px'
-                        }}>
-                            <Image src={logo} height={20} />
-                        </Box>
+                        {
+                            /*
+                            <Box sx={{
+                                ///background: theme.palette.primary.main,
+                                border: `3px solid ${theme.palette.primary.main}`,
+                                background: "black",
+                                borderRadius: '8px 8px 8px 0',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                width: '40px',
+                                height: '40px'
+                            }}>
+                                <Image src={logo} height={20} />
+                            </Box>
+                            */
+                        }
+                        <Image src={logo} height={40} />
 
                         <Link href='/' className='no-link-decor'>
                             <Typography
@@ -95,10 +102,11 @@ const MainNavigation = () => {
                                 sx={{
                                     ml: 1,
                                     fontWeight: 700,
-                                    color: 'white'
+                                    color: 'white',
+                                    letterSpacing: -1
                                 }}
                             >
-                                BETZON
+                                MotoBookie
                             </Typography>
                         </Link>
 
@@ -142,9 +150,9 @@ const MainNavigation = () => {
 
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: 2 }}>
-                        {pages.map((page) => (
+                        {pages.map((page, index) => (
                             <Button
-                                key={page}
+                                key={index}
                                 onClick={() => routeHandler(page.path)}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >

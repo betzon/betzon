@@ -12,8 +12,11 @@ const theme = createTheme({
   },
   palette: {
     mode: 'dark',
+    success: {
+      main: '#BCF9B2'
+    },
     primary: {
-      main: '#FF9121',
+      main: '#0083E7',
     },
     secondary: {
       main: '#000000',
@@ -26,7 +29,7 @@ const theme = createTheme({
       paper: '#141414', // Adjust this if you also want paper components to have a different background
     },
     dark: {
-      dark:'#141414',
+      dark: '#000812',
       // main: '#141414',
       main: '#000000',
       light: '#B7B7B7',
@@ -40,6 +43,16 @@ const theme = createTheme({
     }
   },
   components: {
+    boardingBox: {
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      pt: '24px',
+      pb: '24px',
+      gap: '36px',
+      boxSizing: 'border-box'
+    },
     MuiBottomNavigation: {
       styleOverrides: {
         root: {
@@ -74,6 +87,7 @@ const theme = createTheme({
         },
       },
     },
+    /*
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
@@ -107,7 +121,7 @@ const theme = createTheme({
           },
         },
       },
-    },
+    },*/
   },
   // ... add other theme customizations here
 });

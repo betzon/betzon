@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useState, useRef } from 'react'
 import EmailIcon from '@mui/icons-material/Email';
+import OnboardingHeaderLogo from '../header-logo/header-logo'
 
 const EmailVerification = () => {
 
@@ -53,26 +54,10 @@ const EmailVerification = () => {
     return (
 
         <Box
-            sx={{
-                boxSizing: 'border-box',
-                display: 'flex',
-                height: '100%',
-                position: 'relative',
-                flexDirection: 'column',
-                justifyContent: { xs: 'space-between', md: 'center' },
-                alignItems: 'center',
-                gap: '84px',
-            }}
+            sx={theme.components.boardingBox}
         >
 
-            <Typography
-                sx={{
-                    textAlign: 'center'
-                }}>
-                NEW LOGO HERE BC CHAD HATED MINE
-            </Typography>
-
-
+            <OnboardingHeaderLogo />
 
             <Box sx={{
                 ...boxStyles,
@@ -81,7 +66,6 @@ const EmailVerification = () => {
                 alignItems: 'center',
                 width: { xs: '100%', md: '400px' }
             }}>
-
 
                 <Typography
                     variant="h4"
@@ -136,10 +120,6 @@ const EmailVerification = () => {
 
             </Box>
 
-
-
-
-
             <Box sx={{
                 ...boxStyles,
                 alignItems: 'center',
@@ -151,7 +131,7 @@ const EmailVerification = () => {
                     sx={{
                         width: '100%'
                     }}
-                    onClick={() => router.push('/onboarding/team-select')}
+                    onClick={() => router.push('/onboarding/age-verification')}
                     color='primary'
                     size='large'
                     variant='contained'>

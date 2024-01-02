@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server'
 export function middleware(request) {
   // return NextResponse.redirect(new URL('/home', request.url)) REDIRECT USERS TO PAGES -> SICK
 
-  return NextResponse.redirect(new URL('/', request.url))
+  //return NextResponse.redirect(new URL('/', request.url))
 }
 export const config = {
   matcher: [

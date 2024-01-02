@@ -10,6 +10,8 @@ import SportsFootballIcon from '@mui/icons-material/SportsFootball';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import SportsMmaIcon from '@mui/icons-material/SportsMma';
 import GolfCourseIcon from '@mui/icons-material/GolfCourse';
+import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
+import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports';
 
 const LeaguePillEngagementBar = ({ status, completion }) => {
     const statusSpacing = -.5
@@ -28,7 +30,7 @@ const LeaguePillEngagementBar = ({ status, completion }) => {
                         </Typography>
                         <Typography
                             variant='subtitle1'>
-                            Planned Release Date: <span style={{ fontWeight: 700 }}>October 2024!</span>
+                            Planned Release Date: <span style={{ fontWeight: 700 }}>March 2024!</span>
                         </Typography>
                     </Stack>
 
@@ -251,7 +253,9 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
             {
 
                 status === 'live' ?
-                    <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Check it out!</Button>
+                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Check it out!</Button>
+                    </Box>
                     : ''
             }
 
@@ -304,9 +308,39 @@ const LeagueDisplaySection = () => {
                     ]
                     */
 
-    const live = []
+    const live = [
+        {
+            sport: 'Motocross',
+            icon: <SportsMotorsportsIcon fontSize='large' />,
+            status: 'live'
+        },
+        {
+            sport: 'Supercross',
+            icon: <TwoWheelerIcon fontSize='large' />,
+            status: 'live'
+        }
+    ]
 
     const dev = [
+        {
+            sport: 'Formula1',
+            status: 'in-development',
+            icon: <SportsBasketballIcon fontSize='large' />,
+            completion: 10
+        },
+        {
+            sport: 'MotoGP',
+            status: 'in-development',
+            icon: <SportsBasketballIcon fontSize='large' />,
+            completion: 10
+        },
+        {
+            sport: 'NASCAR',
+            status: 'in-development',
+            icon: <SportsBasketballIcon fontSize='large' />,
+            completion: 10
+        },
+        /*
         {
             sport: 'Basketball',
             status: 'in-development',
@@ -330,7 +364,7 @@ const LeagueDisplaySection = () => {
             status: 'in-development',
             icon: <SportsSoccerIcon fontSize='large' />,
             completion: 10
-        }
+        }*/
     ]
 
     const idle = [
@@ -361,11 +395,15 @@ const LeagueDisplaySection = () => {
                 live.length != 0 ? <LeagueDisplaySectionRows list={[...live]} title='Wager on the following sports!' status='live' /> : ''
             }
             <LeagueDisplaySectionRows list={[...dev]} title='Coming soon.' />
-            <LeagueDisplaySectionRows
-                status='idle'
-                list={[...idle]}
-                title='Your favorites.'
-                caption='We check this weekly! Upvote the sport you would like to see on BetzOn!' />
+            {
+                /*
+     <LeagueDisplaySectionRows
+                    status='idle'
+                    list={[...idle]}
+                    title='Your favorites.'
+                    caption='We check this weekly! Upvote the sport you would like to see on BetzOn!' />
+                */
+            }
         </Box>
     )
 }

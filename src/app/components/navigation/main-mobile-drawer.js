@@ -18,18 +18,20 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useRouter } from 'next/navigation';
 
 import Image from 'next/image'
-import logo from "../../assets/betzon_logo.png"
+import logo from "../../assets/mb.png"
 
 const pages = [
     {
         title: 'Home',
         path: '/'
-    },
+    }
+    
+    /*
+    ,
     {
         title: 'Help Center',
         path: '/help-center'
     }
-    /*
     ,
     {
         title: 'SUPPORT',
@@ -52,7 +54,12 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
         }
     }, [isLargeWidth]);
 
-
+    const redirectToAnotherSite = () => {
+        window.open('https://app.motobookie.com/signup', '_blank');
+    };
+    const redirectToAnotherSiteLogin = () => {
+        window.open('https://app.motobookie.com', '_blank');
+    };
 
     const list = (anchor) => (
         <Box
@@ -78,7 +85,9 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
                         alignItems: 'center',
                         gap: 1
                     }}>
-                        <Box sx={{
+                        {
+                            /*
+<Box sx={{
                             ///background: theme.palette.primary.main,
                             border: `3px solid ${theme.palette.primary.main}`,
                             background: "black",
@@ -91,8 +100,19 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
                         }}>
                             <Image src={logo} height={20} />
                         </Box>
-
-                        <Typography sx={{ fontWeight: 700 }} variant='h6'>BETZON</Typography>
+                            */
+                        }
+                        <Box sx={{
+                            ///background: theme.palette.primary.main,
+                            background: "black",
+                            borderRadius: '8px 8px 8px 0',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                            <Image src={logo} height={30} />
+                        </Box>
+                        <Typography sx={{ fontWeight: 700 }} variant='h6'>Motobookie</Typography>
                     </Box>
 
                     <IconButton>
@@ -116,46 +136,32 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
             <List>
 
                 <ListItem >
-                    <Tooltip title="Coming Soon!">
-                        <span style={{
-                            width: '100%'
-                        }}>
-                            <Button
-                                sx={{
-                                    width: '100%',
-                                    fontWeight: 700
-                                }}
-                                disabled
-                                onClick={() => router.push('/login')}
-                                color='primary'
-                                variant='contained'
-                            >
-                                LOGIN
-                            </Button>
-                        </span>
-                    </Tooltip>
+                    <Button
+                        sx={{
+                            width: '100%',
+                            fontWeight: 700
+                        }}
+                        onClick={() => redirectToAnotherSiteLogin()}
+                        color='primary'
+                        variant='contained'
+                    >
+                        LOGIN
+                    </Button>
                 </ListItem>
 
 
                 <ListItem >
-                    <Tooltip title="Coming Soon!">
-                        <span style={{
-                            width: '100%'
-                        }}>
-                            <Button
-                                sx={{
-                                    width: '100%',
-                                    fontWeight: 700
-                                }}
-                                color='neutral'
-                                variant='text'
-                                disabled
-                                onClick={() => router.push('/signup')}
-                            >
-                                CREATE AN ACCOUNT
-                            </Button>
-                        </span>
-                    </Tooltip>
+                    <Button
+                        sx={{
+                            width: '100%',
+                            fontWeight: 700
+                        }}
+                        color='neutral'
+                        variant='text'
+                        onClick={() => redirectToAnotherSite()}
+                    >
+                        CREATE AN ACCOUNT
+                    </Button>
 
                 </ListItem>
 

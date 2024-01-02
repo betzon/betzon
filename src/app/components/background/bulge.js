@@ -9,37 +9,34 @@ const Bulge = () => {
     const [size, setSize] = useState(1000); // Initial size
     const whiteList = ['/help-center']
     const [location, setLocation] = useState(50);
-    const [bgColorOne, setBgColorOne] = useState('rgba(0, 0, 255, 1)'); // Start with blue
-    const [bgColorTwo, setBgColorTwo] = useState('rgba(144, 238, 144, 1)'); // Start with light green
+    // Initialize with dark blue
+    const [bgColorOne, setBgColorOne] = useState('rgba(0, 8, 18, 1)');
+    const [bgColorTwo, setBgColorTwo] = useState('rgba(0, 8, 18, 1)');
+
 
     useEffect(() => {
         const handleScroll = () => {
-
             if (typeof window !== "undefined") {
                 const scrollPosition = window.pageYOffset;
                 const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-
                 const scrollRatio = scrollPosition / pageHeight;
+
                 const newLocation = Math.round(50 - (scrollRatio * 100));
 
-                // Interpolate from blue to light orange-red
-                const redOne = Math.min(255, Math.round(255 * scrollRatio));
-                const greenOne = Math.min(165, Math.round(165 * scrollRatio));
-                const blueOne = Math.max(0, 255 - Math.round(255 * scrollRatio));
-                const newColorOne = `rgba(${redOne}, ${greenOne}, ${blueOne}, 1)`;
+                // Interpolate from dark blue to light blue
+                const interpolate = (start, end) => Math.round(start + (end - start) * scrollRatio);
+                const red = interpolate(0, 0);
+                const green = interpolate(8, 131);
+                const blue = interpolate(18, 231);
 
-                const newSize = 1000 + (scrollRatio * 200); // Adjust multiplier for more/less growth
+                const newColor = `rgba(${red}, ${green}, ${blue}, 1)`;
 
-                // Interpolate from light green to orange
-                const redTwo = Math.min(255, 144 + Math.round(111 * scrollRatio));
-                const greenTwo = Math.max(165, 238 - Math.round(73 * scrollRatio));
-                const blueTwo = Math.max(0, 144 - Math.round(144 * scrollRatio));
-                const newColorTwo = `rgba(${redTwo}, ${greenTwo}, ${blueTwo}, 1)`;
+                const newSize = 1000 + (scrollRatio * 200);
 
                 setLocation(newLocation);
                 setSize(newSize);
-                setBgColorOne(newColorOne);
-                setBgColorTwo(newColorTwo);
+                setBgColorOne(newColor);
+                setBgColorTwo(newColor); // Use the same color for both, or adjust as needed
             }
         };
 

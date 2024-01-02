@@ -32,8 +32,6 @@ const DashboardLayout = ({ children }) => {
                 height: '100vh',
                 position: 'relative',
                 boxSizing: 'border-box',
-                paddingTop: '16px',
-                paddingBottom: '16px',
                 overflow: 'visible',
                 paddingLeft: allowedRoutes.includes(pathname) ? '0' : '24px',
                 paddingRight: allowedRoutes.includes(pathname) ? '0 ' : '24px'

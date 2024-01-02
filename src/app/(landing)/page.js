@@ -104,7 +104,7 @@ const LandingPage = () => {
                 document.getElementById('top'),
                 document.getElementById('our-sports'),
                 // other sections
-                document.getElementById('why-betzon'),
+                document.getElementById('why-motobookie'),
                 document.getElementById('contact'),
             ];
 
@@ -171,7 +171,7 @@ const LandingPage = () => {
                 >
                     <StyledTab label="Scroll to Top" name='top' />
                     <StyledTab label="Our Sports" name='our-sports' />
-                    <StyledTab label="Why BetzOn?" name='why-betzon' />
+                    <StyledTab label="Why Motobookie?" name='why-motobookie' />
                     <StyledTab label="Waitlist" name='contact' />
                 </StyledTabs>
             </Box>
@@ -179,8 +179,6 @@ const LandingPage = () => {
             <LeagueDisplaySection />
             <div style={{ marginBottom: '120px' }} />
             <OurResponsibilitiesSection />
-            <div style={{ marginBottom: '120px' }} />
-            <ContactSection />
             <div style={{ marginBottom: '120px' }} />
         </>
     )

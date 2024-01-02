@@ -2,8 +2,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux"
 //import { increment, decrement } from "../../redux/slices/test"
-import { Button, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { increment, decrement, incrementByAmount } from '@/app/redux/actions/testAction'
+import TitleHeader from '@/app/components/headers/title'
+import MyWagersList from '@/app/components/(card)/wager/my-wagers/my-wagers-list'
 
 const WagerDetails = () => {
 
@@ -11,14 +13,13 @@ const WagerDetails = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      WagerDetails
-      <div>
-        <Typography>Counter: {counter}</Typography>
-        <Button onClick={() => dispatch(increment())}>Increment</Button>
-        <Button onClick={() => dispatch(incrementByAmount(25))}>Increment</Button>
-      </div>
-    </div>
+    <Box sx={{
+      height: '100vh',
+      boxSizing: 'border-box'
+    }}>
+      <TitleHeader title={"Wagers"} />
+      <MyWagersList />
+    </Box>
   )
 }
 

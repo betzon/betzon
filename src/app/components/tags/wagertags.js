@@ -9,11 +9,12 @@ const WagerTags = (props) => {
     return (
         <Chip
             sx={{
-                backgroundColor: theme.palette.dark.main,
+                width: 'fit-content',
+                backgroundColor: theme.palette.dark.dark,
                 color: theme.palette.dark.light,
                 textTransform: 'uppercase',
                 paddingTop: '.5px !important',
-                paddingBottom: '.5px !important', 
+                paddingBottom: '.5px !important',
                 fontSize: '0.7rem'  // adjust this value as per your requirement
 
             }}

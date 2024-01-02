@@ -6,6 +6,7 @@ import { Box, TextField, Typography, Link as MUILink, Button } from '@mui/materi
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import OnboardingHeaderLogo from '../onboarding/header-logo/header-logo'
 
 const SignUp = () => {
 
@@ -23,19 +24,10 @@ const SignUp = () => {
   return (
 
     <Box
-      sx={{
-        boxSizing: 'border-box',
-        display: 'flex',
-        height: '100%',
-        position: 'relative',
-        flexDirection: 'column',
-        justifyContent: { xs: 'space-between', md: 'center' },
-        alignItems: 'center',
-        gap: '48px',
-      }}
+      sx={theme.components.boardingBox}
     >
 
-      <Typography>NEW LOGO HERE BC CHAD HATED MINE</Typography>
+      <OnboardingHeaderLogo />
 
       <Box sx={{
         ...boxStyles,

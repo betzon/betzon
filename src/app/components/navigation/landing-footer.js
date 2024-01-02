@@ -9,7 +9,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image'
-import logo from "../../assets/betzon_logo.png"
+import logo from "../../assets/mb.png"
 
 const LandingFooter = () => {
     const theme = useTheme()
@@ -19,16 +19,20 @@ const LandingFooter = () => {
         {
             title: 'Home',
             path: '/'
-        },
-        {
-            title: 'Help Center',
-            path: '/help-center'
         }
+
+        /*
+            ,
+            {
+                title: 'Help Center',
+                path: '/help-center'
+            }
+            */
     ]
 
     const handleEmailClick = () => {
         if (typeof window !== "undefined") {
-            window.location.href = 'mailto:info@betzon.com';
+            window.location.href = 'mailto:support@motobookie.com';
         }
     };
 
@@ -54,6 +58,8 @@ const LandingFooter = () => {
                         gridTemplateColumns: '.5fr 1fr 1fr 1fr',
                         gap: '48px'
                     }}>
+                        {
+                            /*
                         <Box sx={{
                             ///background: theme.palette.primary.main,
                             border: `6px solid ${theme.palette.primary.main}`,
@@ -67,6 +73,10 @@ const LandingFooter = () => {
                         }}>
                             <Image src={logo} height={50} />
                         </Box>
+                        */
+                        }
+                        <Image src={logo} height={100} />
+
                         <Stack spacing={2}>
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Links</Typography>
 
@@ -127,7 +137,7 @@ const LandingFooter = () => {
                                         gap: '16px'
                                     }}>
                                     <LocalPhoneIcon />
-                                    <Typography>info@betzon.com</Typography>
+                                    <Typography>support@motobookie.com</Typography>
                                 </ListItemButton>
 
                                 <ListItem sx={{
@@ -156,7 +166,7 @@ const LandingFooter = () => {
                                     pt: '24px',
                                     pb: '24px'
                                 }}>
-                                    <Typography sx={{ color: theme.palette.dark.otherlight }}>© 2024 BetzOn Inc.</Typography>
+                                    <Typography sx={{ color: theme.palette.dark.otherlight }}>© 2024 Motobookie Inc.</Typography>
 
                                     <Stack spacing={1} direction='row'>
                                         <Link

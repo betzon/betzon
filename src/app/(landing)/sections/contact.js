@@ -48,7 +48,7 @@ const StatusHandler = () => {
                         textAlign: 'center'
                     }}>
                         <Typography variant={variant} sx={{ fontWeight: 700 }}>Be part of what&apos;s next</Typography>
-                        <Typography variant='body2'>Join our waitlist</Typography>
+                        <Typography variant='body2'>Join our mail list for exclusive awards </Typography>
                     </Box>
 
                     {

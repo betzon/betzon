@@ -6,6 +6,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStripe } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/navigation';
+import OnboardingHeaderLogo from '../header-logo/header-logo';
 
 const BillingInformationPage = () => {
 
@@ -24,24 +25,18 @@ const BillingInformationPage = () => {
 
         <Box
             sx={{
-                boxSizing: 'border-box',
+                height: '100vh',
                 display: 'flex',
-                height: 'auto',
-                position: 'relative',
                 flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
+                justifyContent: 'space-between',
+                pt: '24px',
+                pb: '24px',
                 gap: '36px',
-                paddingBottom: '24px'
+                boxSizing: 'border-box'
             }}
         >
 
-            <Typography
-                sx={{
-                    textAlign: 'center'
-                }}>
-                NEW LOGO HERE BC CHAD HATED MINE
-            </Typography>
+            <OnboardingHeaderLogo />
 
             <Box sx={{
                 ...boxStyles,
@@ -165,7 +160,9 @@ const BillingInformationPage = () => {
 
                 </Box>
 
-                <Box
+                {
+                    /*
+<Box
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -196,9 +193,9 @@ const BillingInformationPage = () => {
                         <Typography variant='caption' color='black'>Powered by</Typography>
                         <FontAwesomeIcon icon={faStripe} size="2x" style={{ color: 'black' }} />
                     </Box>
-
-
                 </Box>
+                    */
+                }
 
                 <Box
                     sx={{
@@ -208,10 +205,12 @@ const BillingInformationPage = () => {
                     }}
                 >
 
-                    <Checkbox
-                        defaultChecked
-                        sx={{ '& .MuiSvgIcon-root': { fontSize: 20 } }}
-                    />
+                    <Box>
+                        <Checkbox
+                            defaultChecked
+                            sx={{ '& .MuiSvgIcon-root': { fontSize: 20 } }}
+                        />
+                    </Box>
 
                     <Typography
                         color={theme.palette.dark.otherlight}

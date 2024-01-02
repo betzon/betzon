@@ -1,7 +1,8 @@
-import { OPEN_MODAL, CLOSE_MODAL } from "../types";
+import { OPEN_MODAL, CLOSE_MODAL, CLOSE_USER_MODAL, OPEN_USER_MODAL } from "../types";
 
 const initialState = {
-    toggle: false
+    toggle: false,
+    userModal: true
 };
 
 function modalReducer(state = initialState, action) {
@@ -17,6 +18,19 @@ function modalReducer(state = initialState, action) {
             return {
                 ...state,
                 toggle: false
+            };
+
+        case OPEN_USER_MODAL:
+            console.log('IN REDUCER')
+            return {
+                ...state,
+                userModal: true
+            };
+
+        case CLOSE_USER_MODAL:
+            return {
+                ...state,
+                userModal: false
             };
 
         default:

@@ -1,7 +1,12 @@
+"use client"
+import { useTheme } from '@emotion/react'
 import { Avatar, Stack, Typography } from '@mui/material'
 import React from 'react'
 
-const WagerCardTeamItem = () => {
+const WagerCardTeamItem = ({ predictionOnly }) => {
+
+    const theme = useTheme()
+
     return (
         <Stack spacing={1} direction="row">
 
@@ -19,9 +24,18 @@ const WagerCardTeamItem = () => {
                 </Typography>
 
                 <Typography
-                    sx={{ lineHeight: '16px' }}
-                    variant='caption'
-                >Prediction: Winner by 25 points or more</Typography>
+                    sx={{
+                        lineHeight: '16px',
+                        color: theme.palette.dark.light
+                    }}
+                    variant='caption'>
+                    Prediction:
+                    {
+                        !!predictionOnly ?
+                            " Winner" : " Winner by 25 points or more"
+
+                    }
+                </Typography>
 
             </Stack>
 
