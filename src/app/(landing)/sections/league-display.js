@@ -205,6 +205,11 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
         smoothScrollTo('#contact');
     };
 
+
+    const redirectToAnotherSite = () => {
+        window.open('https://app.motobookie.com/signup', '_blank');
+    };
+
     return (
         <Stack spacing={6} sx={{
             width: '100%',
@@ -254,7 +259,7 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
 
                 status === 'live' ?
                     <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }}>Check it out!</Button>
+                        <Button size='large' variant='contained' sx={{ fontWeight: 700, width: 'fit-content' }} onClick={() => redirectToAnotherSite()}>Check it out!</Button>
                     </Box>
                     : ''
             }
