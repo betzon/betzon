@@ -25,7 +25,7 @@ const pages = [
         title: 'Home',
         path: '/'
     }
-    
+
     /*
     ,
     {
@@ -57,6 +57,13 @@ const MainNavigation = () => {
     const routeHandler = (path) => {
         router.push(path)
     }
+
+    const redirectToAnotherSite = () => {
+        window.open('https://app.motobookie.com/signup', '_blank');
+    };
+    const redirectToAnotherSiteLogin = () => {
+        window.open('https://app.motobookie.com', '_blank');
+    };
 
     return (
         <AppBar position="absolute" sx={{
@@ -164,35 +171,25 @@ const MainNavigation = () => {
                     <Box sx={{
                         display: { xs: 'none', md: 'flex' }
                     }}>
-                        <Tooltip title="Coming Soon!">
-                            <span>
-                                <Button
-                                    sx={{
-                                        fontWeight: 700
-                                    }}
-                                    disabled
-                                    onClick={() => router.push('/signup')}
-                                    color='neutral'
-                                    variant='text'>
-                                    SIGN UP
-                                </Button>
-                            </span>
-                        </Tooltip>
+                        <Button
+                            sx={{
+                                fontWeight: 700
+                            }}
+                            onClick={() => redirectToAnotherSite()}
+                            color='neutral'
+                            variant='text'>
+                            SIGN UP
+                        </Button>
 
-                        <Tooltip title="Coming Soon!">
-                            <span>
-                                <Button
-                                    disabled
-                                    onClick={() => router.push('/login')}
-                                    sx={{
-                                        marginLeft: '12px',
-                                        fontWeight: 700
-                                    }}
-                                    variant='contained'>
-                                    LOGIN
-                                </Button>
-                            </span>
-                        </Tooltip>
+                        <Button
+                            onClick={() => redirectToAnotherSiteLogin()}
+                            sx={{
+                                marginLeft: '12px',
+                                fontWeight: 700
+                            }}
+                            variant='contained'>
+                            LOGIN
+                        </Button>
 
                     </Box>
 
