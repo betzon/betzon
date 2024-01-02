@@ -26,7 +26,6 @@ const AlertModal = () => {
     };
 
     const isMediumUp = useMediaQuery(theme.breakpoints.up('sm'));
-    const isSmallUp = useMediaQuery(theme.breakpoints.up('sm'));
 
     const redirectToAnotherSite = () => {
         window.open('https://app.motobookie.com/signup', '_blank');
@@ -55,7 +54,7 @@ const AlertModal = () => {
                 width: '90%',
                 maxWidth: '800px',
                 height: 'fit-content',
-                maxHeight: '500px',
+                maxHeight: '600px',
                 overflow: 'scroll',
                 display: 'flex',
                 flexDirection: 'column',
@@ -99,10 +98,10 @@ const AlertModal = () => {
                     <Typography>• 2nd Place: Grab a cool $750!</Typography>
                     <Typography>• 3rd Place: Secure $250!</Typography>
                 </Stack>
-                <Stack direction={isSmallUp ? "row" : "column"} spacing={isSmallUp ? 3 : 1} sx={{
-                    width: isSmallUp ? "fit-content" : '100%'
+                <Stack direction={isMediumUp ? "row" : "column"} spacing={isMediumUp ? 3 : 1} sx={{
+                    width: isMediumUp ? "fit-content" : '100%'
                 }}>
-                    <Button sx={{ width: isSmallUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSite()} variant='contained'>Create an account</Button>
+                    <Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSite()} variant='contained'>Create an account</Button>
                     <Button onClick={() => redirectToAnotherSiteLogin()} variant='contained'>Login</Button>
                 </Stack>
             </Box>
