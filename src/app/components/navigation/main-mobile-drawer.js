@@ -25,7 +25,6 @@ const pages = [
         title: 'Home',
         path: '/'
     }
-    
     /*
     ,
     {
