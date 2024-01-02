@@ -84,7 +84,7 @@ const AlertModal = () => {
                 </Stack>
 
                 <Stack spacing={1}>
-                    <Typography variant='h5' sx={{ fontWeight: 700 }}>What's at stake?</Typography>
+                    <Typography variant='h5' sx={{ fontWeight: 700 }}>What&apos;s at stake?</Typography>
                     <Typography>• 1st Place: Grand prize of $1,000!</Typography>
                     <Typography>• 2nd Place: Grab a cool $750!</Typography>
                     <Typography>• 3rd Place: Secure $250!</Typography>
