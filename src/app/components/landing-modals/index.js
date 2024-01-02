@@ -34,6 +34,14 @@ const AlertModal = () => {
     const redirectToAnotherSiteLogin = () => {
         window.open('https://app.motobookie.com', '_blank');
     };
+
+    React.useEffect(() => {
+        if (toggle) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }, [toggle]);
     return (
         <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -47,12 +55,14 @@ const AlertModal = () => {
                 width: '90%',
                 maxWidth: '800px',
                 height: 'fit-content',
+                maxHeight: '500px',
+                overflow: 'scroll',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'flex-start',
                 gap: '48px',
-                position: 'relative'
+                position: 'relative',
             }}>
 
                 <IconButton
@@ -65,7 +75,7 @@ const AlertModal = () => {
                     <CloseIcon fontSize='medium' />
                 </IconButton>
                 {
-                    isMediumUp ? "" : <div style={{marginTop:-30}}></div>
+                    isMediumUp ? "" : <div style={{ marginTop: -30 }}></div>
                 }
                 <Box sx={{
                     display: 'flex',
