@@ -19,15 +19,11 @@ const LandingFooter = () => {
         {
             title: 'Home',
             path: '/'
+        },
+        {
+            title: 'Help Center',
+            path: '/help-center'
         }
-
-        /*
-            ,
-            {
-                title: 'Help Center',
-                path: '/help-center'
-            }
-            */
     ]
 
     const handleEmailClick = () => {
@@ -44,7 +40,7 @@ const LandingFooter = () => {
             width: '100vw',
             position: 'absolute',
             left: 0,
-            background: 'black',
+            background: theme.palette.dark.dark,
             //backdropFilter: 'blur(200px)', // Apply blur effect
             paddingTop: '84px',
             paddingBottom: '48px',

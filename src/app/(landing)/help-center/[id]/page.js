@@ -5,6 +5,7 @@ import { helpCenterContent } from '../content';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 function findPathIndex(helpCenterContent, pathId) {
     for (let i = 0; i < helpCenterContent.length; i++) {
@@ -64,10 +65,8 @@ const HelpCenterSubPage = ({ params }) => {
                             <Stack spacing={1}>
                                 <Typography variant='h5' sx={{ fontWeight: 700 }}>{key.title}</Typography>
                                 <Typography variant='body2'>{key.paragraph}</Typography>
-                                {
-                                    /*
-
                                 <ul style={{
+                                    marginLeft: 0,
                                     display: 'flex',
                                     flexDirection: 'column',
                                     gap: '12px'
@@ -82,8 +81,6 @@ const HelpCenterSubPage = ({ params }) => {
                                         ))
                                     }
                                 </ul>
-                                    */
-                                }
                             </Stack>
                         )
                         break;
@@ -112,8 +109,7 @@ const HelpCenterSubPage = ({ params }) => {
                     padding: '24px',
                     borderRadius: '12px',
                     marginBottom: '72px',
-                    backgroundColor: 'rgba(0, 0, 0, 0.8)', // Adjust the alpha value for darkness
-                    backdropFilter: 'blur(10px)'
+                    background: theme.palette.dark.dark,
                 }}>
                     <Stack spacing={6}>
                         <Stack spacing={1.5}>
@@ -128,6 +124,12 @@ const HelpCenterSubPage = ({ params }) => {
                                 item
                             ))
                         }
+
+
+                        <Stack spacing={1.5}>
+                            <Typography variant='h5' sx={{ fontWeight: 700 }}>Any Questions?</Typography>
+                            <Typography variant='body1' >Feel free to reach out to our supprot team at <a style={{ color: theme.palette.primary.main, fontWeight: 700 }} href='mailto:support@motobookie.com?subject=Need%20help'>support@motobookie.com</a></Typography>
+                        </Stack>
                     </Stack>
                 </Box>
             </Box>

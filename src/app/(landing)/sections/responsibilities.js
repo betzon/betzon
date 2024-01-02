@@ -1,7 +1,9 @@
+import { openUserModal } from '@/app/redux/actions/modalAction';
 import { useTheme } from '@emotion/react'
 import { Box, Button, Stack, Typography } from '@mui/material'
 import { useMediaQuery } from '@mui/material';
 import React from 'react'
+import { useDispatch } from 'react-redux';
 
 const ContentBox = ({ data }) => {
     const isSmallScreen = useMediaQuery('md');
@@ -22,9 +24,15 @@ const ContentBox = ({ data }) => {
 
 const OurResponsibilitiesSection = () => {
 
+    const dispatch = useDispatch()
+
     const theme = useTheme()
 
     const isSmallScreen = useMediaQuery('md');
+
+    const triggerModal = () => {
+        dispatch(openUserModal())
+    }
 
     const content = [
         {
@@ -97,10 +105,9 @@ const OurResponsibilitiesSection = () => {
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems:'center'
+                alignItems: 'center'
             }}>
-
-                <Button variant='contained' sx={{ width: 'fit-content' }}>Check out our Motobookie Challenge!</Button>
+                <Button variant='contained' onClick={() => triggerModal()} sx={{ width: 'fit-content', fontWeight:700}}>Check out our Motobookie Challenge!</Button>
             </Box>
 
         </Stack>

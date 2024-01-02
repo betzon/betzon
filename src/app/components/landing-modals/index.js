@@ -21,9 +21,6 @@ const AlertModal = () => {
         dispatch(closeUserModal())
 
     };
-    const handleOpen = () => {
-        //setOpen(true);
-    };
 
     const isMediumUp = useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -54,7 +51,7 @@ const AlertModal = () => {
                 width: '90%',
                 maxWidth: '800px',
                 height: 'fit-content',
-                maxHeight: '600px',
+                maxHeight: '100vh',
                 overflow: 'scroll',
                 display: 'flex',
                 flexDirection: 'column',

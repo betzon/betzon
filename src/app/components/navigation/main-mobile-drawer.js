@@ -25,12 +25,13 @@ const pages = [
         title: 'Home',
         path: '/'
     }
-    /*
     ,
     {
         title: 'Help Center',
         path: '/help-center'
     }
+
+    /*
     ,
     {
         title: 'SUPPORT',

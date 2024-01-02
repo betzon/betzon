@@ -4,6 +4,67 @@ import HowToRegIcon from '@mui/icons-material/HowToReg';
 import PersonIcon from '@mui/icons-material/Person';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 
+
+export const helpCenterContent = [
+    {
+        title: 'Registration',
+        icon: <HowToRegIcon fontSize='large' />,
+        items: [
+            {
+                title: 'Motobookie Challenge!',
+                path: '/verification',
+                content: {
+                    title: 'Motobookie Challenge',
+                    updatedOn: 'Jan 2, 2024',
+                    content: [
+                        {
+                            type: 'paragraph',
+                            title: 'Social wagering meets fantasy sports this year!',
+                            content: [
+                                "To start off the season right, we’re kicking off a new contest that runs each month in January and February! ",
+                                "There are no subscription fees that will be charged in those two months and you can sign up to participate in all the action for free!"
+                            ]
+                        },
+                        {
+                            type: 'paragraphList',
+                            title: 'How do I withdraw funds?',
+                            paragraph: 'Each player who is currently subscribed will get 1000 fantasy chips automatically deposited into their accounts! This will also be offered to each new person who signs up! You will then be able to engage in wagering against others through the course of the month. These chips cannot be cashed out for real money as they are fantasy chips. However, at the end of the month, the players with the highest wins will be awarded the following prizes:',
+                            list: [
+                                "1st Place: $1,000",
+                                "2nd Place: $750",
+                                "3rd Place: $250"
+                            ],
+                        },
+                        {
+                            type: 'paragraph',
+                            title: '',
+                            content: [
+                                'Any ties for each place will cause the pot for their respective tier to be divided equally amongst those who tie for that place. Wager wisely though, each player will only get 1,000 chips allocated to them for the month. The chip count will reset before the first race of February, 2024; at that time, each player gets a fresh set of 1,000 fantasy chips.'
+                            ]
+                        },
+                        {
+                            type: 'paragraph',
+                            title: 'What about my previous chips?',
+                            content: [
+                                "If you previously were subscribed, we have a record of your current real chip count. Those will be reset but we have a record and if you wish to cash those out feel free to reach out to support at: support@motobookie.com (mailto:support@motobookie.com). Of course, you can choose to keep those in your account so that once we return to the regular wagering in the month of March, those will be reinstated into your account."
+                            ]
+                        },
+                        {
+                            type: 'paragraph',
+                            title: '',
+                            content: [
+                                "Stay tuned as MotoBookie has improved and new features and sports are coming soon!"
+                            ]
+                        }
+                    ]
+                }
+            },
+        ]
+    }
+]
+
+
+/*
 export const helpCenterContent = [
     {
         title: 'Chips & Wager Credits',
@@ -481,3 +542,4 @@ export const helpCenterContent = [
         ]
     }
 ]
+*/
