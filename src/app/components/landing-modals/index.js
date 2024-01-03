@@ -32,6 +32,11 @@ const AlertModal = () => {
         dispatch(closeUserModal())
     };
 
+    const redirectToAnotherSiteLogin = () => {
+        dispatch(closeUserModal())
+        window.open('https://app.motobookie.com', '_blank');
+    };
+
     React.useEffect(() => {
         if (toggle) {
             document.body.style.overflow = 'hidden';
@@ -87,6 +92,7 @@ const AlertModal = () => {
                     width: isMediumUp ? "fit-content" : '100%'
                 }}>
                     <Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSite()} variant='contained'>Learn more</Button>
+                    <Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSiteLogin()} variant='contained'>Sign up</Button>
 
                 </Stack>
             </Box>
