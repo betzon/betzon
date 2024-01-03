@@ -7,8 +7,11 @@ import { useTheme } from '@emotion/react';
 import CloseIcon from '@mui/icons-material/Close';
 import { closeUserModal } from '@/app/redux/actions/modalAction';
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
 
 const AlertModal = () => {
+
+    const router = useRouter()
 
     const theme = useTheme()
 
@@ -25,10 +28,8 @@ const AlertModal = () => {
     const isMediumUp = useMediaQuery(theme.breakpoints.up('sm'));
 
     const redirectToAnotherSite = () => {
-        window.open('https://app.motobookie.com/signup', '_blank');
-    };
-    const redirectToAnotherSiteLogin = () => {
-        window.open('https://app.motobookie.com', '_blank');
+        router.push('/help-center/motobookie-challenge')
+        dispatch(closeUserModal())
     };
 
     React.useEffect(() => {
@@ -40,6 +41,63 @@ const AlertModal = () => {
     }, [toggle]);
     return (
         <Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={toggle}
+        >
+            <Box sx={{
+                border: `4px solid ${theme.palette.primary.dark}`,
+                background: theme.palette.dark.dark,
+                borderRadius: '20px',
+                p: '24px',
+                width: '90%',
+                maxWidth: '600px',
+                height: 'fit-content',
+                maxHeight: '100vh',
+                overflow: 'scroll',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                textAlign:'center',
+                alignItems: 'center',
+                gap: '24px',
+                position: 'relative',
+            }}>
+
+                <IconButton
+                    onClick={() => handleClose()}
+                    sx={{
+                        position: 'absolute',
+                        right: '12px',
+                        top: '12px'
+                    }}>
+                    <CloseIcon fontSize='medium' />
+                </IconButton>
+                {
+                    isMediumUp ? "" : <div style={{ marginTop: -30 }}></div>
+                }
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                }}>
+                    <Typography variant={'h5'} sx={{ fontWeight: 700 }}>Sign up and join our Motobookie Contest!</Typography>
+                    <Typography variant='body1' sx={{ fontWeight: 500 }}>For a chance to win $1,000!</Typography>
+                </Box>
+                <Stack direction={isMediumUp ? "row" : "column"} spacing={isMediumUp ? 3 : 1} sx={{
+                    width: isMediumUp ? "fit-content" : '100%'
+                }}>
+                    <Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSite()} variant='contained'>Learn more</Button>
+
+                </Stack>
+            </Box>
+        </Backdrop>
+    );
+}
+
+export default AlertModal
+
+/*
+ <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
             open={toggle}
         >
@@ -103,7 +161,4 @@ const AlertModal = () => {
                 </Stack>
             </Box>
         </Backdrop>
-    );
-}
-
-export default AlertModal
+*/

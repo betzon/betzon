@@ -12,7 +12,7 @@ export const helpCenterContent = [
         items: [
             {
                 title: 'Motobookie Challenge!',
-                path: '/verification',
+                path: '/motobookie-challenge',
                 content: {
                     title: 'Motobookie Challenge',
                     updatedOn: 'Jan 2, 2024',
