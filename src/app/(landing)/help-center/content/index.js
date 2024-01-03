@@ -46,7 +46,7 @@ export const helpCenterContent = [
                             type: 'paragraph',
                             title: 'What about my previous chips?',
                             content: [
-                                "If you previously were subscribed, we have a record of your current real chip count. Those will be reset but we have a record and if you wish to cash those out feel free to reach out to support at: support@motobookie.com (mailto:support@motobookie.com). Of course, you can choose to keep those in your account so that once we return to the regular wagering in the month of March, those will be reinstated into your account."
+                                "If you previously were subscribed, we have a record of your current real chip count. Those will be reset but we have a record and if you wish to cash those out feel free to reach out to support at: support@motobookie.com. Of course, you can choose to keep those in your account so that once we return to the regular wagering in the month of March, those will be reinstated into your account."
                             ]
                         },
                         {
