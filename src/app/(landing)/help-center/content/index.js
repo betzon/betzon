@@ -28,7 +28,7 @@ export const helpCenterContent = [
                         {
                             type: 'paragraphList',
                             title: 'How do I withdraw funds?',
-                            paragraph: 'Each player who is currently subscribed will get 1000 fantasy chips automatically deposited into their accounts! This will also be offered to each new person who signs up! You will then be able to engage in wagering against others through the course of the month. These chips cannot be cashed out for real money as they are fantasy chips. However, at the end of the month, the players with the highest wins will be awarded the following prizes:',
+                            paragraph: 'Each player who is currently subscribed will get 1000 fantasy chips automatically deposited into their accounts! This will also be offered to each new person who signs up! You will then be able to engage in wagering against others through the course of the month. These chips cannot be cashed out for real money as they are fantasy chips. However, at the end of the month, the players with the highest number of wagers won will be awarded the following prizes:',
                             list: [
                                 "1st Place: $1,000",
                                 "2nd Place: $750",

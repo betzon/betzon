@@ -29,7 +29,7 @@ export default function GoogleMaps({ handleLocation }) {
     const [inputValue, setInputValue] = React.useState('');
     const [options, setOptions] = React.useState([]);
     const loaded = React.useRef(false);
-
+console.log(object)
     if (typeof window !== 'undefined' && !loaded.current) {
         if (!document.querySelector('#google-maps')) {
             loadScript(
