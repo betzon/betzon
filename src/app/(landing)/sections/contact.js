@@ -24,7 +24,7 @@ const StatusHandler = () => {
     })
 
     const submitWaitlistRequest = async () => {
-        dispatch(waitListSignUpRequest(inputs))
+       // dispatch(waitListSignUpRequest(inputs))
     }
 
     const handleInputs = (event) => {
