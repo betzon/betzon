@@ -18,6 +18,7 @@ export const config = {
     '/signup/:path*',
     '/profile/:path*',
     '/team/:path*',
+    '/template',
     '/template/:path*',
     '/dashboard/:path*',
     '/wagers/:path*',
