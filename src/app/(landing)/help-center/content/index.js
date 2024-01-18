@@ -11,42 +11,55 @@ export const helpCenterContent = [
         icon: <HowToRegIcon fontSize='large' />,
         items: [
             {
-                title: 'Motobookie Challenge!',
+                title: 'Plot Twist! The MotoBookie Challenge Gets Better! More Chances to Play and Win!',
                 path: '/motobookie-challenge',
                 content: {
                     title: 'Motobookie Challenge',
-                    updatedOn: 'Jan 2, 2024',
+                    updatedOn: 'Jan 14, 2024',
                     content: [
                         {
                             type: 'paragraph',
-                            title: 'Social wagering meets fantasy sports this year!',
+                            title: '',
                             content: [
-                                "To start off the season right, we’re kicking off a new contest that runs each month in January and February! ",
-                                "There are no subscription fees that will be charged in those two months and you can sign up to participate in all the action for free!"
+                                "We will now be awarding prizes twice a month to the users with higher numbers of wagers won! Sign up and participate now!"
                             ]
                         },
                         {
                             type: 'paragraphList',
-                            title: 'How do I withdraw funds?',
-                            paragraph: 'Each player who is currently subscribed will get 1000 fantasy chips automatically deposited into their accounts! This will also be offered to each new person who signs up! You will then be able to engage in wagering against others through the course of the month. These chips cannot be cashed out for real money as they are fantasy chips. However, at the end of the month, the players with the highest number of wagers won will be awarded the following prizes:',
+                            title: 'Here are the details:',
+                            paragraph: 'The users with the highest number of combined wagers won after these set of races:',
                             list: [
-                                "1st Place: $1,000",
-                                "2nd Place: $750",
-                                "3rd Place: $250"
+                                "Anaheim 1 + San Francisco",
+                                "San Diego + Anaheim 2",
+                                "Detroit + Glendale + Arlington"
+                            ],
+                        },
+                        {
+                            type: 'paragraphList',
+                            title: '',
+                            paragraph: 'Win these prizes:',
+                            list: [
+                                "1st Place: $500",
+                                "2nd Place: $400",
+                                "3rd Place: $300"
                             ],
                         },
                         {
                             type: 'paragraph',
                             title: '',
                             content: [
-                                'Any ties for each place will cause the pot for their respective tier to be divided equally amongst those who tie for that place. Wager wisely though, each player will only get 1,000 chips allocated to them for the month. The chip count will reset before the first race of February, 2024; at that time, each player gets a fresh set of 1,000 fantasy chips.'
+                                'Any ties for each place split that tier’s winning equally. These are prizes for each set of races. If you don’t win in the first set of races, you get to start again at the next set of races for prizes of the same value.'
                             ]
                         },
                         {
                             type: 'paragraph',
-                            title: 'What about my previous chips?',
+                            title: 'WAIT!! THERE’S MORE:',
                             content: [
-                                "If you previously were subscribed, we have a record of your current real chip count. Those will be reset but we have a record and if you wish to cash those out feel free to reach out to support at: support@motobookie.com. Of course, you can choose to keep those in your account so that once we return to the regular wagering in the month of March, those will be reinstated into your account."
+                                "After each set of races above, users will get to start fresh, from scratch, but now with 2000 chips to fantasy-wager with!",
+                                "Remember these chips are fantasy chips but are important to compete for the prizes above!",
+                                "This means more chances to win and less waiting for prize winners! It’s a win-win for all!",
+                                "What are you waiting for? Sign-up or continue participating for your chance at these prizes!",
+                                "Get ready to put your money where your mouth is!"
                             ]
                         },
                         {
@@ -62,7 +75,7 @@ export const helpCenterContent = [
         ]
     }
 ]
-
+//&rsquo;
 
 /*
 export const helpCenterContent = [
