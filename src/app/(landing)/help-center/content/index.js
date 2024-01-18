@@ -7,14 +7,14 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 
 export const helpCenterContent = [
     {
-        title: 'Registration',
+        title: 'For our beloved users!',
         icon: <HowToRegIcon fontSize='large' />,
         items: [
             {
-                title: 'Plot Twist! The MotoBookie Challenge Gets Better! More Chances to Play and Win!',
+                title: 'Motobookie Challenge!',
                 path: '/motobookie-challenge',
                 content: {
-                    title: 'Motobookie Challenge',
+                    title: 'Plot Twist! The MotoBookie Challenge Gets Better! More Chances to Play and Win!',
                     updatedOn: 'Jan 14, 2024',
                     content: [
                         {
