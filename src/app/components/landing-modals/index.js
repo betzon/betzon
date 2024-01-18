@@ -86,7 +86,7 @@ const AlertModal = () => {
                     justifyContent: 'center',
                 }}>
                     <Typography variant={'h5'} sx={{ fontWeight: 700 }}>Sign up and join our Motobookie Contest!</Typography>
-                    <Typography variant='body1' sx={{ fontWeight: 500 }}>For a chance to win $1,000!</Typography>
+                    <Typography variant='body1' sx={{ fontWeight: 500 }}>For a chance to win $500!</Typography>
                 </Box>
                 <Stack direction={isMediumUp ? "row" : "column"} spacing={isMediumUp ? 3 : 1} sx={{
                     width: isMediumUp ? "fit-content" : '100%'
