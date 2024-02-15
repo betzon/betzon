@@ -12,6 +12,7 @@ import SportsMmaIcon from '@mui/icons-material/SportsMma';
 import GolfCourseIcon from '@mui/icons-material/GolfCourse';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports';
+import SportsScoreIcon from '@mui/icons-material/SportsScore';
 
 const LeaguePillEngagementBar = ({ status, completion }) => {
     const statusSpacing = -.5
@@ -326,7 +327,7 @@ const LeagueDisplaySection = () => {
         },
         {
             sport: 'NASCAR',
-            icon: <SportsBasketballIcon fontSize='large' />,
+            icon: <SportsScoreIcon fontSize='large' />,
             status: 'live'
         }
     ]
@@ -335,13 +336,13 @@ const LeagueDisplaySection = () => {
         {
             sport: 'Formula1',
             status: 'in-development',
-            icon: <SportsBasketballIcon fontSize='large' />,
+            icon: <SportsScoreIcon fontSize='large' />,
             completion: 10
         },
         {
             sport: 'MotoGP',
             status: 'in-development',
-            icon: <SportsBasketballIcon fontSize='large' />,
+            icon: <SportsScoreIcon fontSize='large' />,
             completion: 10
         },
         /*
