@@ -55,10 +55,10 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
     }, [isLargeWidth]);
 
     const redirectToAnotherSite = () => {
-        window.open('https://app.motobookie.com/signup', '_blank');
+        window.open('https://app.betzon.com/signup', '_blank');
     };
     const redirectToAnotherSiteLogin = () => {
-        window.open('https://app.motobookie.com', '_blank');
+        window.open('https://app.betzon.com', '_blank');
     };
 
     const list = (anchor) => (
