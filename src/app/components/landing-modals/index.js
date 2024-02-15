@@ -28,13 +28,13 @@ const AlertModal = () => {
     const isMediumUp = useMediaQuery(theme.breakpoints.up('sm'));
 
     const redirectToAnotherSite = () => {
-        router.push('/help-center/motobookie-challenge')
+        router.push('/help-center/betzon-challenge')
         dispatch(closeUserModal())
     };
 
     const redirectToAnotherSiteLogin = () => {
         dispatch(closeUserModal())
-        window.open('https://app.motobookie.com', '_blank');
+        window.open('https://app.betzon.com', '_blank');
     };
 
     React.useEffect(() => {
@@ -85,7 +85,7 @@ const AlertModal = () => {
                     flexDirection: 'column',
                     justifyContent: 'center',
                 }}>
-                    <Typography variant={'h5'} sx={{ fontWeight: 700 }}>Sign up and join our Motobookie Contest!</Typography>
+                    <Typography variant={'h5'} sx={{ fontWeight: 700 }}>Sign up and join our BetzOn Contest!</Typography>
                     <Typography variant='body1' sx={{ fontWeight: 500 }}>For a chance to win $500!</Typography>
                 </Box>
                 <Stack direction={isMediumUp ? "row" : "column"} spacing={isMediumUp ? 3 : 1} sx={{

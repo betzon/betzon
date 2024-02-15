@@ -171,7 +171,7 @@ const LandingPage = () => {
                 >
                     <StyledTab label="Scroll to Top" name='top' />
                     <StyledTab label="Our Sports" name='our-sports' />
-                    <StyledTab label="Why Motobookie?" name='why-motobookie' />
+                    <StyledTab label="Why BetzOn?" name='why-betzon' />
                 </StyledTabs>
             </Box>
             <div style={{ marginBottom: '120px' }} />

@@ -59,10 +59,10 @@ const MainNavigation = () => {
     }
 
     const redirectToAnotherSite = () => {
-        window.open('https://app.motobookie.com/signup', '_blank');
+        window.open('https://app.betzon.com/signup', '_blank');
     };
     const redirectToAnotherSiteLogin = () => {
-        window.open('https://app.motobookie.com', '_blank');
+        window.open('https://app.betzon.com', '_blank');
     };
 
     return (
@@ -113,7 +113,7 @@ const MainNavigation = () => {
                                     letterSpacing: -1
                                 }}
                             >
-                                MotoBookie
+                                BetzOn
                             </Typography>
                         </Link>
 

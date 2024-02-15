@@ -11,10 +11,10 @@ export const helpCenterContent = [
         icon: <HowToRegIcon fontSize='large' />,
         items: [
             {
-                title: 'Motobookie Challenge!',
-                path: '/motobookie-challenge',
+                title: 'BetzOn Challenge!',
+                path: '/betzon-challenge',
                 content: {
-                    title: 'Plot Twist! The MotoBookie Challenge Gets Better! More Chances to Play and Win!',
+                    title: 'Plot Twist! The BetzOn Challenge Gets Better! More Chances to Play and Win!',
                     updatedOn: 'Jan 14, 2024',
                     content: [
                         {
@@ -66,7 +66,7 @@ export const helpCenterContent = [
                             type: 'paragraph',
                             title: '',
                             content: [
-                                "Stay tuned as MotoBookie has improved and new features and sports are coming soon!"
+                                "Stay tuned as BetzOn has improved and new features and sports are coming soon!"
                             ]
                         }
                     ]

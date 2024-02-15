@@ -43,7 +43,7 @@ const OurResponsibilitiesSection = () => {
                     <br />
                     No more Middleman
                 </>),
-            content: "At Motobookie, you're not placing bets against the house but directly with other genuine fans and enthusiasts. Whether you're clashing with fans of the Lakers or the Steelers, Motobookie is your go-to platform for authentic, fan-to-fan wagering."
+            content: "At BetzOn, you're not placing bets against the house but directly with other genuine fans and enthusiasts. Whether you're clashing with fans of the Lakers or the Steelers, BetzOn is your go-to platform for authentic, fan-to-fan wagering."
         },
         {
             title: isSmallScreen ?
@@ -53,7 +53,7 @@ const OurResponsibilitiesSection = () => {
                     <br />
                     - Zero Fees!
                 </>),
-            content: "That's right, Motobookie ensures that you keep 100% of your winnings. We don't take a cut. To start or accept a bet, simply buy wager credits and dive into the action!"
+            content: "That's right, BetzOn ensures that you keep 100% of your winnings. We don't take a cut. To start or accept a bet, simply buy wager credits and dive into the action!"
         },
         {
             title: isSmallScreen ?
@@ -63,13 +63,13 @@ const OurResponsibilitiesSection = () => {
                     <br />
                     the User
                 </>),
-            content: "Our goal is to craft a platform that you'll absolutely love. Have a feature in mind that Motobookie should include, or a sport you're eager to bet on? Drop us a message at our support email. We're committed to replying within 12 hours, because your input shapes Motobookie."
+            content: "Our goal is to craft a platform that you'll absolutely love. Have a feature in mind that BetzOn should include, or a sport you're eager to bet on? Drop us a message at our support email. We're committed to replying within 12 hours, because your input shapes BetzOn."
         }
     ]
 
     return (
         <Stack
-            id="why-motobookie"
+            id="why-betzon"
             spacing={6}
             sx={{
                 //background: theme.palette.primary.main,
@@ -81,7 +81,7 @@ const OurResponsibilitiesSection = () => {
                 textAlign: 'center'
             }}>
 
-            <Typography variant='h3' sx={{ fontWeight: 700 }}>Why Motobookie?</Typography>
+            <Typography variant='h3' sx={{ fontWeight: 700 }}>Why BetzOn?</Typography>
 
             <Box
                 sx={{
@@ -107,7 +107,7 @@ const OurResponsibilitiesSection = () => {
                 flexDirection: 'column',
                 alignItems: 'center'
             }}>
-                <Button variant='contained' onClick={() => triggerModal()} sx={{ width: 'fit-content', fontWeight:700}}>Check out our Motobookie Challenge!</Button>
+                <Button variant='contained' onClick={() => triggerModal()} sx={{ width: 'fit-content', fontWeight:700}}>Check out our BetzOn Challenge!</Button>
             </Box>
 
         </Stack>

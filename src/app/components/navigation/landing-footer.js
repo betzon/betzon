@@ -28,7 +28,7 @@ const LandingFooter = () => {
 
     const handleEmailClick = () => {
         if (typeof window !== "undefined") {
-            window.location.href = 'mailto:support@motobookie.com';
+            window.location.href = 'mailto:info@betzon.com';
         }
     };
 
@@ -133,7 +133,7 @@ const LandingFooter = () => {
                                         gap: '16px'
                                     }}>
                                     <LocalPhoneIcon />
-                                    <Typography>support@motobookie.com</Typography>
+                                    <Typography>info@betzon.com</Typography>
                                 </ListItemButton>
 
                                 <ListItem sx={{

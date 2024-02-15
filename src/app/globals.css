@@ -3,9 +3,8 @@
 }
 
 body {
-  background-color: #000812 !important;
+  background-color: #000000 !important;
 }
-
 
 .shadow-1 {
   top: -50%;
@@ -16,8 +15,7 @@ body {
   height: 900px;
   flex-shrink: 0;
   border-radius: 904px;
-  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(96, 121, 254, 0.40) 0%, rgba(217, 217, 217, 0.00) 100%);
-
+  background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #FF7700 100%);
 }
 
 .shadow-2 {
@@ -28,10 +26,10 @@ body {
   width: 900px;
   height: 900px;
   flex-shrink: 0;
-  border-radius: 904px;
   border-radius: 875px;
-  background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(250, 114, 103, 0.40) 0%, rgba(96, 121, 254, 0.02) 72.40%, rgba(217, 217, 217, 0.00) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #000000 0%, #FF7700 100%);
 }
+
 
 #messaging-input-wrapper {
   border-radius: 100px;

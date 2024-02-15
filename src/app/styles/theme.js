@@ -16,7 +16,7 @@ const theme = createTheme({
       main: '#BCF9B2'
     },
     primary: {
-      main: '#0083E7',
+      main: '#FF7700',
     },
     secondary: {
       main: '#000000',
@@ -29,7 +29,7 @@ const theme = createTheme({
       paper: '#141414', // Adjust this if you also want paper components to have a different background
     },
     dark: {
-      dark: '#000812',
+      dark: '#141414',
       // main: '#141414',
       main: '#000000',
       light: '#B7B7B7',
