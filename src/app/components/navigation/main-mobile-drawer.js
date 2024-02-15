@@ -112,7 +112,7 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
                         }}>
                             <Image src={logo} height={30} />
                         </Box>
-                        <Typography sx={{ fontWeight: 700 }} variant='h6'>Motobookie</Typography>
+                        <Typography sx={{ fontWeight: 700 }} variant='h6'>Betzon</Typography>
                     </Box>
 
                     <IconButton>

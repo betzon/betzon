@@ -162,7 +162,7 @@ const LandingFooter = () => {
                                     pt: '24px',
                                     pb: '24px'
                                 }}>
-                                    <Typography sx={{ color: theme.palette.dark.otherlight }}>© 2024 Motobookie Inc.</Typography>
+                                    <Typography sx={{ color: theme.palette.dark.otherlight }}>© 2024 BetzOn Inc.</Typography>
 
                                     <Stack spacing={1} direction='row'>
                                         <Link
