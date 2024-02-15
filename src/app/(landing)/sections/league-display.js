@@ -207,7 +207,7 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
 
 
     const redirectToAnotherSite = () => {
-        window.open('https://app.motobookie.com/signup', '_blank');
+        window.open('https://app.betzon.com/signup', '_blank');
     };
 
     return (
@@ -323,6 +323,11 @@ const LeagueDisplaySection = () => {
             sport: 'Supercross',
             icon: <TwoWheelerIcon fontSize='large' />,
             status: 'live'
+        },
+        {
+            sport: 'NASCAR',
+            icon: <SportsBasketballIcon fontSize='large' />,
+            status: 'live'
         }
     ]
 
@@ -335,12 +340,6 @@ const LeagueDisplaySection = () => {
         },
         {
             sport: 'MotoGP',
-            status: 'in-development',
-            icon: <SportsBasketballIcon fontSize='large' />,
-            completion: 10
-        },
-        {
-            sport: 'NASCAR',
             status: 'in-development',
             icon: <SportsBasketballIcon fontSize='large' />,
             completion: 10
