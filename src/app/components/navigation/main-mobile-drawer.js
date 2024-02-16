@@ -62,6 +62,7 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
     };
 
     const list = (anchor) => (
+        
         <Box
             sx={{
                 width: 'auto',
