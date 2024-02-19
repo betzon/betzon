@@ -128,7 +128,7 @@ const HelpCenterSubPage = ({ params }) => {
 
                         <Stack spacing={1.5}>
                             <Typography variant='h5' sx={{ fontWeight: 700 }}>Any Questions?</Typography>
-                            <Typography variant='body1' >Feel free to reach out to our supprot team at <a style={{ color: theme.palette.primary.main, fontWeight: 700 }} href='mailto:support@motobookie.com?subject=Need%20help'>support@motobookie.com</a></Typography>
+                            <Typography variant='body1' >Feel free to reach out to our supprot team at <a style={{ color: theme.palette.primary.main, fontWeight: 700 }} href='mailto:info@betzon.com?subject=Need%20help'>info@betzon.com</a></Typography>
                         </Stack>
                     </Stack>
                 </Box>
