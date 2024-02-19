@@ -64,6 +64,30 @@ export const helpCenterContent = [
                         },
                         {
                             type: 'paragraph',
+                            title: 'The New BetzOn NASCAR Challenge!',
+                            content: [
+                                "What is the BetzOn NASCAR Challenge?"
+                            ]
+                        },
+                        {
+                            type: 'paragraphList',
+                            title: '',
+                            paragraph: 'The people with the highest number of wins at the end of Daytona 500 + Ambetter Health 400, have an opportunity to win the following:',
+                            list: [
+                                "1st Place: $500",
+                                "2nd Place: $400",
+                                "3rd Place: $300"
+                            ],
+                        },
+                        {
+                            type: 'paragraph',
+                            title: '',
+                            content: [
+                                "Any ties for a tier get split evenly. Join us on this new challenge for a chance to win any of these great prizes!"
+                            ]
+                        },
+                        {
+                            type: 'paragraph',
                             title: '',
                             content: [
                                 "Stay tuned as BetzOn has improved and new features and sports are coming soon!"
