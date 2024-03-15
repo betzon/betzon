@@ -90,6 +90,13 @@ export const helpCenterContent = [
                             type: 'paragraph',
                             title: '',
                             content: [
+                                "Available only to US Residents."
+                            ]
+                        },
+                        {
+                            type: 'paragraph',
+                            title: '',
+                            content: [
                                 "Stay tuned as BetzOn has improved and new features and sports are coming soon!"
                             ]
                         }
