@@ -1,10 +1,9 @@
 import ThemeRegistry from "./ThemeRegistry";
-import './globals.css'
+import './globals.css';
 import ReduxProvider from "./redux/ReduxProvider";
+import Script from 'next/script'; // Import the Script component from next/script
 
-//import store from './redux/store'
-export default function RootLayout(props) {
-  const { children } = props;
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
@@ -12,6 +11,21 @@ export default function RootLayout(props) {
         <title>BetzOn</title>
         <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet' />
         <meta name="description" content="Sports Betting Meets Social Media." />
+        
+        {/* Google Analytics: gtag.js */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16508370283"
+          strategy="afterInteractive" // This ensures the script is loaded after the page becomes interactive
+          async
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16508370283');
+          `}
+        </Script>
       </head>
       <body>
 
@@ -23,4 +37,3 @@ export default function RootLayout(props) {
     </html>
   );
 }
-

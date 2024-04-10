@@ -8,7 +8,7 @@ import Bulge from '../components/background/bulge.js';
 import { useTheme } from '@emotion/react';
 import Image from 'next/image.js';
 import { gsap } from "gsap";
-import logo from "../assets/mb.png"
+import logo from "../assets/logo.svg"
 import { Flip } from "gsap/Flip";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";

@@ -285,35 +285,6 @@ const LeagueDisplaySectionRows = ({ list, title, caption, status }) => {
 }
 
 const LeagueDisplaySection = () => {
-    /*
-                    const live = [
-                    {
-                        sport: 'Basketball',
-                    status: 'live'
-            },
-                    {
-                        sport: 'Soccer',
-                    status: 'live'
-            },
-                    {
-                        sport: 'Football',
-                    status: 'live'
-            },
-                    {
-                        sport: 'Slap Box',
-                    status: 'live'
-            },
-                    {
-                        sport: 'E-Sports',
-                    status: 'live'
-            },
-                    {
-                        sport: 'Golf',
-                    status: 'live'
-            }
-                    ]
-                    */
-
     const live = [
         {
             sport: 'Motocross',
@@ -329,22 +300,20 @@ const LeagueDisplaySection = () => {
             sport: 'NASCAR',
             icon: <SportsScoreIcon fontSize='large' />,
             status: 'live'
-        }
-    ]
-
-    const dev = [
+        },
         {
             sport: 'Formula1',
-            status: 'in-development',
+            status: 'live',
             icon: <SportsScoreIcon fontSize='large' />,
-            completion: 10
         },
         {
             sport: 'MotoGP',
-            status: 'in-development',
-            icon: <SportsScoreIcon fontSize='large' />,
-            completion: 10
+            status: 'live',
+            icon: <SportsMotorsportsIcon fontSize='large' />,
         },
+    ]
+
+    const dev = [
         /*
         {
             sport: 'Basketball',
@@ -399,7 +368,10 @@ const LeagueDisplaySection = () => {
             {
                 live.length != 0 ? <LeagueDisplaySectionRows list={[...live]} title='Wager on the following sports!' status='live' /> : ''
             }
-            <LeagueDisplaySectionRows list={[...dev]} title='Coming soon.' />
+            {
+                dev.length > 0 &&
+                <LeagueDisplaySectionRows list={[...dev]} title='Coming soon.' />
+            }
             {
                 /*
      <LeagueDisplaySectionRows
