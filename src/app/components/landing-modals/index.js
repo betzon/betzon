@@ -161,7 +161,6 @@ const AlertModal = () => {
                         onClick={() => {
                             router.push('#waitlist')
                             dispatch(closeUserModal())
-
                         }}
                         variant='contained'>
                         Join Waitlist</Button>
