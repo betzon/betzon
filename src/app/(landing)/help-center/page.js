@@ -83,7 +83,7 @@ const HelpCenterPage = () => {
 
     const isMediumUp = useMediaQuery(theme.breakpoints.up('md'));
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -114,7 +114,9 @@ const HelpCenterPage = () => {
                     onChange={handleChange}
                     aria-label="styled tabs example"
                 >
-                    <StyledTab label="Rules" />
+                    {
+                        //<StyledTab label="Rules" />
+                    }
                     <StyledTab label=" Support" />
                 </StyledTabs>
             </Box>

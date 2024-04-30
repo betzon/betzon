@@ -6,7 +6,12 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 
 
 export const helpCenterContent = [
-    {
+    
+]
+
+
+/*
+{
         title: 'For our beloved users!',
         icon: <HowToRegIcon fontSize='large' />,
         items: [
@@ -105,7 +110,7 @@ export const helpCenterContent = [
             },
         ]
     }
-]
+*/
 //&rsquo;
 
 /*
