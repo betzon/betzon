@@ -58,7 +58,6 @@ const MainLayout = ({ children }) => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const hasVisited = !!!sessionStorage.getItem('hasVisited');
-            console.log('Checking: ', hasVisited)
             if (hasVisited) {
                 /*
                 BETZON LOGO LOAD

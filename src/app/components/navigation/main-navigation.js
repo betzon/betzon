@@ -171,7 +171,9 @@ const MainNavigation = () => {
                     <Box sx={{
                         display: { xs: 'none', md: 'flex' }
                     }}>
-                        <Button
+                        {
+                            /*
+<Button
                             sx={{
                                 fontWeight: 700
                             }}
@@ -190,7 +192,19 @@ const MainNavigation = () => {
                             variant='contained'>
                             LOGIN
                         </Button>
+                            */
+                        }
 
+
+                        <Button
+                            onClick={() => router.push('#waitlist')}
+                            sx={{
+                                marginLeft: '12px',
+                                fontWeight: 700
+                            }}
+                            variant='contained'>
+                            Join Waitlist
+                        </Button>
                     </Box>
 
                 </Toolbar>

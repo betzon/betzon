@@ -15,17 +15,24 @@ export const waitListSignUpRequest = (userInfo) => {
         // Start the fetch operation
         try {
             const update = {
-                first_name: userInfo.first_name,
-                last_name: userInfo.last_name,
+                name: userInfo.name,
                 email: userInfo.email
             };
             //const response = await api.post(`${process.env.API_URL}:3001/api/landing/waitlist/add`, update)
-            const response = await api.post(`/api/landing/waitlist/add`, update)
+            const response = await api.post(
+                `landing/waitlist/join`,
+                update,
+                {
+                    headers: {
+                        platform: 'web', 'x-api-key': 'mb52ea2d-4567-4956-9d19-35a7e75a2c17'
+                    }
+                }
+            )
             console.log(response)
             dispatch(setWaitlistSuccess());
         } catch (error) {
             console.log('ERROR HERE')
-            console.error(error.response.data.message);
+            console.error(error);
             dispatch(setWaitlistFail(error.response.data.message));
 
         }

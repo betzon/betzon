@@ -18,13 +18,13 @@ const StatusHandler = () => {
     const error = useSelector(state => state.landing.waitlist.error);
 
     const [inputs, setInputs] = useState({
-        first_name: '',
-        last_name: '',
+        name: '',
         email: ''
     })
 
     const submitWaitlistRequest = async () => {
-       // dispatch(waitListSignUpRequest(inputs))
+        console.log('inputs - - - -', inputs)
+        dispatch(waitListSignUpRequest(inputs))
     }
 
     const handleInputs = (event) => {
@@ -47,8 +47,8 @@ const StatusHandler = () => {
                     <Box sx={{
                         textAlign: 'center'
                     }}>
-                        <Typography variant={variant} sx={{ fontWeight: 700 }}>Be part of what&apos;s next</Typography>
-                        <Typography variant='body2'>Join our mail list for exclusive awards </Typography>
+                        <Typography variant={variant} sx={{ fontWeight: 700 }}>Be part of what&apos;s next!</Typography>
+                        <Typography variant='body2'>Join our wait list for exclusive updates and more!</Typography>
                     </Box>
 
                     {
@@ -70,16 +70,8 @@ const StatusHandler = () => {
                             error={error.status}
                             sx={{ width: '100%' }}
                             variant='filled'
-                            name="first_name"
-                            label='First Name'
-                        />
-                        <TextField
-                            onChange={() => handleInputs(event)}
-                            error={error.status}
-                            sx={{ width: '100%' }}
-                            variant='filled'
-                            name="last_name"
-                            label='Last Name'
+                            name="name"
+                            label='Full Name'
                         />
                     </Box>
 
@@ -141,7 +133,7 @@ const ContactSection = () => {
 
     return (
         <Box
-            id="contact"
+            id="waitlist"
             sx={{
 
                 //background: 'green',

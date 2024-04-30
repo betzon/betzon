@@ -105,7 +105,7 @@ const LandingPage = () => {
                 document.getElementById('our-sports'),
                 // other sections
                 document.getElementById('why-motobookie'),
-                document.getElementById('contact'),
+                document.getElementById('waitlist'),
             ];
 
             const currentSection = sections.findIndex((section) => {
@@ -172,12 +172,15 @@ const LandingPage = () => {
                     <StyledTab label="Scroll to Top" name='top' />
                     <StyledTab label="Our Sports" name='our-sports' />
                     <StyledTab label="Why BetzOn?" name='why-betzon' />
+                    <StyledTab label="Join Waitlist" name='waitlist' />
                 </StyledTabs>
             </Box>
             <div style={{ marginBottom: '120px' }} />
             <LeagueDisplaySection />
             <div style={{ marginBottom: '120px' }} />
             <OurResponsibilitiesSection />
+            <div style={{ marginBottom: '120px' }} />
+            <ContactSection/>
             <div style={{ marginBottom: '120px' }} />
         </>
     )

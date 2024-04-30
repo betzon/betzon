@@ -62,7 +62,7 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
     };
 
     const list = (anchor) => (
-        
+
         <Box
             sx={{
                 width: 'auto',
@@ -136,7 +136,9 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
 
             <List>
 
-                <ListItem >
+                {
+                    /*
+                    <ListItem >
                     <Button
                         sx={{
                             width: '100%',
@@ -165,7 +167,20 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
                     </Button>
 
                 </ListItem>
+            */
+                }
 
+                <ListItem >
+                    <Button
+                        onClick={() => router.push('#waitlist')}
+                        sx={{
+                            width: '100%',
+                            fontWeight: 700
+                        }}
+                        variant='contained'>
+                        Join Waitlist
+                    </Button>
+                </ListItem>
 
             </List>
 

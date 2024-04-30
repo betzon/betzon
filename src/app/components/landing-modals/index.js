@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 
 const AlertModal = () => {
+    const videoRef = React.useRef(null);
 
     const router = useRouter()
 
@@ -18,6 +19,8 @@ const AlertModal = () => {
     const dispatch = useDispatch()
 
     const toggle = useSelector((state) => state.modal.userModal);
+
+    const [muted, setMuted] = React.useState(true)
 
     const handleClose = () => {
         //setOpen(false);
@@ -29,6 +32,11 @@ const AlertModal = () => {
 
     const redirectToAnotherSite = () => {
         router.push('/help-center/betzon-challenge')
+        dispatch(closeUserModal())
+    };
+
+    const redirectToWaitlist = () => {
+        router.push('/#waitlist')
         dispatch(closeUserModal())
     };
 
@@ -44,6 +52,37 @@ const AlertModal = () => {
             document.body.style.overflow = '';
         }
     }, [toggle]);
+
+    const videoUrl = "https://betzon-motobookie.s3.us-east-2.amazonaws.com/relaunchCampaign.mp4";
+
+
+    // React.useEffect(() => {
+    //     // Function to handle automatic play under certain conditions
+    //     const handleAutoPlay = () => {
+    //         if (videoRef.current && toggle) {
+    //             videoRef.current.play().catch(err => {
+    //                 console.error("Playback failed:", err);
+    //                 // Fall back to muted if play with sound fails
+    //                 setMuted(true);
+    //                 videoRef.current.play().catch(err => {
+    //                     console.error("Muted playback also failed:", err);
+    //                 });
+    //             });
+    //         } else if (videoRef.current) {
+    //             videoRef.current.pause();
+    //         }
+    //     };
+
+    //     setTimeout(handleAutoPlay, 2000);
+
+
+    //     setTimeout(setMuted(false), 2500);
+    //     return () => {
+    //         clearTimeout(handleAutoPlay);
+    //     };
+    // }, [toggle]);
+
+
     return (
         <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -51,7 +90,7 @@ const AlertModal = () => {
         >
             <Box sx={{
                 border: `4px solid ${theme.palette.primary.dark}`,
-                background: theme.palette.dark.dark,
+                background: theme.palette.dark.main,
                 borderRadius: '20px',
                 p: '24px',
                 width: '90%',
@@ -62,7 +101,7 @@ const AlertModal = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                textAlign:'center',
+                textAlign: 'center',
                 alignItems: 'center',
                 gap: '24px',
                 position: 'relative',
@@ -80,20 +119,52 @@ const AlertModal = () => {
                 {
                     isMediumUp ? "" : <div style={{ marginTop: -30 }}></div>
                 }
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                }}>
-                    <Typography variant={'h5'} sx={{ fontWeight: 700 }}>Sign up and join our BetzOn Contest!</Typography>
-                    <Typography variant='body1' sx={{ fontWeight: 500 }}>For a chance to win $500!</Typography>
-                </Box>
+                <Stack>
+                    <Typography fontWeight={700}>Relaunching Fall 2024</Typography>
+                    <Typography variant='h4' sx={{ fontWeight: 700 }}>LIVE <span style={{ color: theme.palette.primary.main }}>GAMING</span></Typography>
+                    <Typography variant='h4' sx={{ fontWeight: 700 }}>LIVE <span style={{ color: theme.palette.primary.main }}>WAGERING</span> </Typography>
+                </Stack>
+
+
+                {
+                    toggle &&
+                    <Box sx={{ width: '100%', position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
+                        <div className="video-container">
+                            <video
+                                // This is usually required for autoplay to work in most browsers
+                                ref={videoRef}
+                                //muted={muted}
+                                autoPlay
+                                muted
+                                data-autoplay=''
+                                playsInline // Helps with autoplay on iOS devices
+                                controls={true} // Hides video controls
+                            >
+                                <source src={videoUrl} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </Box>
+                }
+
                 <Stack direction={isMediumUp ? "row" : "column"} spacing={isMediumUp ? 3 : 1} sx={{
                     width: isMediumUp ? "fit-content" : '100%'
                 }}>
-                    <Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSite()} variant='contained'>Learn more</Button>
+                    {
+                        /*
+<Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSite()} variant='contained'>Learn more</Button>
                     <Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSiteLogin()} variant='contained'>Sign up</Button>
+                        */
+                    }
+                    <Button
+                        sx={{ width: isMediumUp ? 'fit-content' : '100%' }}
+                        onClick={() => {
+                            router.push('#waitlist')
+                            dispatch(closeUserModal())
 
+                        }}
+                        variant='contained'>
+                        Join Waitlist</Button>
                 </Stack>
             </Box>
         </Backdrop>
@@ -101,70 +172,3 @@ const AlertModal = () => {
 }
 
 export default AlertModal
-
-/*
- <Backdrop
-            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={toggle}
-        >
-            <Box sx={{
-                border: `4px solid ${theme.palette.primary.dark}`,
-                background: theme.palette.dark.dark,
-                borderRadius: '20px',
-                p: '24px',
-                width: '90%',
-                maxWidth: '800px',
-                height: 'fit-content',
-                maxHeight: '100vh',
-                overflow: 'scroll',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                gap: '48px',
-                position: 'relative',
-            }}>
-
-                <IconButton
-                    onClick={() => handleClose()}
-                    sx={{
-                        position: 'absolute',
-                        right: '12px',
-                        top: '12px'
-                    }}>
-                    <CloseIcon fontSize='medium' />
-                </IconButton>
-                {
-                    isMediumUp ? "" : <div style={{ marginTop: -30 }}></div>
-                }
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                }}>
-                    <Typography variant={isMediumUp ? 'h3' : 'h5'} sx={{ fontWeight: 700 }}>Motobookie Contest!</Typography>
-                    <Typography variant='body1' sx={{ fontWeight: 500 }}>Contest ends Febuary 2024</Typography>
-                </Box>
-
-                <Stack spacing={1}>
-                    <Typography variant='h5' sx={{ fontWeight: 700 }}>Rules</Typography>
-                    <Typography>Sign up and we&apos;ll supercharge your start with 1,000 free chips to wager against other contestants!</Typography>
-                    <Typography>Gather as many wins as you can each month.</Typography>
-                    <Typography>The top 3 users with the highest win count for each month will walk away with amazing rewards.</Typography>
-                </Stack>
-
-                <Stack spacing={1}>
-                    <Typography variant='h5' sx={{ fontWeight: 700 }}>What&apos;s at stake?</Typography>
-                    <Typography>• 1st Place: Grand prize of $1,000!</Typography>
-                    <Typography>• 2nd Place: Grab a cool $750!</Typography>
-                    <Typography>• 3rd Place: Secure $250!</Typography>
-                </Stack>
-                <Stack direction={isMediumUp ? "row" : "column"} spacing={isMediumUp ? 3 : 1} sx={{
-                    width: isMediumUp ? "fit-content" : '100%'
-                }}>
-                    <Button sx={{ width: isMediumUp ? 'fit-content' : '100%' }} onClick={() => redirectToAnotherSite()} variant='contained'>Create an account</Button>
-                    <Button onClick={() => redirectToAnotherSiteLogin()} variant='contained'>Login</Button>
-                </Stack>
-            </Box>
-        </Backdrop>
-*/

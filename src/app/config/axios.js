@@ -2,8 +2,8 @@ import axios from 'axios'
 
 axios.interceptors.request.use(
     config => {
-        config.baseURL = 'https://api.betzon.com'
-        //config.baseURL = 'http://localhost:3001'
+        config.baseURL = 'https://api.betzon.com/api/v1/'
+        //config.baseURL = 'http://localhost:2040/api/v1/'
         return config
     },
     error => {

@@ -4,6 +4,7 @@ import { Box, Button, Stack, Typography } from '@mui/material'
 import { useMediaQuery } from '@mui/material';
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/navigation';
 
 const ContentBox = ({ data }) => {
     const isSmallScreen = useMediaQuery('md');
@@ -23,6 +24,8 @@ const ContentBox = ({ data }) => {
 }
 
 const OurResponsibilitiesSection = () => {
+
+    const router = useRouter()
 
     const dispatch = useDispatch()
 
@@ -107,7 +110,12 @@ const OurResponsibilitiesSection = () => {
                 flexDirection: 'column',
                 alignItems: 'center'
             }}>
-                <Button variant='contained' onClick={() => triggerModal()} sx={{ width: 'fit-content', fontWeight:700}}>Check out our BetzOn Challenge!</Button>
+                {
+                    ///                <Button variant='contained' onClick={() => triggerModal()} sx={{ width: 'fit-content', fontWeight:700}}>Join our waitlist!</Button>
+
+                }
+                <Button variant='contained' onClick={() => router.push('/#waitlist')} sx={{ width: 'fit-content', fontWeight: 700 }}>Join our waitlist!</Button>
+
             </Box>
 
         </Stack>

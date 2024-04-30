@@ -49,7 +49,7 @@ const HelpCenterSubPage = ({ params }) => {
                 switch (key.type) {
                     case 'paragraph':
                         results.push(
-                            <Stack spacing={1}>
+                            <Stack spacing={1} key={key}>
                                 <Typography variant='h5' sx={{ fontWeight: 700 }}>{key.title}</Typography>
                                 {
                                     key.content.map((item, key) => (
@@ -62,7 +62,7 @@ const HelpCenterSubPage = ({ params }) => {
 
                     case 'paragraphList':
                         results.push(
-                            <Stack spacing={1}>
+                            <Stack spacing={1} key={key}>
                                 <Typography variant='h5' sx={{ fontWeight: 700 }}>{key.title}</Typography>
                                 <Typography variant='body2'>{key.paragraph}</Typography>
                                 <ul style={{
@@ -73,7 +73,7 @@ const HelpCenterSubPage = ({ params }) => {
                                 }}>
                                     {
                                         key.list.map((item, key) => (
-                                            <li>
+                                            <li key={key}>
                                                 <Typography variant='body2'>
                                                     {item}
                                                 </Typography>
