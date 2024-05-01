@@ -13,14 +13,20 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Sports Betting Meets Social Media." />
 
         {/* Google Analytics: gtag.js */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQKLKB7QW1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JQKLKB7QW1"
+          strategy="afterInteractive" // This ensures the script is loaded after the page becomes interactive
+          async
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JQKLKB7QW1');
+  `}
+        </Script>
 
-          gtag('config', 'G-JQKLKB7QW1');
-        </script>
       </head>
       <body>
 
