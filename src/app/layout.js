@@ -11,21 +11,16 @@ export default function RootLayout({ children }) {
         <title>BetzOn</title>
         <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet' />
         <meta name="description" content="Sports Betting Meets Social Media." />
-        
+
         {/* Google Analytics: gtag.js */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16508370283"
-          strategy="afterInteractive" // This ensures the script is loaded after the page becomes interactive
-          async
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16508370283');
-          `}
-        </Script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQKLKB7QW1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-JQKLKB7QW1');
+        </script>
       </head>
       <body>
 
