@@ -150,14 +150,14 @@ const LandingPage = () => {
         <>
             <Container sx={{
                 height: '100vh',
-                width: '100vw',
+                width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
                 textAlign:'center'
             }}>
-                <Typography variant='h4' fontWeight={700}>We will be back...</Typography>
+                <Typography variant='h5' fontWeight={700}>We will be back.</Typography>
                 <Typography>Fall 2024</Typography>
             </Container>
 
