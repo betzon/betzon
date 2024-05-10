@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import HomeHeaderSection from './sections/header';
 import LeagueDisplaySection from './sections/league-display';
-import { Divider, useMediaQuery } from '@mui/material';
+import { Divider, Typography, useMediaQuery } from '@mui/material';
 import OurResponsibilitiesSection from './sections/responsibilities';
 import ContactSection from './sections/contact';
 import { Box, Container, Tab, Tabs } from '@mui/material';
@@ -92,7 +92,7 @@ const LandingPage = () => {
 
         setTimeout(() => {
 
-        setIsScrollingFromHandleChange(false);
+            setIsScrollingFromHandleChange(false);
         }, 2500);
     };
 
@@ -148,7 +148,30 @@ const LandingPage = () => {
     //<Divider sx={{ marginBottom: '120px', marginTop: '120px' }} />
     return (
         <>
-            <HomeHeaderSection />
+            <Container sx={{
+                height: '100vh',
+                width: '100vw',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <Typography variant='h3' fontWeight={700}>We will be back...</Typography>
+                <Typography>Fall 2024</Typography>
+            </Container>
+
+            <ContactSection />
+            
+            <div style={{ marginBottom: '120px' }} />
+        </>
+    )
+}
+//IT&apos;S ON!
+export default LandingPage
+
+
+/*
+ <HomeHeaderSection />
 
             <Box sx={{
                 position: 'sticky',
@@ -180,10 +203,6 @@ const LandingPage = () => {
             <div style={{ marginBottom: '120px' }} />
             <OurResponsibilitiesSection />
             <div style={{ marginBottom: '120px' }} />
-            <ContactSection/>
+            <ContactSection />
             <div style={{ marginBottom: '120px' }} />
-        </>
-    )
-}
-//IT&apos;S ON!
-export default LandingPage
+*/

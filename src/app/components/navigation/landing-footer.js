@@ -20,10 +20,10 @@ const LandingFooter = () => {
             title: 'Home',
             path: '/'
         },
-        {
-            title: 'Help Center',
-            path: '/help-center'
-        }
+        // {
+        //     title: 'Help Center',
+        //     path: '/help-center'
+        // }
     ]
 
     const handleEmailClick = () => {

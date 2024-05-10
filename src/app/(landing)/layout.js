@@ -123,7 +123,9 @@ const MainLayout = ({ children }) => {
 
     return (
         <>
-            <AlertModal />
+        {
+            //<AlertModal />
+        }
             {
                 //!shouldShowLoader ?
                 !shouldShowLoader ?

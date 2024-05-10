@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Sports Betting Meets Social Media." />
 
         {/* Google Analytics: gtag.js */}
-        <Script
+        {
+          /*
+<Script
           src="https://www.googletagmanager.com/gtag/js?id=G-JQKLKB7QW1"
           strategy="afterInteractive" // This ensures the script is loaded after the page becomes interactive
           async
@@ -26,6 +28,8 @@ export default function RootLayout({ children }) {
     gtag('config', 'G-JQKLKB7QW1');
   `}
         </Script>
+          */
+        }
 
       </head>
       <body>
