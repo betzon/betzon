@@ -154,14 +154,15 @@ const LandingPage = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                textAlign:'center'
             }}>
-                <Typography variant='h3' fontWeight={700}>We will be back...</Typography>
+                <Typography variant='h4' fontWeight={700}>We will be back...</Typography>
                 <Typography>Fall 2024</Typography>
             </Container>
 
             <ContactSection />
-            
+
             <div style={{ marginBottom: '120px' }} />
         </>
     )
