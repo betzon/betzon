@@ -65,7 +65,7 @@ const MainNavigation = () => {
 
     return (
         <AppBar position="absolute" sx={{
-            background: 'transparent',
+            background: 'black',
             boxShadow: 'none'
             //borderBottom: `1px solid ${theme.palette.primary.main}` 
         }}>

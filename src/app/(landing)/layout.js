@@ -175,17 +175,17 @@ const MainLayout = ({ children }) => {
 
                     ""
             }
-            <Container maxWidth="xl" sx={{
+            {/* <Container maxWidth="xl" disableGutters sx={{
                 paddingTop: 0,
                 bgcolor: 'transparent',
                 boxSizing: 'border-box',
                 overflow: 'show'
-            }}>
+            }}> */}
                 <MainNavigation />
                 {children}
-                <Bulge />
+                {/* <Bulge /> */}
                 <LandingFooter />
-            </Container>
+            {/* </Container> */}
         </>
     );
 };
