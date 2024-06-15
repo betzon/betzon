@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-export default function ImageBackground({ source }) {
+export default function ImageBackground({ source, middleComponent }) {
   return (
     <>
       <Image
@@ -15,6 +15,7 @@ export default function ImageBackground({ source }) {
           objectFit: "cover",
         }}
       />
+      {middleComponent}
       <div
         style={{
           position: "absolute",

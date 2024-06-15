@@ -34,6 +34,7 @@ import betzonphone2 from "../assets/betzon-phone-1.png";
 import trophy from "../assets/trophy.png";
 import motorcyclist2 from "../assets/motorcyclist-2.png";
 import people1 from "../assets/people-1.png";
+import herophone from "../assets/hero-phone.png";
 
 import Image from "next/image";
 import ImageBackground from "../components/new-landing-page/ImageBackground";
@@ -226,7 +227,22 @@ const LandingPage = () => {
         }}
       >
         {/* Background image */}
-        <ImageBackground source={landingImage} />
+        <ImageBackground
+          source={landingImage}
+          middleComponent={
+            <Image
+              src={herophone}
+              fill
+              style={{
+                position: "absolute",
+                zIndex: -1,
+                // width: "70%",
+                overflow: "hidden",
+                objectFit: "contain",
+              }}
+            />
+          }
+        />
 
         {/* Title */}
         <Box maxWidth="xl">
@@ -319,14 +335,23 @@ const LandingPage = () => {
           <Typography
             variant="h2"
             fontWeight={900}
-            style={{ textAlign: isLargeScreen ? "center" : "left" }}
+            style={{
+              textAlign: isLargeScreen ? "center" : "left",
+
+              fontSize: isLargeScreen && "3.5vw",
+            }}
           >
             JOIN A COMMUNITY OF FANS ON BETZON
           </Typography>
           <Typography
             variant="h5"
             fontWeight={500}
-            style={{ textAlign: isLargeScreen ? "center" : "left" }}
+            style={{
+              textAlign: isLargeScreen ? "center" : "left",
+              fontSize: isLargeScreen && "1.5vw",
+              marginLeft: isLargeScreen && "110px",
+              marginRight: isLargeScreen && "110px",
+            }}
           >
             BetzOn is the ultimate place for wagers on NASCAR, FormulaOne,
             Motocross/Supercross, MotoGP, and MLB. Sign up and start winning!
@@ -512,7 +537,7 @@ const LandingPage = () => {
             style={{
               margin: "auto",
               width: "100%",
-              height: "1300px",
+              height: "900px",
               zIndex: "1",
               alignItems: "center",
               justifyContent: "flex-end",
@@ -524,7 +549,7 @@ const LandingPage = () => {
             {isLargeScreen && (
               <Box
                 style={{
-                  width: "500px",
+                  width: "450px",
                   justifyContent: "center",
                   alignItems: "center",
                   display: "flex",
@@ -550,7 +575,7 @@ const LandingPage = () => {
                 objectFit: "contain",
                 height: "auto",
                 position: "absolute",
-                transform: "translateX(-50%) translateY(10%) scaleX(-1)",
+                transform: "translateX(-30%) translateY(10%) scaleX(-1)",
                 zIndex: "-1",
                 left: "55%",
               }}
@@ -635,7 +660,10 @@ const LandingPage = () => {
           <Typography
             variant="h2"
             fontWeight={900}
-            style={{ textAlign: isLargeScreen ? "left" : "center" }}
+            style={{
+              textAlign: isLargeScreen ? "left" : "center",
+              lineHeight: isLargeScreen && "60px",
+            }}
           >
             WHY SETTLE FOR WATCHING WHEN YOU CAN BE WINNING?
           </Typography>
@@ -651,7 +679,11 @@ const LandingPage = () => {
           <Typography
             variant="h2"
             fontWeight={900}
-            style={{ textAlign: isLargeScreen ? "left" : "center" }}
+            style={{
+              textAlign: isLargeScreen ? "left" : "center",
+              lineHeight: isLargeScreen && "60px",
+              paddingTop: "20px",
+            }}
           >
             MLB
             <br />
@@ -680,6 +712,7 @@ const LandingPage = () => {
           style={{
             position: "absolute",
             zIndex: "1",
+            paddingTop: "80px",
             paddingLeft: "0",
             paddingRight: "0",
             pointerEvents: "none",
@@ -722,7 +755,7 @@ const LandingPage = () => {
         sx={{
           //   width: "100%",
           display: "flex",
-
+          paddingTop: "120px",
           height: "auto",
           justifyContent: "center",
           position: "relative",
@@ -760,6 +793,7 @@ const LandingPage = () => {
             style={{
               textAlign: isLargeScreen ? "left" : "center",
               paddingRight: isLargeScreen && "40%",
+              lineHeight: "60px",
             }}
           >
             JOIN THE BETZON CHALLENGE AND COMPETE FOR PRIZES IN OUR BI-MONTHLY
@@ -780,7 +814,7 @@ const LandingPage = () => {
         sx={{
           //   width: "100%",
           display: "flex",
-
+          paddingTop: "50px",
           height: "auto",
           justifyContent: "center",
           position: "relative",
@@ -843,8 +877,8 @@ const LandingPage = () => {
               position: "relative",
             }}
           >
-            {subscriptions.map((item) => (
-              <Pricing pricing={item} />
+            {subscriptions.map((item, index) => (
+              <Pricing key={index} pricing={item} />
             ))}
           </Box>
         </Box>
@@ -853,22 +887,25 @@ const LandingPage = () => {
         maxWidth={false}
         disableGutters
         style={{
+          height: "1050px",
           position: "relative",
+          alignItems: "flex-end",
         }}
       >
         <Image
           src={people1}
           style={{
-            objectFit: "contain",
+            objectFit: "cover",
             width: "100%",
-            height: "auto",
+            height: "1050px",
+            alignSelf: "flex-end",
           }}
         />
         {/* Ready to bet container */}
         <Box
           sx={{
             position: "absolute",
-            top: "10%",
+            top: "20%",
             left: "50%",
             width: "100%",
             transform: "translateX(-50%) translateY(-50%)",
@@ -896,14 +933,17 @@ const LandingPage = () => {
           </Button>
         </Box>
       </Container>
+
       {/* Accordion container */}
       <Container
         maxWidth={false}
         disableGutters
         style={{
+          backgroundColor: "black",
           position: "relative",
           display: "flex",
           justifyContent: "center",
+          paddingTop: "60px",
         }}
       >
         <Box
@@ -913,8 +953,8 @@ const LandingPage = () => {
             alignItems: "center",
             display: "flex",
             flexDirection: "column",
-            paddingLeft:"30px",
-            paddingRight:"30px"
+            paddingLeft: "30px",
+            paddingRight: "30px",
           }}
         >
           <Typography
@@ -938,7 +978,7 @@ const LandingPage = () => {
               paddingTop: "80px",
               paddingLeft: isLargeScreen && "20px",
               paddingRight: isLargeScreen && "20px",
-              width:"100%"
+              width: "100%",
             }}
           >
             <Accordion
@@ -1050,8 +1090,8 @@ const LandingPage = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              paddingTop:"80px",
-              gap:'20px'
+              paddingTop: "80px",
+              gap: "20px",
             }}
           >
             <Typography
@@ -1069,8 +1109,8 @@ const LandingPage = () => {
               Contact our support team for further assistance.
             </Typography>
             <Button variant="outlined" style={{ borderColor: "white" }}>
-                Contact
-              </Button>
+              Contact
+            </Button>
           </Box>
         </Box>
       </Container>

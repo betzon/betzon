@@ -36,7 +36,7 @@ const theme = createTheme({
       // main: '#141414',
       main: "#000000",
       light: "#B7B7B7",
-      otherlight: "#808080",
+      otherlight: "#FFF",
     },
   },
   buttonStyles: {

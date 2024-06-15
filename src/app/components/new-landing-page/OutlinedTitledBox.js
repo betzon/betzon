@@ -22,8 +22,10 @@ export default function OutlinedTitledBox({text, children}) {
     }}>
       <Typography variant='h2' style = {{
         paddingBottom:"70px",
-        paddingLeft: isLargeScreen && '23px',
-        paddingRight: isLargeScreen && '23px',
+        paddingTop: isLargeScreen ? '60px' : '30px',
+        lineHeight: isLargeScreen ? '50px' : '30px',
+        paddingLeft: isLargeScreen ? '43px' : '30px',
+        paddingRight: isLargeScreen ? '43px' : '30px',
 
         textAlign: isLargeScreen ? "left" : 'center'
       }}>{text}</Typography>
