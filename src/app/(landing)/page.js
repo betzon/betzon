@@ -487,7 +487,10 @@ const LandingPage = () => {
           textAlign: "center",
           position: "relative",
           gap: isLargeScreen ? "40px" : "20px",
-          padding: isLargeScreen ? "30px" : "20px",
+          paddingLeft: isLargeScreen ? "30px" : "20px",
+          paddingRight: isLargeScreen ? "30px" : "20px",
+          paddingTop: "110px",
+          paddingBottom: "110px",
           flexDirection: isLargeScreen ? "row" : "column",
         }}
       >
@@ -537,7 +540,9 @@ const LandingPage = () => {
             style={{
               margin: "auto",
               width: "100%",
-              height: "900px",
+              height: "1300px",
+              position: "relative",
+              top: "-200px",
               zIndex: "1",
               alignItems: "center",
               justifyContent: "flex-end",
@@ -575,7 +580,7 @@ const LandingPage = () => {
                 objectFit: "contain",
                 height: "auto",
                 position: "absolute",
-                transform: "translateX(-30%) translateY(10%) scaleX(-1)",
+                transform: "translateX(-30%) translateY(20%) scaleX(-1)",
                 zIndex: "-1",
                 left: "55%",
               }}
@@ -587,7 +592,7 @@ const LandingPage = () => {
                 objectFit: "contain",
                 height: "auto",
                 position: "absolute",
-                transform: "translateX(0%) translateY(60%) scaleX(-1)",
+                transform: "translateX(0%) translateY(90%) scaleX(-1)",
                 zIndex: "1",
               }}
             />
@@ -652,6 +657,7 @@ const LandingPage = () => {
             alignItems: isLargeScreen ? "flex-start" : "center",
             textAlign: "center",
             paddingLeft: "20px",
+            paddingTop: "50px",
             paddingRight: isLargeScreen ? "600px" : "20px",
             gap: "10px",
             zIndex: 1,
@@ -983,7 +989,7 @@ const LandingPage = () => {
           >
             <Accordion
               sx={{
-                backgroundColor: "transparent",
+                // backgroundColor: "black",
                 borderTop: "1px solid white",
                 borderTopLeftRadius: "0 !important",
                 borderTopRightRadius: "0 !important",
@@ -991,6 +997,7 @@ const LandingPage = () => {
             >
               <AccordionSummary
                 sx={{
+                  backgroundColor: "black",
                   display: "flex",
                 }}
                 id="panel1-header"
@@ -1001,7 +1008,11 @@ const LandingPage = () => {
                 </Typography>
                 <KeyboardArrowDownIcon />
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails
+                sx={{
+                  backgroundColor: "black",
+                }}
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </AccordionDetails>
             </Accordion>
@@ -1012,6 +1023,10 @@ const LandingPage = () => {
               }}
             >
               <AccordionSummary
+               sx={{
+                backgroundColor: "black",
+                display: "flex",
+              }}
                 id="panel2-header"
                 aria-controls="panel2-content"
               >
@@ -1020,7 +1035,9 @@ const LandingPage = () => {
                 </Typography>
                 <KeyboardArrowDownIcon />
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails  sx={{
+                  backgroundColor: "black",
+                }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </AccordionDetails>
             </Accordion>
@@ -1031,6 +1048,10 @@ const LandingPage = () => {
               }}
             >
               <AccordionSummary
+               sx={{
+                backgroundColor: "black",
+                display: "flex",
+              }}
                 id="panel3-header"
                 aria-controls="panel3-content"
               >
@@ -1039,7 +1060,9 @@ const LandingPage = () => {
                 </Typography>
                 <KeyboardArrowDownIcon />
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails  sx={{
+                  backgroundColor: "black",
+                }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </AccordionDetails>
             </Accordion>
@@ -1050,6 +1073,10 @@ const LandingPage = () => {
               }}
             >
               <AccordionSummary
+                sx={{
+                  backgroundColor: "black",
+                  display: "flex",
+                }}
                 id="panel4-header"
                 aria-controls="panel4-content"
               >
@@ -1058,7 +1085,9 @@ const LandingPage = () => {
                 </Typography>
                 <KeyboardArrowDownIcon />
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails  sx={{
+                  backgroundColor: "black",
+                }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </AccordionDetails>
             </Accordion>
@@ -1072,6 +1101,10 @@ const LandingPage = () => {
               }}
             >
               <AccordionSummary
+               sx={{
+                backgroundColor: "black",
+                display: "flex",
+              }}
                 id="panel4-header"
                 aria-controls="panel4-content"
               >
@@ -1080,7 +1113,9 @@ const LandingPage = () => {
                 </Typography>
                 <KeyboardArrowDownIcon />
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails  sx={{
+                  backgroundColor: "black",
+                }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </AccordionDetails>
             </Accordion>

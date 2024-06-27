@@ -103,12 +103,7 @@ const LandingFooter = () => {
                 lg: "flex",
                 xl: "flex",
               },
-              flexDirection: {
-                xs: "column",
-                sm: "column",
-
-                md: "column",
-              },
+              flexDirection: isLargeScreen ? 'row' : 'column',
               gridTemplateColumns: ".5fr 1fr 1fr 1fr",
               gap: "48px",
               paddingRight: isLargeScreen && "80px",
