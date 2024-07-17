@@ -28,13 +28,13 @@ const Item = ({ data }) => {
 
             <List
                 subheader={
-                    <ListSubheader sx={{ background: 'transparent', mb:.5, mt:.5 }} id="nested-list-subheader">
+                    <ListSubheader sx={{ background: 'transparent', mb: .5, mt: .5 }} id="nested-list-subheader">
                         <Typography variant='h6' sx={{ fontWeight: 700 }}>{data.title}</Typography>
                     </ListSubheader>
                 }>
                 {
                     data.items.map((item, index) => (
-                        <ListItemButton key={index} onClick={() => router.push(`/help-center${item.path}`)}>
+                        <ListItemButton key={index} onClick={() => item?.type === "external" ? window.open(item.path, "_open") : router.push(`/help-center${item.path}`)}>
                             <ListItemText primary={item.title} />
                         </ListItemButton>
                     ))
@@ -52,7 +52,7 @@ const Grid = ({ data }) => {
         <Box sx={{
             display: 'grid',
             gap: isMediumUp ? 'h2' : 'h3',
-            gap:'48px',
+            gap: '48px',
             gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' }
         }}>
             {

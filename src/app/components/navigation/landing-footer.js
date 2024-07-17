@@ -40,7 +40,7 @@ const LandingFooter = () => {
             width: '100vw',
             position: 'absolute',
             left: 0,
-            background: theme.palette.dark.dark,
+            background: 'black',
             //backdropFilter: 'blur(200px)', // Apply blur effect
             paddingTop: '84px',
             paddingBottom: '48px',

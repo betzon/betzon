@@ -8,6 +8,7 @@ import {
   AccordionSummary,
   Button,
   Divider,
+  Stack,
   Switch,
   TextField,
   Typography,
@@ -42,6 +43,13 @@ import zIndex from "@mui/material/styles/zIndex";
 import { display, positions, width } from "@mui/system";
 import Pricing from "../components/new-landing-page/Pricing";
 import { ArrowDropDownIcon } from "@mui/x-date-pickers";
+
+import { Inter } from 'next/font/google'
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 const SmoothScroll = dynamic(() => import("smooth-scroll"), { ssr: false });
 
@@ -227,23 +235,24 @@ const LandingPage = () => {
       >
         {/* Background image */}
         <ImageBackground source={landingImage} />
-
         {/* Title */}
-        <Box maxWidth="xl">
+        <Stack
+          justifyContent="center"
+          alignItems="center"
+          maxWidth="xl"
+          spacing={2}>
           <Typography
             variant="h1"
-            fontWeight={700}
-            style={{
-              paddingTop: isLargeScreen ? 0 : 110,
-              paddingBottom: 110,
-              marginLeft: 20,
-              marginRight: 20,
+            sx={{
+              fontWeight: 900,
+              lineHeight: 1,
+              letterSpacing: -1.5
             }}
           >
             UNLIMITED FAN-TO-FAN WAGERING FOR $9.99 PER MONTH
           </Typography>
           <Button variant="contained">CREATE AN ACCOUNT</Button>
-        </Box>
+        </Stack>
       </Container>
       {/* See pricing container */}
       <Container
@@ -296,7 +305,7 @@ const LandingPage = () => {
         {/* See pricing text */}
         <Box
           disableGutters
-          maxWidth="lg"
+          maxWidth="md"
           sx={{
             display: "flex",
             width: "100%",
@@ -319,7 +328,12 @@ const LandingPage = () => {
           <Typography
             variant="h2"
             fontWeight={900}
-            style={{ textAlign: isLargeScreen ? "center" : "left" }}
+            sx={{
+              fontWeight: 900,
+              lineHeight: 1,
+              letterSpacing: -1.5,
+              textAlign: isLargeScreen ? "center" : "left"
+            }}
           >
             JOIN A COMMUNITY OF FANS ON BETZON
           </Typography>
@@ -348,7 +362,7 @@ const LandingPage = () => {
           alignItems: "center",
           textAlign: "center",
           position: "relative",
-          height: "100vh",
+          height: "100%",
         }}
       >
         {/* Background image */}
@@ -364,14 +378,12 @@ const LandingPage = () => {
             }}
           />
         )}
-        {/* Sign up form // coins image */}
         <Box
           disableGutters
           maxWidth="lg"
           sx={{
             display: "flex",
             width: "100%",
-            height: "100%",
             justifyContent: "center",
             overflow: "hidden",
             alignItems: "center",
@@ -393,7 +405,12 @@ const LandingPage = () => {
             <Typography
               variant="h3"
               fontWeight={900}
-              style={{ textAlign: "left" }}
+              sx={{
+                textAlign: "left",
+                fontWeight: 900,
+                lineHeight: 1,
+                letterSpacing: -1.5
+              }}
             >
               JOIN BETZON NOW & GET 200 CHIPS INSTANTLY
             </Typography>
@@ -442,9 +459,10 @@ const LandingPage = () => {
                 src={coins}
                 alt="Coins"
                 style={{
-                  objectFit: "cover",
+                  objectFit: "contain",
                   width: "auto",
                   height: "100%",
+                  maxWidth: 500
                 }}
               />
             </Box>
@@ -518,13 +536,13 @@ const LandingPage = () => {
               justifyContent: "flex-end",
               display: "flex",
               transform: "translateY(-15%)",
-              overflow: "hidden",
+              overflow: "hidden"
             }}
           >
             {isLargeScreen && (
               <Box
                 style={{
-                  width: "500px",
+                  width: "400px",
                   justifyContent: "center",
                   alignItems: "center",
                   display: "flex",
@@ -546,11 +564,11 @@ const LandingPage = () => {
             <Image
               src={car1}
               style={{
-                width: "655px",
+                width: "600px",
                 objectFit: "contain",
                 height: "auto",
                 position: "absolute",
-                transform: "translateX(-50%) translateY(10%) scaleX(-1)",
+                transform: "translateX(-30%) translateY(60%) scaleX(-1)",
                 zIndex: "-1",
                 left: "55%",
               }}
@@ -558,11 +576,11 @@ const LandingPage = () => {
             <Image
               src={baseball1}
               style={{
-                width: isLargeScreen ? "455px" : "240px",
+                width: isLargeScreen ? "400px" : "240px",
                 objectFit: "contain",
                 height: "auto",
                 position: "absolute",
-                transform: "translateX(0%) translateY(60%) scaleX(-1)",
+                transform: "translateX(10%) translateY(100%) scaleX(-1)",
                 zIndex: "1",
               }}
             />
@@ -630,12 +648,17 @@ const LandingPage = () => {
             paddingRight: isLargeScreen ? "600px" : "20px",
             gap: "10px",
             zIndex: 1,
+            paddingTop: 125
           }}
         >
           <Typography
             variant="h2"
-            fontWeight={900}
-            style={{ textAlign: isLargeScreen ? "left" : "center" }}
+            style={{
+              textAlign: isLargeScreen ? "left" : "center",
+              lineHeight: 1,
+              letterSpacing: -1.5,
+              fontWeight: 900,
+            }}
           >
             WHY SETTLE FOR WATCHING WHEN YOU CAN BE WINNING?
           </Typography>
@@ -648,29 +671,42 @@ const LandingPage = () => {
             every game into an electrifying betting experience. Explore our
             sports selection
           </Typography>
-          <Typography
-            variant="h2"
-            fontWeight={900}
-            style={{ textAlign: isLargeScreen ? "left" : "center" }}
-          >
-            MLB
-            <br />
-            NBA
-            <br />
-            MOTOCROSS
-            <br />
-            FORMULA1
-            <br />
-            MOTOGP
-            <br />
-            NASCAR
-          </Typography>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: "white", color: "black" }}
-          >
-            PARTICIPATE TODAY!
-          </Button>
+          <Stack
+            spacing={2}
+            justifyContent={"flex-start"}
+            alignItems={"flex-start"}
+            sx={{
+              marginTop: 12
+            }}>
+            <Typography
+              variant="h2"
+              fontWeight={900}
+              style={{
+                textAlign: isLargeScreen ? "left" : "center",
+                lineHeight: 1.25,
+                letterSpacing: -1.5,
+                fontWeight: 900,
+              }}
+            >
+              MLB
+              <br />
+              NBA
+              <br />
+              MOTOCROSS
+              <br />
+              FORMULA1
+              <br />
+              MOTOGP
+              <br />
+              NASCAR
+            </Typography>
+            <Button
+              variant="contained"
+              style={{ backgroundColor: "white", color: "black" }}
+            >
+              PARTICIPATE TODAY!
+            </Button>
+          </Stack>
         </Box>
       </Container>
       {/* Large screen Motorcycle overlay */}
@@ -702,14 +738,14 @@ const LandingPage = () => {
             <Image
               src={motorcyclist2}
               style={{
-                width: "505px",
+                width: "400px",
                 objectFit: "contain",
                 height: "auto",
                 position: "absolute",
                 // transform: "translateY(20%)",
                 zIndex: "-1",
                 left: "-5px",
-                bottom: "30%",
+                bottom: "18%",
               }}
             />
           </Box>
@@ -721,45 +757,46 @@ const LandingPage = () => {
         maxWidth={false}
         sx={{
           //   width: "100%",
+          py: 24,
           display: "flex",
-
           height: "auto",
           justifyContent: "center",
           position: "relative",
           backgroundColor: theme.palette.primary.main,
-          paddingBottom: "150px",
           overflow: "hidden",
+          paddingLeft: "20px",
+          paddingRight: "20px",
         }}
       >
+        <Image
+          src={trophy}
+          style={{
+            position: isLargeScreen ? "absolute":'relative',
+            width: isLargeScreen ? "1000px" : "100%",
+            height: "auto",
+            objectFit: "contain",
+            right: "-255px",
+            bottom: "-400px",
+          }}
+        />
         <Box
           maxWidth="xl"
-          style={{
+          sx={{
             display: "flex",
-            gap: "40px",
             flexDirection: "column",
             alignItems: isLargeScreen ? "flex-start" : "center",
-            paddingLeft: "20px",
-            paddingRight: "20px",
-            position: "relative",
+            gap: 4
           }}
         >
-          <Image
-            src={trophy}
-            style={{
-              position: isLargeScreen && "absolute",
-              width: isLargeScreen ? "1000px" : "100%",
-              height: "auto",
-              objectFit: "contain",
-              right: "-255px",
-              bottom: "-600px",
-            }}
-          />
           <Typography
             variant="h2"
             fontWeight={900}
             style={{
               textAlign: isLargeScreen ? "left" : "center",
               paddingRight: isLargeScreen && "40%",
+              lineHeight: 1,
+              letterSpacing: -1.5,
+              fontWeight: 900,
             }}
           >
             JOIN THE BETZON CHALLENGE AND COMPETE FOR PRIZES IN OUR BI-MONTHLY
@@ -773,20 +810,18 @@ const LandingPage = () => {
           </Button>
         </Box>
       </Container>
+
       {/* Pricing container */}
       <Container
         disableGutters
         maxWidth={false}
         sx={{
-          //   width: "100%",
           display: "flex",
-
           height: "auto",
           justifyContent: "center",
           position: "relative",
-          backgroundColor: "black ",
-          paddingBottom: "150px",
           overflow: "hidden",
+          py: 12
         }}
       >
         <Box
@@ -913,8 +948,8 @@ const LandingPage = () => {
             alignItems: "center",
             display: "flex",
             flexDirection: "column",
-            paddingLeft:"30px",
-            paddingRight:"30px"
+            paddingLeft: "30px",
+            paddingRight: "30px"
           }}
         >
           <Typography
@@ -938,7 +973,7 @@ const LandingPage = () => {
               paddingTop: "80px",
               paddingLeft: isLargeScreen && "20px",
               paddingRight: isLargeScreen && "20px",
-              width:"100%"
+              width: "100%"
             }}
           >
             <Accordion
@@ -1050,8 +1085,8 @@ const LandingPage = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              paddingTop:"80px",
-              gap:'20px'
+              paddingTop: "80px",
+              gap: '20px'
             }}
           >
             <Typography
@@ -1069,8 +1104,8 @@ const LandingPage = () => {
               Contact our support team for further assistance.
             </Typography>
             <Button variant="outlined" style={{ borderColor: "white" }}>
-                Contact
-              </Button>
+              Contact
+            </Button>
           </Box>
         </Box>
       </Container>

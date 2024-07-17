@@ -185,7 +185,6 @@ const MainLayout = ({ children }) => {
                 {children}
                 {/* <Bulge /> */}
                 <LandingFooter />
-            {/* </Container> */}
         </>
     );
 };

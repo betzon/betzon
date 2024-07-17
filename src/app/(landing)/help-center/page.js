@@ -90,49 +90,53 @@ const HelpCenterPage = () => {
     };
 
     return (
-        <Stack
-            spacing={isMediumUp ? 8 : 4}
-            sx={{
-                position: 'relative',
-                minHeight: '100vh'
-            }}>
+        <Container>
+            <Stack
+                spacing={isMediumUp ? 8 : 4}
+                sx={{
+                    position: 'relative',
+                    minHeight: '100vh'
+                }}>
 
-            <Box style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                //border: `3px solid ${theme.palette.primary.main}`,
-                backgroundColor: theme.palette.primary.main, // Adjust the alpha value for darkness
-                position: 'relative',
-                height: '350px',
-                marginTop: isMediumUp ? '96px' : '72px',
-                borderRadius: '20px'
-            }}>
-                <Typography variant={isMediumUp ? 'h2' : 'h3'} sx={{ fontWeight: 700 }}>Help Center</Typography>
-                <StyledTabs
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="styled tabs example"
-                >
-                    {
-                        //<StyledTab label="Rules" />
-                    }
-                    <StyledTab label=" Support" />
-                </StyledTabs>
-            </Box>
+                <Box style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    //border: `3px solid ${theme.palette.primary.main}`,
+                    backgroundColor: theme.palette.primary.main, // Adjust the alpha value for darkness
+                    position: 'relative',
+                    height: '350px',
+                    marginTop: isMediumUp ? '96px' : '72px',
+                    borderRadius: '20px'
+                }}>
+                    <Typography
+                        variant={isMediumUp ? 'h2' : 'h3'}
+                        sx={{
+                            fontWeight: 900
+                        }}>
+                        HELP CENTER
+                    </Typography>
+                    <StyledTabs
+                        value={value}
+                        onChange={handleChange}
+                        aria-label="styled tabs example"
+                    >
+                        <StyledTab label="RULES" />
+                        <StyledTab label="CONTACT" />
+                    </StyledTabs>
+                </Box>
 
-            <Box sx={{
-                //background: 'green'
-            }}>
-                <TabPanel value={value} index={0} >
-                    <Grid data={helpCenterContent} />
-                </TabPanel>
-                <TabPanel value={value} index={1} >
-                    <ContactSupport />
-                </TabPanel>
-            </Box>
+                <Box>
+                    <TabPanel value={value} index={0} >
+                        <Grid data={helpCenterContent} />
+                    </TabPanel>
+                    <TabPanel value={value} index={1} >
+                        <ContactSupport />
+                    </TabPanel>
+                </Box>
 
-        </Stack>
+            </Stack>
+        </Container>
     )
 }
 

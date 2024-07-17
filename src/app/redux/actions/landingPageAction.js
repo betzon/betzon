@@ -70,11 +70,12 @@ export const helpCenterContactSupport = (userInfo) => {
                 email: userInfo.email,
                 message: userInfo.message
             };
-            const response = await api.post(`/api/landing/help-center/contact-support`, update)
+            const response = await api.post(`landing/help-center/contact-support`, update)
             console.log(response)
             dispatch(setHelpCenterContactSupportSuccess());
         } catch (error) {
             console.log('ERROR HERE')
+            console.error(error);
             console.error(error.response.data.message);
             dispatch(setHelpCenterContactSupportFailure(error.response.data.message));
 

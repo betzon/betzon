@@ -1,17 +1,17 @@
 import axios from 'axios'
 
-axios.interceptors.request.use(
-    config => {
-        config.baseURL = 'https://api.betzon.com/api/v1/'
-        //config.baseURL = 'http://localhost:2040/api/v1/'
-        return config
+const api = axios.create({
+    // baseURL: 'http://localhost:2040/api/v1/',
+    baseURL: 'https://api.betzon.com/api/v1/',
+    timeout: 50000, 
+    headers: {
+        'Content-Type': 'application/json',
+        platform: 'web',
+        'x-api-key': 'mb52ea2d-4567-4956-9d19-35a7e75a2c17',
     },
-    error => {
-        Promise.reject(error)
-    }
-)
+});
 
-axios.interceptors.response.use(function (response) {
+api.interceptors.response.use(function (response) {
     // Do something with response data
     return response
 }, function (error) {
@@ -26,4 +26,4 @@ axios.interceptors.response.use(function (response) {
 })
 
 
-export default axios  
+export default api  

@@ -25,10 +25,10 @@ const pages = [
         title: 'Home',
         path: '/'
     },
-    // {
-    //     title: 'Help Center',
-    //     path: '/help-center'
-    // }
+    {
+        title: 'Help Center',
+        path: '/help-center'
+    }
     /*
     ,
     {
@@ -134,8 +134,6 @@ const MainNavigation = () => {
                         */
                     }
 
-
-
                     <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -151,8 +149,6 @@ const MainNavigation = () => {
                             <MenuIcon />
                         </IconButton>
                     </Box>
-
-
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: 2 }}>
                         {pages.map((page, index) => (
@@ -194,7 +190,9 @@ const MainNavigation = () => {
                         }
 
 
-                        <Button
+                        {
+                            /*
+<Button
                             onClick={() => router.push('#waitlist')}
                             sx={{
                                 marginLeft: '12px',
@@ -203,6 +201,8 @@ const MainNavigation = () => {
                             variant='contained'>
                             Join Waitlist
                         </Button>
+                            */
+                        }
                     </Box>
 
                 </Toolbar>
