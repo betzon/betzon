@@ -542,7 +542,7 @@ const LandingPage = () => {
             {isLargeScreen && (
               <Box
                 style={{
-                  width: "400px",
+                  width: "450px",
                   justifyContent: "center",
                   alignItems: "center",
                   display: "flex",
@@ -771,7 +771,7 @@ const LandingPage = () => {
         <Image
           src={trophy}
           style={{
-            position: isLargeScreen ? "absolute":'relative',
+            position: isLargeScreen ? "absolute" : 'relative',
             width: isLargeScreen ? "1000px" : "100%",
             height: "auto",
             objectFit: "contain",
