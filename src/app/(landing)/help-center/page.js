@@ -122,7 +122,9 @@ const HelpCenterPage = () => {
                         aria-label="styled tabs example"
                     >
                         <StyledTab label="RULES" />
-                        <StyledTab label="CONTACT" />
+                        {
+                            // <StyledTab label="CONTACT" />
+                        }
                     </StyledTabs>
                 </Box>
 
@@ -130,9 +132,13 @@ const HelpCenterPage = () => {
                     <TabPanel value={value} index={0} >
                         <Grid data={helpCenterContent} />
                     </TabPanel>
+                    {
+                        /*
                     <TabPanel value={value} index={1} >
                         <ContactSupport />
                     </TabPanel>
+                        */
+                    }
                 </Box>
 
             </Stack>
