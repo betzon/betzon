@@ -394,6 +394,7 @@ const LandingPage = () => {
           />
         </OutlinedTitledBox>
       </Container>
+
       
       {/* Large screen BetzOn Phone overlay */}
       {isLargeScreen && (
