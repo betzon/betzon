@@ -20,7 +20,6 @@ const LandingFooter = () => {
             title: 'Home',
             path: '/'
         },
-
         {
             title: 'Privacy Policy',
             path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=bb5d82f6-4a0d-4019-a48d-2add7721ba10',
