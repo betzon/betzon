@@ -25,6 +25,7 @@ const ItemUIBox = ({ src }) => {
         >
             <Image
                 src={src}
+                layout="fill" // Ensures image takes full width and height
                 objectFit="cover" // Ensures image fills parent while maintaining aspect ratio
                 alt="Item"
             />
