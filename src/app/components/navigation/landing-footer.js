@@ -13,6 +13,7 @@ import logo from "../../assets/mb.png"
 
 const LandingFooter = () => {
     const theme = useTheme()
+    
     //const icons = [<FacebookIcon />, <InstagramIcon />, <YouTubeIcon />]
     const icons = []
     const footerItems = [
