@@ -6,7 +6,7 @@ import React from 'react'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image'
 import logo from "../../assets/mb.png"
@@ -25,7 +25,7 @@ const LandingFooter = () => {
             path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=bb5d82f6-4a0d-4019-a48d-2add7721ba10',
         },
         {
-            title: 'End User Liscense Agreement',
+            title: 'End User License Agreement',
             path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=083bd9f8-a41c-4f37-8dbc-efbccbe1242a',
         },
         {
@@ -148,7 +148,7 @@ const LandingFooter = () => {
                                         justifyContent: 'flex-start',
                                         gap: '16px'
                                     }}>
-                                    <LocalPhoneIcon />
+                                    <EmailIcon />
                                     <Typography>info@betzon.com</Typography>
                                 </ListItemButton>
 

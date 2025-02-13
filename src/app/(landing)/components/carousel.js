@@ -14,7 +14,7 @@ const ItemUIBox = ({ src }) => {
                 height: { xs: 250, sm: 350, md: 400, lg: 500, xl: 500 },
                 width: { xs: 250, sm: 350, md: 400, lg: 500, xl: 500 },
                 position: 'relative',
-                bgcolor: 'blue',
+                bgcolor: theme.palette.dark.dark,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -25,9 +25,12 @@ const ItemUIBox = ({ src }) => {
         >
             <Image
                 src={src}
+                style={{ objectFit: 'cover' }}
                 layout="fill" // Ensures image takes full width and height
                 objectFit="cover" // Ensures image fills parent while maintaining aspect ratio
                 alt="Item"
+                priority
+                placeholder="blur"
             />
         </Box>
     );
@@ -54,8 +57,8 @@ const Item = ({ data }) => {
 const HowToCarousel = ({ data, showButton = false, interval = 3000 }) => {
     return (
         <Box sx={{
-            width: { xs: "100%", sm: 500, md: 500, lg: 600, xl: 700 },
-            minHeight: { xs: 500, sm: 500, md: 500, lg: 600, xl: 700 }
+            width: { xs: "100%", sm: 500, md: 500, lg: 650, xl: 750 },
+            minHeight: { xs: 500, sm: 500, md: 500, lg: 650, xl: 750 }
         }}>
             <Carousel
                 interval={interval}
