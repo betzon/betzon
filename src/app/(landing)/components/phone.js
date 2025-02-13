@@ -1,3 +1,4 @@
+"use client"
 import MobileBottomNavigation from '@/app/components/navigation/bottom-navigation'
 import { useTheme } from '@emotion/react'
 import { BottomNavigation, BottomNavigationAction, Box, Button, IconButton, Typography, Divider, Tooltip } from '@mui/material'

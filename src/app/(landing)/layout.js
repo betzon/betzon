@@ -124,10 +124,6 @@ const MainLayout = ({ children }) => {
     return (
         <>
             {
-                //<AlertModal />
-            }
-            {
-                //!shouldShowLoader ?
                 !shouldShowLoader ?
                     <div
                         id='loader-body'
@@ -143,23 +139,6 @@ const MainLayout = ({ children }) => {
                         }}>
 
                         {
-                            /*
-                            <Box
-                            id='logo-container'
-                            sx={{
-                                border: `14px solid ${theme.palette.primary.main}`,
-                                background: "black",
-                                borderRadius: '24px 24px 24px 0',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                opacity: 0
-                            }}>
-                            {
-                                <Image id='logo' src={logo} height={144} />
-                            }
-                        </Box>
-                        */
                             <Box
                                 id='logo-container'
 
@@ -170,17 +149,9 @@ const MainLayout = ({ children }) => {
                             </Box>
                         }
                     </div >
-
                     :
-
                     ""
             }
-            {/* <Container maxWidth="xl" disableGutters sx={{
-                paddingTop: 0,
-                bgcolor: 'transparent',
-                boxSizing: 'border-box',
-                overflow: 'show'
-            }}> */}
             <MainNavigation />
             {children}
             {/* <Bulge /> */}
