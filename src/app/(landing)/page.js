@@ -325,7 +325,7 @@ const LandingPage = () => {
               lineHeight: 1
             }}
           >
-            DAILY SPORTS FANTASY'S
+            DAILY SPORTS FANTASY&apos;S
           </Typography>
           <Typography
             variant="h1"
@@ -418,7 +418,7 @@ const LandingPage = () => {
               textAlign: "center"
             }}
           >
-            Betzon's Fan-vs-Fan Daily Fantasy Sports app is lightning quick and easy to use. You create an account, add funds, and start playing in less than 1 minute. Here’s how:
+            Betzon&apos;s Fan-vs-Fan Daily Fantasy Sports app is lightning quick and easy to use. You create an account, add funds, and start playing in less than 1 minute. Here&apos;s how:
           </Typography>
         </Stack>
         <HowToCarousel data={howToSteps} showButton />
@@ -499,8 +499,8 @@ const LandingPage = () => {
               textAlign: "center"
             }}
           >
-            Betzon's social features can be accessed from anywhere in the United States, however not all games are available to be played in every US state.
-            Bets's real-money games can be played in the following states:
+            Betzon&apos;s social features can be accessed from anywhere in the United States, however not all games are available to be played in every US state.
+            Bets&apos;s real-money games can be played in the following states:
           </Typography>
         </Stack>
         <StateList states={states} />
