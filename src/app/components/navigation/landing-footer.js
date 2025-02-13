@@ -20,10 +20,23 @@ const LandingFooter = () => {
             title: 'Home',
             path: '/'
         },
-        // {
-        //     title: 'Help Center',
-        //     path: '/help-center'
-        // }
+
+        {
+            title: 'Privacy Policy',
+            path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=bb5d82f6-4a0d-4019-a48d-2add7721ba10',
+        },
+        {
+            title: 'End User Liscense Agreement',
+            path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=083bd9f8-a41c-4f37-8dbc-efbccbe1242a',
+        },
+        {
+            title: 'Terms of Use',
+            path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=083bd9f8-a41c-4f37-8dbc-efbccbe1242a',
+        },
+        {
+            title: 'Acceptable Use Policy',
+            path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=5f2223cf-7007-4c12-93ad-b8e5acbf2155',
+        },
     ]
 
     const handleEmailClick = () => {
@@ -74,7 +87,7 @@ const LandingFooter = () => {
                         <Image src={logo} height={100} />
 
                         <Stack spacing={2}>
-                            <Typography variant='h6' sx={{ fontWeight: 700 }}>Links</Typography>
+                            <Typography variant='h6' sx={{ fontWeight: 700 }}>Help Center</Typography>
 
                             <Stack spacing={1}>
                                 {

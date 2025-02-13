@@ -35,7 +35,7 @@ const Item = ({ data }) => {
                 {
                     data.items.map((item, index) => (
                         <ListItemButton key={index} onClick={() => item?.type === "external" ? window.open(item.path, "_open") : router.push(`/help-center${item.path}`)}>
-                            <ListItemText primary={item.title} />
+                            <ListItemText primary={item.title}/>
                         </ListItemButton>
                     ))
                 }

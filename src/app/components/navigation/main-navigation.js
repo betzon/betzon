@@ -56,13 +56,6 @@ const MainNavigation = () => {
         router.push(path)
     }
 
-    const redirectToAnotherSite = () => {
-        window.open('https://app.betzon.com/signup', '_blank');
-    };
-    const redirectToAnotherSiteLogin = () => {
-        window.open('https://app.betzon.com', '_blank');
-    };
-
     return (
         <AppBar position="absolute" sx={{
             background: 'black',
@@ -99,40 +92,20 @@ const MainNavigation = () => {
                         }
                         <Image src={logo} height={40} />
 
-                        <Link href='/' className='no-link-decor'>
-                            <Typography
-                                onClick={() => routeHandler('/')}
-                                variant="h6"
-                                noWrap
-                                sx={{
-                                    ml: 1,
-                                    fontWeight: 700,
-                                    color: 'white',
-                                    letterSpacing: -1
-                                }}
-                            >
-                                BetzOn
-                            </Typography>
-                        </Link>
+                        <Typography
+                            variant="h4"
+                            noWrap
+                            fontSize={24}
+                            fontWeight={900}
+                            sx={{
+                                ml: 1,
+                                color: 'white'
+                            }}
+                        >
+                            BETZON
+                        </Typography>
 
                     </Box>
-                    {
-                        /*
-                    
-                                        <Typography
-                                            variant="h5"
-                                            sx={{
-                                                ml: 1,
-                                                display: { xs: 'flex', md: 'none' },
-                                                color: 'inherit',
-                                                fontWeight: 700,
-                                                flexGrow: 1,
-                                            }}
-                                        >
-                                            BETZON
-                                        </Typography>
-                        */
-                    }
 
                     <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

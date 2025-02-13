@@ -11,10 +11,25 @@ export const helpCenterContent = [
         icon: <HowToRegIcon fontSize='large' />,
         items: [
             {
-                title: 'PRIVATE POLICY',
+                title: 'Privacy Policy',
                 path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=bb5d82f6-4a0d-4019-a48d-2add7721ba10',
                 type: 'external'
-            }
+            },
+            {
+                title: 'End User Liscense Agreement',
+                path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=083bd9f8-a41c-4f37-8dbc-efbccbe1242a',
+                type: 'external'
+            },
+            {
+                title: 'Terms of Use',
+                path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=083bd9f8-a41c-4f37-8dbc-efbccbe1242a',
+                type: 'external'
+            },
+            {
+                title: 'Acceptable Use Policy',
+                path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=5f2223cf-7007-4c12-93ad-b8e5acbf2155',
+                type: 'external'
+            },
         ]
     }
 ]

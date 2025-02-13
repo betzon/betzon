@@ -83,7 +83,7 @@ const HelpCenterPage = () => {
 
     const isMediumUp = useMediaQuery(theme.breakpoints.up('md'));
 
-    const [value, setValue] = useState(1);
+    const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -102,8 +102,7 @@ const HelpCenterPage = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    //border: `3px solid ${theme.palette.primary.main}`,
-                    backgroundColor: theme.palette.primary.main, // Adjust the alpha value for darkness
+                    backgroundColor: theme.palette.primary.main,
                     position: 'relative',
                     height: '350px',
                     marginTop: isMediumUp ? '96px' : '72px',

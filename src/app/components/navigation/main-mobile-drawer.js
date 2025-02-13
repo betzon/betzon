@@ -25,6 +25,10 @@ const pages = [
         title: 'Home',
         path: '/'
     },
+    {
+        title: 'Help Center',
+        path: '/help-center'
+    }
     // {
     //     title: 'Help Center',
     //     path: '/help-center'
@@ -52,13 +56,6 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
             toggleDrawer()
         }
     }, [isLargeWidth]);
-
-    const redirectToAnotherSite = () => {
-        window.open('https://app.betzon.com/signup', '_blank');
-    };
-    const redirectToAnotherSiteLogin = () => {
-        window.open('https://app.betzon.com', '_blank');
-    };
 
     const list = (anchor) => (
 
@@ -171,13 +168,13 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
 
                 <ListItem >
                     <Button
-                        onClick={() => router.push('#waitlist')}
+                        //onClick={() => router.push('#waitlist')}
                         sx={{
                             width: '100%',
                             fontWeight: 700
                         }}
                         variant='contained'>
-                        Join Waitlist
+                        DOWNLOAD NOW
                     </Button>
                 </ListItem>
 

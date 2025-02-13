@@ -44,7 +44,17 @@ import { display, positions, width } from "@mui/system";
 import Pricing from "../components/new-landing-page/Pricing";
 import { ArrowDropDownIcon } from "@mui/x-date-pickers";
 
+import ui7 from "../assets/ux/ui-7.jpg";
+import ui6 from "../assets/ux/ui-6.jpg";
+import ui5 from "../assets/ux/ui-5.jpg";
+import ui4 from "../assets/ux/ui-4.jpg";
+import ui3 from "../assets/ux/ui-3.jpg";
+import ui2 from "../assets/ux/ui-2.jpg";
+import ui1 from "../assets/ux/uib-1.jpg";
+
 import { Inter } from 'next/font/google'
+import HowToCarousel from "./components/carousel";
+import StateList from "./components/stateList";
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -98,6 +108,73 @@ const LandingPage = () => {
   const [isScrollingFromHandleChange, setIsScrollingFromHandleChange] =
     useState(false);
   const [isSmoothScrollLoaded, setIsSmoothScrollLoaded] = useState(false);
+
+  const states = [
+    "Alaska",
+    "California",
+    "Florida",
+    "Georgia",
+    "Illinois",
+    "Kansas",
+    "Kentucky",
+    "Minnesota",
+    "Nebraska",
+    "New Mexico",
+    "North Carolina",
+    "North Dakota",
+    "Oklahoma",
+    "Oregon",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Texas",
+    "Utah",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming",
+    "District of Columbia"
+  ];
+
+  const howToSteps = [
+    {
+      src: ui5,
+      name: "STEP 1: REGISTER ACCOUNT",
+      description: "We legally need to verify your identity before you play. We will need some personal detials such as your age and address. This is to ensure the safety of you and everyone who uses Betzon!"
+    },
+    {
+      src: ui1,
+      name: "STEP 2: DEPOSIT FUNDS",
+      description: "You can start playing against other users on Betzon with as little as $3. Make a fast and more importantly SECURE deposit using your debit or credit card and start playing right away!"
+    },
+    {
+      src: ui2,
+      name: "STEP 3: JOIN/CREATE/SEND A CONTEST",
+      description: "Now it's time to use your skill and compete against other users on the Betzon by joining their contest or create your own to post/send to another user!"
+    },
+    {
+      src: ui7,
+      name: "STEP 4: WIN!",
+      description: ""
+    }
+  ]
+
+  const socialFeatures = [
+    {
+      src: ui4,
+      name: "ADD A CAPTION TO YOUR CONTEST",
+      description: "Talk smack, hype up your favorite pick, hate on your least favorite player when you create a contest. Let people know your thoughts!"
+    },
+    {
+      src: ui3,
+      name: "COMMENT ON OTHER CONTESTS",
+      description: "Have something to say about someones contest? You better let them know!"
+    },
+    {
+      src: ui6,
+      name: "SEND MESSAGES/CONTEST TO USERS AND YOUR FRIENDS",
+      description: "Got something to settle with a specific user? Send them a message or a contest!"
+    }
+  ]
 
   // Initialize SmoothScroll
 
@@ -242,536 +319,199 @@ const LandingPage = () => {
           maxWidth="xl"
           spacing={2}>
           <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 900,
+              lineHeight: 1
+            }}
+          >
+            DAILY SPORTS FANTASY'S
+          </Typography>
+          <Typography
             variant="h1"
             sx={{
               fontWeight: 900,
-              lineHeight: 1,
-              letterSpacing: -1.5
+              lineHeight: 1
             }}
           >
-            UNLIMITED FAN-TO-FAN WAGERING FOR $9.99 PER MONTH
+            ULTIMATE FAN-VS-FAN EXPERIENCE.
           </Typography>
-          <Button variant="contained">CREATE AN ACCOUNT</Button>
+          <Button variant="contained">DOWNLOAD ON APPLE</Button>
         </Stack>
       </Container>
+
+
       {/* See pricing container */}
       <Container
-        disableGutters
-        maxWidth={false}
         sx={{
-          width: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          height: isLargeScreen ? "590px" : "460px",
+          pt: 6
         }}
       >
-        {/* Background images */}
-        <Box
-          disableGutters
+        <Stack
           sx={{
-            display: "flex",
-            width: "100%",
-            height: isLargeScreen ? "590px" : "460px",
-            justifyContent: isLargeScreen ? "space-between" : "flex-end",
-            overflow: "hidden",
-            position: "absolute",
+            marginBottom: -10
           }}
-        >
-          <Image
-            src={motorcyclist1}
-            style={{
-              objectFit: "cover",
-              width: "auto",
-              height: "100%",
-              transform: "translateX(-40%)",
-              marginRight: "-100%",
-              display: isLargeScreen ? "block" : "none",
-            }}
-          />
-          <Image
-            src={basketball1}
-            style={{
-              objectFit: "contain",
-              width: "auto",
-              height: "148%",
-              transform: "translateX(47%)",
-              marginLeft: "-100%",
-            }}
-          />
-        </Box>
-        {/* See pricing text */}
-        <Box
-          disableGutters
-          maxWidth="md"
-          sx={{
-            display: "flex",
+          direction={"column"}
+          spacing={-1}>
+          {
+            ["NO JUICE", "NO VIG", "NO HOUSE", "ALL FAN-VS-FAN"]?.map((item, index) => (
+              <Typography
+                key={index}
+                variant="h1"
+                fontWeight={900}
+                sx={{
+                  fontWeight: 900,
+                  textAlign: "center"
+                }}
+              >
+                {item}
+              </Typography>
+            ))
+          }
+        </Stack>
+        <Image
+          src={sittingglasses}
+          style={{
             width: "100%",
-            height: isLargeScreen ? "590px" : "460px",
-            justifyContent: "space-between",
-            overflow: "hidden",
-            position: "absolute",
-            alignItems: isLargeScreen ? "center" : "flex-start",
-            justifyContent: "center",
-            flexDirection: "column",
-            gap: "15px",
-            paddingLeft: isLargeScreen ? 0 : "15px",
-            paddingRight: isLargeScreen ? 0 : "30%",
+            objectFit: "contain",
+            height: "auto",
           }}
-        >
-          {isLargeScreen && (
-            <Image src={logo} style={{ height: "69px", width: "auto" }} />
-          )}
-
-          <Typography
-            variant="h2"
-            fontWeight={900}
-            sx={{
-              fontWeight: 900,
-              lineHeight: 1,
-              letterSpacing: -1.5,
-              textAlign: isLargeScreen ? "center" : "left"
-            }}
-          >
-            JOIN A COMMUNITY OF FANS ON BETZON
-          </Typography>
-          <Typography
-            variant="h5"
-            fontWeight={500}
-            style={{ textAlign: isLargeScreen ? "center" : "left" }}
-          >
-            BetzOn is the ultimate place for wagers on NASCAR, FormulaOne,
-            Motocross/Supercross, MotoGP, and MLB. Sign up and start winning!
-          </Typography>
-          <Button variant="contained" style={{ marginTop: 15 }}>
-            SEE PRICING
-          </Button>
-        </Box>
+        />
       </Container>
+
       <Container
-        disableGutters
-        maxWidth="xl"
         sx={{
-          width: "100%",
+          py: 6,
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          position: "relative",
-          gap: isLargeScreen ? "40px" : "20px",
-          padding: isLargeScreen ? "30px" : "20px",
-          flexDirection: isLargeScreen ? "row" : "column",
+          background: `linear-gradient(180deg, ${theme.palette.primary.main} 0%, #000 100%)`,
         }}
       >
-        <OutlinedTitledBox text="DIRECT BETTING, NO MIDDLEMAN.">
-          <Image
-            src={sittingglasses}
-            style={{
-              width: "100%",
-              objectFit: "contain",
-              height: "auto",
-              position: isLargeScreen ? "relative" : "static",
-              left: isLargeScreen ? "-30px" : "auto",
-              bottom: isLargeScreen ? "-20px" : "auto",
-              marginTop: isLargeScreen ? "-120px" : "0",
-            }}
-          />
-        </OutlinedTitledBox>
-        <OutlinedTitledBox text="FULL WINNINGS, ZERO FEES.">
-          <Image
-            src={smilinglookingdown}
-            style={{
-              width: "100%",
-              objectFit: "contain",
-              height: "auto",
-              position: isLargeScreen ? "relative" : "static",
-              left: isLargeScreen ? "-40px" : "auto",
-              bottom: isLargeScreen ? "-30px" : "auto",
-              marginTop: isLargeScreen ? "-120px" : "0",
-            }}
-          />
-        </OutlinedTitledBox>
-      </Container>
-
-      
-      {/* Large screen BetzOn Phone overlay */}
-      {isLargeScreen && (
-        <Container
-          maxWidth={false}
-          style={{
-            position: "absolute",
-            zIndex: "1",
-            paddingLeft: "0",
-            paddingRight: "0",
-            pointerEvents: "none",
-          }}
-        >
-          <Box
-            maxWidth="xl"
-            style={{
-              margin: "auto",
-              width: "100%",
-              height: "1300px",
-              zIndex: "1",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              display: "flex",
-              transform: "translateY(-15%)",
-              overflow: "hidden"
-            }}
-          >
-            {isLargeScreen && (
-              <Box
-                style={{
-                  width: "450px",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  display: "flex",
-                  overflow: "hidden",
-                  transform: "translateX(-15%)",
-                  position: "absolute",
-                }}
-              >
-                <Image
-                  src={betzonphone2}
-                  style={{
-                    width: "200%",
-                    height: "auto",
-                    objectFit: "cover",
-                  }}
-                />
-              </Box>
-            )}
-            <Image
-              src={car1}
-              style={{
-                width: "600px",
-                objectFit: "contain",
-                height: "auto",
-                position: "absolute",
-                transform: "translateX(-30%) translateY(60%) scaleX(-1)",
-                zIndex: "-1",
-                left: "55%",
-              }}
-            />
-            <Image
-              src={baseball1}
-              style={{
-                width: isLargeScreen ? "400px" : "240px",
-                objectFit: "contain",
-                height: "auto",
-                position: "absolute",
-                transform: "translateX(10%) translateY(100%) scaleX(-1)",
-                zIndex: "1",
-              }}
-            />
-          </Box>
-        </Container>
-      )}
-      {/* Sports list container + small screen images */}
-      <Container
-        disableGutters
-        maxWidth={false}
-        sx={{
-          //   width: "100%",
-          display: "flex",
-
-          height: "auto",
-          justifyContent: "center",
-          position: "relative",
-          background: `linear-gradient(180deg, #000 0%, ${theme.palette.primary.main}  100%)`,
-          paddingBottom: "150px",
-          overflow: "hidden",
-        }}
-      >
-        {!isLargeScreen && (
-          <>
-            <Image
-              src={car1}
-              style={{
-                width: "200px",
-                objectFit: "contain",
-                height: "auto",
-                position: "absolute",
-                transform: "translateX(30%) scaleX(-1)",
-                bottom: "350px",
-
-                right: "0",
-              }}
-            />
-            <Image
-              src={baseball1}
-              style={{
-                width: "240px",
-                objectFit: "contain",
-                height: "auto",
-                position: "absolute",
-                transform: "translateX(-15%)",
-                left: "0",
-                bottom: "50px",
-              }}
-            />
-          </>
-        )}
-        <Box
-          disableGutters
-          maxWidth="xl"
-          style={{
-            width: "100%",
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            height: "auto",
-            alignItems: isLargeScreen ? "flex-start" : "center",
-            textAlign: "center",
-            paddingLeft: "20px",
-            paddingRight: isLargeScreen ? "600px" : "20px",
-            gap: "10px",
-            zIndex: 1,
-            paddingTop: 125
-          }}
-        >
-          <Typography
-            variant="h2"
-            style={{
-              textAlign: isLargeScreen ? "left" : "center",
-              lineHeight: 1,
-              letterSpacing: -1.5,
-              fontWeight: 900,
-            }}
-          >
-            WHY SETTLE FOR WATCHING WHEN YOU CAN BE WINNING?
-          </Typography>
-          <Typography
-            variant="p"
-            fontWeight={500}
-            style={{ textAlign: isLargeScreen ? "left" : "center" }}
-          >
-            Wager on sports you love, transforming every match, every race, and
-            every game into an electrifying betting experience. Explore our
-            sports selection
-          </Typography>
-          <Stack
-            spacing={2}
-            justifyContent={"flex-start"}
-            alignItems={"flex-start"}
-            sx={{
-              marginTop: 12
-            }}>
-            <Typography
-              variant="h2"
-              fontWeight={900}
-              style={{
-                textAlign: isLargeScreen ? "left" : "center",
-                lineHeight: 1.25,
-                letterSpacing: -1.5,
-                fontWeight: 900,
-              }}
-            >
-              MLB
-              <br />
-              NBA
-              <br />
-              MOTOCROSS
-              <br />
-              FORMULA1
-              <br />
-              MOTOGP
-              <br />
-              NASCAR
-            </Typography>
-            <Button
-              variant="contained"
-              style={{ backgroundColor: "white", color: "black" }}
-            >
-              PARTICIPATE TODAY!
-            </Button>
-          </Stack>
-        </Box>
-      </Container>
-      {/* Large screen Motorcycle overlay */}
-      {isLargeScreen && (
-        <Container
-          maxWidth={false}
-          style={{
-            position: "absolute",
-            zIndex: "1",
-            paddingLeft: "0",
-            paddingRight: "0",
-            pointerEvents: "none",
-          }}
-        >
-          <Box
-            maxWidth="xl"
-            style={{
-              margin: "auto",
-              width: "100%",
-              height: "1300px",
-              zIndex: "1",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              display: "flex",
-              transform: "translateY(-15%)",
-              overflow: "hidden",
-            }}
-          >
-            <Image
-              src={motorcyclist2}
-              style={{
-                width: "400px",
-                objectFit: "contain",
-                height: "auto",
-                position: "absolute",
-                // transform: "translateY(20%)",
-                zIndex: "-1",
-                left: "-5px",
-                bottom: "18%",
-              }}
-            />
-          </Box>
-        </Container>
-      )}
-      {/* View live challenges container */}
-      <Container
-        disableGutters
-        maxWidth={false}
-        sx={{
-          //   width: "100%",
-          py: 24,
-          display: "flex",
-          height: "auto",
-          justifyContent: "center",
-          position: "relative",
-          backgroundColor: theme.palette.primary.main,
-          overflow: "hidden",
-          paddingLeft: "20px",
-          paddingRight: "20px",
-        }}
-      >
-        <Image
-          src={trophy}
-          style={{
-            position: isLargeScreen ? "absolute" : 'relative',
-            width: isLargeScreen ? "1000px" : "100%",
-            height: "auto",
-            objectFit: "contain",
-            right: "-255px",
-            bottom: "-400px",
-          }}
-        />
-        <Box
-          maxWidth="xl"
+        <Stack
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: isLargeScreen ? "flex-start" : "center",
-            gap: 4
-          }}
-        >
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
           <Typography
-            variant="h2"
+            variant="h1"
             fontWeight={900}
-            style={{
-              textAlign: isLargeScreen ? "left" : "center",
-              paddingRight: isLargeScreen && "40%",
-              lineHeight: 1,
-              letterSpacing: -1.5,
+            sx={{
               fontWeight: 900,
+              textAlign: "center"
             }}
           >
-            JOIN THE BETZON CHALLENGE AND COMPETE FOR PRIZES IN OUR BI-MONTHLY
-            CONTESTS
+            HOW TO PLAY
           </Typography>
-          <Button
-            variant="contained"
-            style={{ backgroundColor: "white", color: "black" }}
+          <Typography
+            variant="body1"
+            fontWeight={900}
+            sx={{
+              fontWeight: 900,
+              textAlign: "center"
+            }}
           >
-            VIEW LIVE CHALLENGES
-          </Button>
-        </Box>
+            Betzon's Fan-vs-Fan Daily Fantasy Sports app is lightning quick and easy to use. You create an account, add funds, and start playing in less than 1 minute. Here’s how:
+          </Typography>
+        </Stack>
+        <HowToCarousel data={howToSteps} showButton />
+        <Button
+          size="large"
+          variant="contained">
+          DOWNLOAD NOW
+        </Button>
       </Container>
 
-      {/* Pricing container */}
       <Container
-        disableGutters
-        maxWidth={false}
         sx={{
+          py: 6,
           display: "flex",
-          height: "auto",
+          flexDirection: "column",
           justifyContent: "center",
-          position: "relative",
-          overflow: "hidden",
-          py: 12
+          alignItems: "center",
+          textAlign: "center",
+          background: "#000",
         }}
       >
-        <Box
-          maxWidth="xl"
-          style={{
-            display: "flex",
-            gap: "20px",
-            flexDirection: "column",
-            // alignItems: "flex-start",
-            position: "relative",
-          }}
-        >
-          <Box
-            maxWidth="xl"
-            style={{
-              display: "flex",
-              justifyContent: isLargeScreen ? "flex-end" : "space-between",
-              width: "100%",
-              position: "relative",
-              padding: isLargeScreen ? "32px 0" : "16px 0",
+        <Stack
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 2
+          }}>
+          <Typography
+            variant="h1"
+            fontWeight={900}
+            sx={{
+              fontWeight: 900,
+              textAlign: "center"
             }}
           >
-            <Typography
-              variant="h2"
-              fontWeight={900}
-              sx={{
-                position: isLargeScreen ? "absolute" : "relative",
-                left: isLargeScreen && "50%",
-                transform:
-                  isLargeScreen && "translateX(-50%) translateY(-16px)",
-
-                textAlign: "center",
-              }}
-            >
-              PRICING
-            </Typography>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <Typography
-                variant="p"
-                fontWeight={900}
-                style={{ textAlign: isLargeScreen ? "left" : "center" }}
-              >
-                MONTHLY
-              </Typography>
-              <Switch />
-            </div>
-          </Box>
-
-          <Box
-            style={{
-              display: "flex",
-              gap: "20px",
-              flexDirection: isLargeScreen ? "row" : "column",
-              position: "relative",
-            }}
-          >
-            {subscriptions.map((item) => (
-              <Pricing pricing={item} />
-            ))}
-          </Box>
-        </Box>
+            SOCIAL FEATURES
+          </Typography>
+        </Stack>
+        <HowToCarousel data={socialFeatures} interval={4000} />
+        <Button
+          size="large"
+          variant="contained">
+          DOWNLOAD NOW
+        </Button>
       </Container>
+
+      <Container
+        sx={{
+          py: 6,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          background: "#000",
+          gap: 4
+        }}
+      >
+        <Stack
+          sx={{
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+          <Typography
+            variant="h1"
+            fontWeight={900}
+            sx={{
+              fontWeight: 900,
+              textAlign: "center"
+            }}
+          >
+            AVAILABLE IN 23 STATES
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontWeight: 900,
+              textAlign: "center"
+            }}
+          >
+            Betzon's social features can be accessed from anywhere in the United States, however not all games are available to be played in every US state.
+            Bets's real-money games can be played in the following states:
+          </Typography>
+        </Stack>
+        <StateList states={states} />
+      </Container>
+
       <Container
         maxWidth={false}
         disableGutters
         style={{
           position: "relative",
+          marginTop: 36
         }}
       >
         <Image
@@ -796,11 +536,11 @@ const LandingPage = () => {
           }}
         >
           <Typography
-            variant="h2"
+            variant="h5"
             fontWeight={900}
             style={{ textAlign: isLargeScreen ? "center" : "left" }}
           >
-            READY TO BET?
+            THE ULTIMATE FAN-VS-FAN EXPERIENCE
           </Typography>
           <Typography
             variant="h5"
@@ -810,195 +550,15 @@ const LandingPage = () => {
             JOIN BETZON TODAY.
           </Typography>
           <Button variant="contained" style={{ marginTop: 15 }}>
-            SIGN UP NOW
+            DOWNLOAD NOW
           </Button>
         </Box>
       </Container>
-      {/* Accordion container */}
-      <Container
-        maxWidth={false}
-        disableGutters
-        style={{
-          position: "relative",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Box
-          maxWidth="lg"
-          sx={{
-            width: "100%",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-            paddingLeft: "30px",
-            paddingRight: "30px"
-          }}
-        >
-          <Typography
-            variant="h3"
-            fontWeight={900}
-            style={{ textAlign: isLargeScreen ? "center" : "left" }}
-          >
-            FAQs
-          </Typography>
-          <Typography
-            variant="p"
-            fontWeight={500}
-            style={{ textAlign: "center" }}
-          >
-            Find answers to frequently asked questions about how BetzOn works,
-            betting rules, and account management.
-          </Typography>
 
-          <div
-            style={{
-              paddingTop: "80px",
-              paddingLeft: isLargeScreen && "20px",
-              paddingRight: isLargeScreen && "20px",
-              width: "100%"
-            }}
-          >
-            <Accordion
-              sx={{
-                backgroundColor: "transparent",
-                borderTop: "1px solid white",
-                borderTopLeftRadius: "0 !important",
-                borderTopRightRadius: "0 !important",
-              }}
-            >
-              <AccordionSummary
-                sx={{
-                  display: "flex",
-                }}
-                id="panel1-header"
-                aria-controls="panel1-content"
-              >
-                <Typography variant="p" style={{ flexGrow: "1" }}>
-                  How to bet responsibly?
-                </Typography>
-                <KeyboardArrowDownIcon />
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              sx={{
-                backgroundColor: "transparent",
-                borderTop: "1px solid white",
-              }}
-            >
-              <AccordionSummary
-                id="panel2-header"
-                aria-controls="panel2-content"
-              >
-                <Typography variant="p" style={{ flexGrow: "1" }}>
-                  How are winnings calculated?
-                </Typography>
-                <KeyboardArrowDownIcon />
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              sx={{
-                backgroundColor: "transparent",
-                borderTop: "1px solid white",
-              }}
-            >
-              <AccordionSummary
-                id="panel3-header"
-                aria-controls="panel3-content"
-              >
-                <Typography variant="p" style={{ flexGrow: "1" }}>
-                  How to withdraw winnings?
-                </Typography>
-                <KeyboardArrowDownIcon />
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              sx={{
-                backgroundColor: "transparent",
-                borderTop: "1px solid white",
-              }}
-            >
-              <AccordionSummary
-                id="panel4-header"
-                aria-controls="panel4-content"
-              >
-                <Typography variant="p" style={{ flexGrow: "1" }}>
-                  How to manage my account?
-                </Typography>
-                <KeyboardArrowDownIcon />
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              sx={{
-                backgroundColor: "transparent",
-                borderTop: "1px solid white",
-                borderBottom: "1px solid white",
-                borderBottomLeftRadius: "0 !important",
-                borderBottomRightRadius: "0 !important",
-              }}
-            >
-              <AccordionSummary
-                id="panel4-header"
-                aria-controls="panel4-content"
-              >
-                <Typography variant="p" style={{ flexGrow: "1" }}>
-                  Is BetzOn legal?
-                </Typography>
-                <KeyboardArrowDownIcon />
-              </AccordionSummary>
-              <AccordionDetails>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </AccordionDetails>
-            </Accordion>
-          </div>
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              paddingTop: "80px",
-              gap: '20px'
-            }}
-          >
-            <Typography
-              variant="h4"
-              fontWeight={900}
-              style={{ textAlign: isLargeScreen ? "center" : "left" }}
-            >
-              Still have questions?
-            </Typography>
-            <Typography
-              variant="p"
-              fontWeight={500}
-              style={{ textAlign: "center" }}
-            >
-              Contact our support team for further assistance.
-            </Typography>
-            <Button variant="outlined" style={{ borderColor: "white" }}>
-              Contact
-            </Button>
-          </Box>
-        </Box>
-      </Container>
-      {/* <ContactSection /> */}
-
-      <div style={{ marginBottom: "120px" }} />
     </>
   );
 };
-//IT&apos;S ON!
+
 export default LandingPage;
 
 /*

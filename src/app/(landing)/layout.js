@@ -123,9 +123,9 @@ const MainLayout = ({ children }) => {
 
     return (
         <>
-        {
-            //<AlertModal />
-        }
+            {
+                //<AlertModal />
+            }
             {
                 //!shouldShowLoader ?
                 !shouldShowLoader ?
@@ -181,10 +181,10 @@ const MainLayout = ({ children }) => {
                 boxSizing: 'border-box',
                 overflow: 'show'
             }}> */}
-                <MainNavigation />
-                {children}
-                {/* <Bulge /> */}
-                <LandingFooter />
+            <MainNavigation />
+            {children}
+            {/* <Bulge /> */}
+            <LandingFooter />
         </>
     );
 };

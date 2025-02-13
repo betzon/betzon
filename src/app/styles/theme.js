@@ -2,8 +2,8 @@
 import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   breakpoints: {
-    md:800,
-    xl:1300
+    md: 800,
+    xl: 1300
   },
   typography: {
     fontFamily: "Inter, sans-serif",
@@ -125,10 +125,10 @@ const theme = createTheme({
 });
 
 theme.typography.h1 = {
-    fontSize: '36px',
-    [theme.breakpoints.up('md')]: {
-      fontSize: '74px',
-    },
+  fontSize: '36px',
+  [theme.breakpoints.up('md')]: {
+    fontSize: '74px',
+  },
 }
 theme.typography.h2 = {
   fontSize: '30px',
