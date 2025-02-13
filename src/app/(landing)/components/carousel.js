@@ -1,3 +1,4 @@
+'use client'
 import { Typography, Box, Stack, IconButton } from '@mui/material'
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
