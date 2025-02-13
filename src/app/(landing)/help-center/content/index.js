@@ -16,7 +16,7 @@ export const helpCenterContent = [
                 type: 'external'
             },
             {
-                title: 'End User Liscense Agreement',
+                title: 'End User License Agreement',
                 path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=083bd9f8-a41c-4f37-8dbc-efbccbe1242a',
                 type: 'external'
             },
