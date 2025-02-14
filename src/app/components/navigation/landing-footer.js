@@ -30,7 +30,7 @@ const LandingFooter = () => {
         },
         {
             title: 'Terms of Use',
-            path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=083bd9f8-a41c-4f37-8dbc-efbccbe1242a',
+            path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=5ea07cf6-56df-4a98-8d00-e5357ae41958',
         },
         {
             title: 'Acceptable Use Policy',
