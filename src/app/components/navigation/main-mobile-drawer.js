@@ -168,13 +168,13 @@ const MenuMobileDropDown = ({ toggle, toggleDrawer }) => {
 
                 <ListItem >
                     <Button
-                        //onClick={() => router.push('#waitlist')}
+                        onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
                         sx={{
                             width: '100%',
                             fontWeight: 700
                         }}
                         variant='contained'>
-                        DOWNLOAD NOW
+                        DOWNLOAD ON APP STORE
                     </Button>
                 </ListItem>
 

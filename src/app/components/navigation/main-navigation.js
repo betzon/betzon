@@ -139,27 +139,16 @@ const MainNavigation = () => {
                         display: { xs: 'none', md: 'flex' }
                     }}>
                         {
-                            /*
-<Button
-                            sx={{
-                                fontWeight: 700
-                            }}
-                            onClick={() => redirectToAnotherSite()}
-                            color='neutral'
-                            variant='text'>
-                            SIGN UP
-                        </Button>
 
-                        <Button
-                            onClick={() => redirectToAnotherSiteLogin()}
-                            sx={{
-                                marginLeft: '12px',
-                                fontWeight: 700
-                            }}
-                            variant='contained'>
-                            LOGIN
-                        </Button>
-                            */
+                            <Button
+                                onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
+                                sx={{
+                                    marginLeft: '12px',
+                                    fontWeight: 700
+                                }}
+                                variant='contained'>
+                                DOWNLOAD ON APP STORE
+                            </Button>
                         }
 
 

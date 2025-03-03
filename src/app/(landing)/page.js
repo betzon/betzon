@@ -325,7 +325,7 @@ const LandingPage = () => {
               lineHeight: 1
             }}
           >
-            DAILY SPORTS FANTASY&apos;S
+            DAILY FANTASY SPORT&apos;S
           </Typography>
           <Typography
             variant="h1"
@@ -336,7 +336,11 @@ const LandingPage = () => {
           >
             ULTIMATE FAN-VS-FAN EXPERIENCE.
           </Typography>
-          <Button variant="contained">DOWNLOAD ON APPLE</Button>
+          <Button
+            onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
+            variant="contained">
+            AVAILABLE ON APP STORE
+          </Button>
         </Stack>
       </Container>
 
@@ -425,7 +429,7 @@ const LandingPage = () => {
         </Stack>
         <HowToCarousel data={howToSteps} showButton />
         <Button
-          size="large"
+          onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
           variant="contained">
           AVAILABLE ON APP STORE
         </Button>
@@ -461,7 +465,7 @@ const LandingPage = () => {
         </Stack>
         <HowToCarousel data={socialFeatures} interval={4000} />
         <Button
-          size="large"
+          onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
           variant="contained">
           AVAILABLE ON APP STORE
         </Button>
@@ -551,7 +555,10 @@ const LandingPage = () => {
           >
             JOIN BETZON TODAY.
           </Typography>
-          <Button variant="contained" style={{ marginTop: 15 }}>
+          <Button
+            style={{ marginTop: 15 }}
+            onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
+            variant="contained">
             AVAILABLE ON APP STORE
           </Button>
         </Box>
