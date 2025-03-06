@@ -139,17 +139,20 @@ const LandingPage = () => {
     {
       src: ui5,
       name: "STEP 1: REGISTER ACCOUNT",
-      description: "We legally need to verify your identity before you play. We will need some personal detials such as your age and address. This is to ensure the safety of you and everyone who uses Betzon!"
+      description: ""
+     // description: "We legally need to verify your identity before you play. We will need some personal detials such as your age and address. This is to ensure the safety of you and everyone who uses Betzon!"
     },
     {
       src: ui1,
       name: "STEP 2: DEPOSIT FUNDS",
-      description: "You can start playing against other users on Betzon with as little as $3. Make a fast and more importantly SECURE deposit using your debit or credit card and start playing right away!"
+      description: ""
+     // description: "You can start playing against other users on Betzon with as little as $3. Make a fast and more importantly SECURE deposit using your debit or credit card and start playing right away!"
     },
     {
       src: ui2,
       name: "STEP 3: JOIN/CREATE/SEND A CONTEST",
-      description: "Now it's time to use your skill and compete against other users on the Betzon by joining their contest or create your own to post/send to another user!"
+      description: ""
+      //description: "Now it's time to use your skill and compete against other users on the Betzon by joining their contest or create your own to post/send to another user!"
     },
     {
       src: ui7,
@@ -162,17 +165,20 @@ const LandingPage = () => {
     {
       src: ui4,
       name: "ADD A CAPTION TO YOUR CONTEST",
-      description: "Talk smack, hype up your favorite pick, hate on your least favorite player when you create a contest. Let people know your thoughts!"
+      description: ""
+     // description: "Talk smack, hype up your favorite pick, hate on your least favorite player when you create a contest. Let people know your thoughts!"
     },
     {
       src: ui3,
       name: "COMMENT ON OTHER CONTESTS",
-      description: "Have something to say about someones contest? You better let them know!"
+      description: ""
+      //description: "Have something to say about someones contest? You better let them know!"
     },
     {
       src: ui6,
       name: "SEND MESSAGES/CONTEST TO USERS AND YOUR FRIENDS",
-      description: "Got something to settle with a specific user? Send them a message or a contest!"
+      description: ""
+     // description: "Got something to settle with a specific user? Send them a message or a contest!"
     }
   ]
 
@@ -463,8 +469,11 @@ const LandingPage = () => {
             SOCIAL FEATURES
           </Typography>
         </Stack>
-        <HowToCarousel data={socialFeatures} interval={4000} />
+        <HowToCarousel data={socialFeatures}/>
         <Button
+        sx={{
+          mt:6
+        }}
           onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
           variant="contained">
           AVAILABLE ON APP STORE
@@ -505,7 +514,7 @@ const LandingPage = () => {
               textAlign: "center"
             }}
           >
-            Betzon&apos;s social features can be accessed from anywhere in the United States, however not all games are available.
+            Betzon&apos;s social features can be accessed from anywhere in the United States, however not all games are available.<br/>
             Betzon&apos;s real-money games can be played in the following states:
           </Typography>
         </Stack>

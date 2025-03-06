@@ -147,7 +147,7 @@ const MainNavigation = () => {
                                     fontWeight: 700
                                 }}
                                 variant='contained'>
-                                DOWNLOAD ON APP STORE
+                                AVAILABLE ON APP STORE
                             </Button>
                         }
 

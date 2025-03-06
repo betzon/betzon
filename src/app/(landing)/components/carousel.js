@@ -54,7 +54,7 @@ const Item = ({ data }) => {
     )
 }
 
-const HowToCarousel = ({ data, showButton = false, interval = 3000 }) => {
+const HowToCarousel = ({ data, showButton = false, interval = 7000 }) => {
     return (
         <Box sx={{
             width: { xs: "100%", sm: 500, md: 500, lg: 650, xl: 750 },
