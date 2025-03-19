@@ -136,6 +136,7 @@ const LandingFooter = () => {
 
                         <Stack spacing={2}>
                             <Typography variant='h6' sx={{ fontWeight: 700 }}>Contact Details</Typography>
+                            <Typography variant='body2' sx={{ color: theme.palette.dark.otherlight }}>For individuals seeking assistance with problem gaming, support is available through the National Problem Gaming Helpline at 1-800-522-4700.</Typography>
                             <Typography variant='body2' sx={{ color: theme.palette.dark.otherlight }}>If you have any questions, feel free to contact our team!</Typography>
 
                             <List spacing={1}>
