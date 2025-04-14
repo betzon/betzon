@@ -4,6 +4,8 @@ import ThemeRegistry from "./ThemeRegistry";
 import "./globals.css";
 import ReduxProvider from "./redux/ReduxProvider";
 import { Inter } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 const inter = Inter({
   weight: "900",
   subsets: ['latin']
@@ -25,6 +27,7 @@ export default function RootLayout({ children }) {
           <ThemeRegistry options={{ key: "mui" }}>{children}</ThemeRegistry>
         </ReduxProvider>
       </body>
+      <GoogleAnalytics gaId="G-JQKLKB7QW1" />
     </html>
   );
 }
