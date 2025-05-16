@@ -35,6 +35,11 @@ export const helpCenterContent = [
                 path: "https://putyzkkvo0z.typeform.com/to/MTG2HghG",
                 type: 'external'
             },
+            {
+                title: 'Motowens Contest Terms & Conditions',
+                path: "https://betzon-motobookie.s3.us-east-2.amazonaws.com/site/motowensgiveaway.pdf",
+                type: 'download'
+            },
         ]
     }
 ]

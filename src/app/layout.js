@@ -4,7 +4,7 @@ import ThemeRegistry from "./ThemeRegistry";
 import "./globals.css";
 import ReduxProvider from "./redux/ReduxProvider";
 import { Inter } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from "next/script";
 
 const inter = Inter({
   weight: "900",
@@ -21,13 +21,20 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JQKLKB7QW1');
+          `}
+        </Script>
       </Head>
       <body className={inter.className}>
         <ReduxProvider>
           <ThemeRegistry options={{ key: "mui" }}>{children}</ThemeRegistry>
         </ReduxProvider>
       </body>
-      <GoogleAnalytics gaId="G-JQKLKB7QW1" />
     </html>
   );
 }

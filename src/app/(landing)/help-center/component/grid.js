@@ -60,6 +60,20 @@ const Item = ({ data }) => {
                             </ListItemButton>
                         );
                     }
+                    else if (item?.type === "download") {
+                        return (
+                            <ListItemButton
+                                key={index}
+                                component="a"
+                                href={item.path}
+                                download // ✅ This makes the file downloadable
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <ListItemText primary={item.title} />
+                            </ListItemButton>
+                        );
+                    }
                     // Otherwise, internal navigation
                     return (
                         <ListItemButton
