@@ -21,7 +21,8 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-        <Script id="google-analytics" strategy="afterInteractive">
+      </Head>
+       <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -29,7 +30,6 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-JQKLKB7QW1');
           `}
         </Script>
-      </Head>
       <body className={inter.className}>
         <ReduxProvider>
           <ThemeRegistry options={{ key: "mui" }}>{children}</ThemeRegistry>
