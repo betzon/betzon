@@ -16,6 +16,9 @@ import DownloadIcon from '@mui/icons-material/Download'
 import api from '../../config/axios'
 
 
+
+
+
 const InvestorsPage = () => {
     const theme = useTheme()
     const [email, setEmail] = useState('')
