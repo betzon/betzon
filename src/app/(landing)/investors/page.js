@@ -28,7 +28,6 @@ const InvestorsPage = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         return emailRegex.test(email)
     }
-
     
     const handleSubmit = async (e) => {
         e.preventDefault()
