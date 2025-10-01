@@ -3,9 +3,6 @@ import { useTheme } from '@emotion/react'
 import { Box, Container, Divider, IconButton, List, ListItem, ListItemButton, Stack, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image'
@@ -39,6 +36,10 @@ const LandingFooter = () => {
         {
             title: 'Get Help',
             path: "https://putyzkkvo0z.typeform.com/to/MTG2HghG"
+        },
+        {
+            title: 'Investors',
+            path: "/investors"
         }
     ]
 
@@ -70,23 +71,6 @@ const LandingFooter = () => {
                         gridTemplateColumns: '.5fr 1fr 1fr 1fr',
                         gap: '48px'
                     }}>
-                        {
-                            /*
-                        <Box sx={{
-                            ///background: theme.palette.primary.main,
-                            border: `6px solid ${theme.palette.primary.main}`,
-                            background: "black",
-                            borderRadius: '12px 12px 12px 0',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: '100px',
-                            height: '100px'
-                        }}>
-                            <Image src={logo} height={50} />
-                        </Box>
-                        */
-                        }
                         <Image src={logo} height={100} />
 
                         <Stack spacing={2}>

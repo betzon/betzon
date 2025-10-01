@@ -29,13 +29,6 @@ const pages = [
         title: 'Help Center',
         path: '/help-center'
     }
-    /*
-    ,
-    {
-        title: 'SUPPORT',
-        path: '/support'
-    }
-    */
 ];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
