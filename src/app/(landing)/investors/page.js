@@ -28,7 +28,7 @@ const InvestorsPage = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         return emailRegex.test(email)
     }
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -63,8 +63,8 @@ const InvestorsPage = () => {
                 email: email
             })
 
-              setSubmitted(true)
-              setShowSuccess(true)
+            setSubmitted(true)
+            setShowSuccess(true)
         } catch (err) {
             console.error('Error submitting investor email:', err)
             setError(err.response?.data?.message || 'Failed to submit email. Please try again.')
@@ -116,15 +116,21 @@ const InvestorsPage = () => {
                         >
                             LET&apos;S DISRUPT<br />THE DFS SPACE TOGETHER
                         </Typography>
-                        <Typography
-                            variant="subtitle"
-                            sx={{
-                                color: theme.palette.dark.light,
-                                mb: 4,
-                            }}
-                        >
-                            ENTER YOUR EMAIL TO ACCESS OUR INVESTOR DECK.
-                        </Typography>
+                        {
+                            !submitted
+                            &&
+                            (
+                                <Typography
+                                    variant="subtitle"
+                                    sx={{
+                                        color: theme.palette.dark.light,
+                                        mb: 4,
+                                    }}
+                                >
+                                    ENTER YOUR EMAIL TO ACCESS OUR INVESTOR DECK.
+                                </Typography>
+                            )
+                        }
                     </Box>
 
                     {!submitted ? (
@@ -228,7 +234,7 @@ const InvestorsPage = () => {
                                     mb: 4,
                                 }}
                             >
-                                Your investor deck is ready to download.
+                                Your investor deck is ready to download. Please save this PDF/URL, we do not allow double submissions.
                             </Typography>
 
                             <Button
