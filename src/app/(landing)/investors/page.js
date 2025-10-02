@@ -76,7 +76,7 @@ const InvestorsPage = () => {
     const handleDownload = () => {
         // Create a link to download the PDF
         // Replace this with your actual PDF file path
-        const pdfUrl = '/investor-deck.pdf'
+        const pdfUrl = 'https://betzon-motobookie.s3.us-east-2.amazonaws.com/investors/BETZON_DECK_OCTOBER_2025.pdf'
         const link = document.createElement('a')
         link.href = pdfUrl
         link.download = 'Betzon-Investor-Deck.pdf'
