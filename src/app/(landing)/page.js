@@ -50,7 +50,7 @@ import ui5 from "../assets/ux/ui-5.jpg";
 import ui4 from "../assets/ux/ui-4.jpg";
 import ui3 from "../assets/ux/ui-3.jpg";
 import ui2 from "../assets/ux/ui-2.jpg";
-import ui1 from "../assets/ux/uib-1.jpg";
+import ui1 from "../assets/ux/ui-1.jpg";
 
 import { Inter } from 'next/font/google'
 import HowToCarousel from "./components/carousel";
@@ -140,13 +140,13 @@ const LandingPage = () => {
       src: ui5,
       name: "STEP 1: REGISTER ACCOUNT",
       description: ""
-     // description: "We legally need to verify your identity before you play. We will need some personal detials such as your age and address. This is to ensure the safety of you and everyone who uses Betzon!"
+      // description: "We legally need to verify your identity before you play. We will need some personal detials such as your age and address. This is to ensure the safety of you and everyone who uses Betzon!"
     },
     {
       src: ui1,
       name: "STEP 2: DEPOSIT FUNDS",
       description: ""
-     // description: "You can start playing against other users on Betzon with as little as $3. Make a fast and more importantly SECURE deposit using your debit or credit card and start playing right away!"
+      // description: "You can start playing against other users on Betzon with as little as $3. Make a fast and more importantly SECURE deposit using your debit or credit card and start playing right away!"
     },
     {
       src: ui2,
@@ -166,7 +166,7 @@ const LandingPage = () => {
       src: ui4,
       name: "ADD A CAPTION TO YOUR CONTEST",
       description: ""
-     // description: "Talk smack, hype up your favorite pick, hate on your least favorite player when you create a contest. Let people know your thoughts!"
+      // description: "Talk smack, hype up your favorite pick, hate on your least favorite player when you create a contest. Let people know your thoughts!"
     },
     {
       src: ui3,
@@ -178,7 +178,7 @@ const LandingPage = () => {
       src: ui6,
       name: "SEND MESSAGES/CONTEST TO USERS AND YOUR FRIENDS",
       description: ""
-     // description: "Got something to settle with a specific user? Send them a message or a contest!"
+      // description: "Got something to settle with a specific user? Send them a message or a contest!"
     }
   ]
 
@@ -402,7 +402,6 @@ const LandingPage = () => {
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          background: `linear-gradient(180deg, ${theme.palette.primary.main} 0%, #000 100%)`,
           gap: 6
         }}
       >
@@ -441,44 +440,96 @@ const LandingPage = () => {
         </Button>
       </Container>
 
-      <Container
-        sx={{
-          py: 6,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          background: "#000",
-        }}
-      >
-        <Stack
-          sx={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom: 2
-          }}>
-          <Typography
-            variant="h1"
-            fontWeight={900}
+      {
+        false &&
+        <>
+          <Container
             sx={{
-              fontWeight: 900,
-              textAlign: "center"
+              py: 6,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center",
+              background: `linear-gradient(180deg, ${theme.palette.primary.main} 0%, #000 100%)`,
+              gap: 6
             }}
           >
-            SOCIAL FEATURES
-          </Typography>
-        </Stack>
-        <HowToCarousel data={socialFeatures}/>
-        <Button
-        sx={{
-          mt:6
-        }}
-          onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
-          variant="contained">
-          AVAILABLE ON APP STORE
-        </Button>
-      </Container>
+            <Stack
+              sx={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                maxWidth: 700
+              }}>
+              <Typography
+                variant="h1"
+                fontWeight={900}
+                sx={{
+                  fontWeight: 900,
+                  textAlign: "center"
+                }}
+              >
+                HOW TO PLAY
+              </Typography>
+              <Typography
+                variant="body1"
+                fontWeight={900}
+                sx={{
+                  fontWeight: 900,
+                  textAlign: "center"
+                }}
+              >
+                Betzon&apos;s Fan-vs-Fan Daily Fantasy Sports app is lightning quick and easy to use. You create an account, add funds, and start playing in less than 1 minute. Here&apos;s how:
+              </Typography>
+            </Stack>
+            <HowToCarousel data={howToSteps} showButton />
+            <Button
+              onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
+              variant="contained">
+              AVAILABLE ON APP STORE
+            </Button>
+          </Container>
+
+          <Container
+            sx={{
+              py: 6,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center",
+              background: "#000",
+            }}
+          >
+            <Stack
+              sx={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginBottom: 2
+              }}>
+              <Typography
+                variant="h1"
+                fontWeight={900}
+                sx={{
+                  fontWeight: 900,
+                  textAlign: "center"
+                }}
+              >
+                SOCIAL FEATURES
+              </Typography>
+            </Stack>
+            <HowToCarousel data={socialFeatures} />
+            <Button
+              sx={{
+                mt: 6
+              }}
+              onClick={() => window.open("https://apps.apple.com/us/app/betzon/id6550891419")}
+              variant="contained">
+              AVAILABLE ON APP STORE
+            </Button>
+          </Container>
+        </>
+      }
 
       <Container
         sx={{
@@ -514,7 +565,7 @@ const LandingPage = () => {
               textAlign: "center"
             }}
           >
-            Betzon&apos;s social features can be accessed from anywhere in the United States, however not all games are available.<br/>
+            Betzon&apos;s social features can be accessed from anywhere in the United States, however not all games are available.<br />
             Betzon&apos;s real-money games can be played in the following states:
           </Typography>
         </Stack>

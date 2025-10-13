@@ -11,8 +11,8 @@ const ItemUIBox = ({ src }) => {
     return (
         <Box
             sx={{
-                height: { xs: 250, sm: 350, md: 400, lg: 500, xl: 500 },
-                width: { xs: 250, sm: 350, md: 400, lg: 500, xl: 500 },
+                height: { xs: 450, sm: 630, md: 720, lg: 900, xl: 900 },
+                width: { xs: 200, sm: 280, md: 320, lg: 400, xl: 400 },
                 position: 'relative',
                 bgcolor: theme.palette.dark.dark,
                 display: 'flex',
@@ -45,11 +45,11 @@ const Item = ({ data }) => {
                 alignItems: "center",
             }}
         >
-            <ItemUIBox src={data?.src} />
             <Stack>
                 <Typography variant='h4'>{data?.name}</Typography>
                 <Typography variant='body1' sx={{ fontWeight: 900 }}>{data?.description}</Typography>
             </Stack>
+            <ItemUIBox src={data?.src} />
         </Stack>
     )
 }
@@ -58,7 +58,7 @@ const HowToCarousel = ({ data, showButton = false, interval = 7000 }) => {
     return (
         <Box sx={{
             width: { xs: "100%", sm: 500, md: 500, lg: 650, xl: 750 },
-            minHeight: { xs: 500, sm: 500, md: 500, lg: 650, xl: 750 }
+            minHeight: { xs: 650, sm: 830, md: 920, lg: 1100, xl: 1100 }
         }}>
             <Carousel
                 interval={interval}
