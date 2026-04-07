@@ -34,6 +34,10 @@ const LandingFooter = () => {
             path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=5f2223cf-7007-4c12-93ad-b8e5acbf2155',
         },
         {
+            title: 'Delete account & data',
+            path: '/delete-account',
+        },
+        {
             title: 'Get Help',
             path: "https://putyzkkvo0z.typeform.com/to/MTG2HghG"
         },
