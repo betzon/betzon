@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PhoneIcon from '@mui/icons-material/Phone';
 import Image from 'next/image'
 import logo from "../../assets/mb.png"
 
@@ -139,6 +140,19 @@ const LandingFooter = () => {
                                     }}>
                                     <EmailIcon />
                                     <Typography>info@betzon.com</Typography>
+                                </ListItemButton>
+
+                                <ListItemButton
+                                    component="a"
+                                    href="tel:+12133166285"
+                                    sx={{
+                                        color: theme.palette.dark.otherlight,
+                                        display: 'flex',
+                                        justifyContent: 'flex-start',
+                                        gap: '16px'
+                                    }}>
+                                    <PhoneIcon />
+                                    <Typography>+1 (213) 316-6285</Typography>
                                 </ListItemButton>
 
                                 <ListItem sx={{
