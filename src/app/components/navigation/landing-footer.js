@@ -35,6 +35,10 @@ const LandingFooter = () => {
             path: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=5f2223cf-7007-4c12-93ad-b8e5acbf2155',
         },
         {
+            title: 'Child Safety & CSAE Policy',
+            path: '/child-safety-csae-policy',
+        },
+        {
             title: 'Delete account & data',
             path: '/delete-account',
         },
