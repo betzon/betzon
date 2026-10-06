@@ -106,8 +106,24 @@ const DeleteAccountPage = () => {
                                 variant="body1"
                                 sx={{ color: theme.palette.dark.light, mb: 1 }}
                             >
-                                Enter the email associated with your Betzon account. We will email
-                                our team to process deletion of your account and personal data.
+                                Enter the email associated with your Betzon account. If an account
+                                exists, we email you a confirmation link. The account is closed only
+                                after you open that link and confirm. We also notify our team.
+                            </Typography>
+                            <Typography
+                                variant="body2"
+                                sx={{ color: theme.palette.dark.light, mb: 1, textAlign: 'left' }}
+                            >
+                                Closed: you can no longer sign in, and your identity record with our
+                                verification provider is removed.
+                            </Typography>
+                            <Typography
+                                variant="body2"
+                                sx={{ color: theme.palette.dark.light, mb: 1, textAlign: 'left' }}
+                            >
+                                Kept: username, email, and phone stay on the account so contest
+                                history and messages still show your name. Wallet and contest
+                                transaction records are retained.
                             </Typography>
                         )}
                     </Box>
