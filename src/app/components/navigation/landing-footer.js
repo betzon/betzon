@@ -39,7 +39,7 @@ const LandingFooter = () => {
             path: '/child-safety-csae-policy',
         },
         {
-            title: 'Delete account & data',
+            title: 'Close account',
             path: '/delete-account',
         },
         {

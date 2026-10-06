@@ -99,7 +99,7 @@ const DeleteAccountPage = () => {
                             component="h1"
                             sx={{ fontWeight: 700, mb: 2 }}
                         >
-                            Delete account &amp; data
+                            Close account
                         </Typography>
                         {!submitted && (
                             <>
@@ -107,24 +107,25 @@ const DeleteAccountPage = () => {
                                     variant="body1"
                                     sx={{ color: theme.palette.dark.light, mb: 1 }}
                                 >
-                                    Enter the email associated with your Betzon account. If an account
-                                    exists, we email you a confirmation link. The account is closed only
-                                    after you open that link and confirm. We also notify our team.
+                                    Enter the email you use in the Betzon app. If an account
+                                    exists, we email a confirmation link. The account is closed only
+                                    after you open that link and confirm.
                                 </Typography>
                                 <Typography
                                     variant="body2"
                                     sx={{ color: theme.palette.dark.light, mb: 1, textAlign: 'left' }}
                                 >
-                                    Closed: you can no longer sign in, and your identity record with our
-                                    verification provider is removed.
+                                    Closed: you can no longer sign in, deposit, withdraw, or enter
+                                    new contests. Your identity record with our verification provider
+                                    is removed.
                                 </Typography>
                                 <Typography
                                     variant="body2"
                                     sx={{ color: theme.palette.dark.light, mb: 1, textAlign: 'left' }}
                                 >
-                                    Kept: username, email, and phone stay on the account so contest
-                                    history and messages still show your name. Wallet and contest
-                                    transaction records are retained.
+                                    Kept: your username stays on past contests and messages so other
+                                    players still see who they played. Wallet and contest records
+                                    are kept.
                                 </Typography>
                             </>
                         )}
@@ -213,14 +214,13 @@ const DeleteAccountPage = () => {
                     ) : (
                         <Box sx={{ textAlign: 'center' }}>
                             <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
-                                Request received
+                                Check your email
                             </Typography>
                             <Typography
                                 variant="body1"
                                 sx={{ color: theme.palette.dark.light, mb: 3 }}
                             >
-                                We have notified our team. You will be contacted at the email you
-                                provided if we need anything further.
+                                If that email is on an account, we sent a confirmation link. Check your inbox.
                             </Typography>
                             <Button
                                 variant="outlined"
@@ -259,7 +259,7 @@ const DeleteAccountPage = () => {
                         color: '#000',
                     }}
                 >
-                    Your deletion request was sent.
+                    If that email is on an account, we sent a confirmation link. Check your inbox.
                 </Alert>
             </Snackbar>
         </Box>

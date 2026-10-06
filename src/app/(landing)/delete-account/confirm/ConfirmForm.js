@@ -64,16 +64,16 @@ const ConfirmDeleteAccountForm = () => {
                     }}
                 >
                     <Typography variant="h4" component="h1" sx={{ fontWeight: 700, mb: 2, textAlign: 'center' }}>
-                        Confirm account deletion
+                        Confirm account close
                     </Typography>
                     {done ? (
                         <Typography variant="body1" sx={{ color: theme.palette.dark.light, textAlign: 'center' }}>
-                            Your Betzon account is closed. You can no longer sign in with it.
+                            Your Betzon account is closed. You can no longer sign in.
                         </Typography>
                     ) : (
                         <>
                             <Typography variant="body1" sx={{ color: theme.palette.dark.light, mb: 2 }}>
-                                Confirm to close this account. You will not be able to sign in. Your
+                                This closes the account. You will not be able to sign in. Your
                                 username stays on past contests and messages. Wallet and contest
                                 records are kept.
                             </Typography>
@@ -96,7 +96,7 @@ const ConfirmDeleteAccountForm = () => {
                                     backgroundColor: theme.palette.primary.main,
                                 }}
                             >
-                                Confirm deletion
+                                Confirm close
                             </LoadingButton>
                         </>
                     )}
