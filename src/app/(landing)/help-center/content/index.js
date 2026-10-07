@@ -350,32 +350,34 @@ export const helpCenterContent = [
                 title: 'Responsible Gaming',
                 path: '/responsible-gaming',
                 content: {
-                    title: 'TEST',
-                    updatedOn: 'Dec 12, 2024',
+                    title: 'Responsible Gaming',
+                    updatedOn: 'Oct 7, 2026',
                     content: [
                         {
                             type: 'paragraph',
-                            title: 'How ONE',
+                            title: 'Play responsibly on Betzon',
                             content: [
-                                "First, navigate to the menu located in the top left corner of the PrizePicks app. If you are accessing your account on a browser, the menu is in the top right corner. From here, you can select Request Withdrawal.",
-                                "You'll receive a One Time Password(OTP) code by email as soon as you request your withdrawal.No further action is needed on your part; we will send you an email to confirm whether the withdrawal was successful or not."
+                                "Betzon is a real-money daily fantasy sports platform. Contests involve risk of losing money. You must be 18 years of age or older to create an account, deposit, withdraw, or enter contests.",
+                                "Please gamble responsibly and only wager what you can afford to lose. If you feel that contest play is becoming a problem, stop and seek help."
                             ]
                         },
                         {
                             type: 'paragraph',
-                            title: 'How ONE',
+                            title: 'Get help',
                             content: [
-                                "First, navigate to the menu located in the top left corner of the PrizePicks app. If you are accessing your account on a browser, the menu is in the top right corner. From here, you can select Request Withdrawal.",
-                                "You'll receive a One Time Password(OTP) code by email as soon as you request your withdrawal.No further action is needed on your part; we will send you an email to confirm whether the withdrawal was successful or not."
+                                "For gambling addiction help and support in the United States, call 1-800-GAMBLER (1-800-426-2537), or visit https://www.ncpgambling.org for resources from the National Council on Problem Gambling.",
+                                "You can also contact Betzon support at info@betzon.com if you need help closing your account or have questions about responsible play."
                             ]
                         },
                         {
                             type: 'paragraphList',
-                            title: 'How do I withdraw funds?',
-                            paragraph: 'First, navigate to the menu located in the top left corner of the PrizePicks app. If you are accessing your account on a browser',
+                            title: 'Tools and tips',
+                            paragraph: 'Ways to keep contest play healthy:',
                             list: [
-                                "First, navigate to the menu located in the top left corner of the PrizePicks app. If you are accessing your account on a browser, the menu is in the top right corner. From here, you can select Request Withdrawal.",
-                                "You'll receive a One Time Password(OTP) code by email as soon as you request your withdrawal.No further action is needed on your part; we will send you an email to confirm whether the withdrawal was successful or not."
+                                "Set a personal budget before you deposit and stick to it.",
+                                "Never chase losses or wager money you need for essentials.",
+                                "Take breaks if you feel stressed, upset, or out of control.",
+                                "Close your account anytime from Settings in the app, or request deletion at https://www.betzon.com/delete-account."
                             ]
                         }
                     ]
