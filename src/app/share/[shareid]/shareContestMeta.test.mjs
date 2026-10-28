@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import {
     parseShareContestId,
     buildShareTitle,
+    buildShareLinkTitle,
     buildShareDescription,
     pickContestImage,
     shareContestUrl,
@@ -74,4 +75,13 @@ test('abbreviates each multi-athlete side independently', () => {
 test('preserves team names and single-word athlete names', () => {
     assert.equal(buildShareTitle({ winners: [{ team_name: 'New York Knicks' }, { team_name: 'Boston Celtics' }], losers: [{ athlete_name: 'Pelé' }] }), 'New York Knicks & Boston Celtics vs Pelé')
     assert.equal(buildShareTitle({ winners: [{ athlete_name: 'Pelé' }, { athlete_name: 'Jane Doe' }], losers: [{ athlete_name: 'Full Name' }] }), 'Pelé & Jane D. vs Full Name')
+})
+
+test('link title uses the actual payout without changing the image matchup title', () => {
+    const contest = { ...contest191, finances: { viewer: { winnings_multiple: '2x' } } }
+    assert.equal(buildShareLinkTitle(contest), 'Win 2× your entry. Take the challenge!')
+    assert.equal(buildShareLinkTitle({ viewer: { winnings_multiple: '3.5x' } }), 'Win 3.5× your entry. Take the challenge!')
+    assert.equal(buildShareLinkTitle(null), 'Back your pick. Take the challenge!')
+    assert.equal(buildShareLinkTitle({ viewer: { winnings_multiple: 'invalid' } }), 'Back your pick. Take the challenge!')
+    assert.equal(buildShareTitle(contest), 'Will Hughes vs Jake Bidwell · +0.5 Goals')
 })

@@ -55,6 +55,16 @@ export function buildShareTitle(contest) {
     return 'Betzon Contest'
 }
 
+export function buildShareLinkTitle(contest) {
+    const viewer = contest?.finances?.viewer ?? contest?.viewer
+    const raw = String(viewer?.winnings_multiple ?? '').trim()
+    const match = raw.match(/^(\d+(?:\.\d+)?)\s*[x×]?$/i)
+    const multiple = match ? Number(match[1]) : 0
+    return Number.isFinite(multiple) && multiple > 1
+        ? `Win ${multiple}× your entry. Take the challenge!`
+        : 'Back your pick. Take the challenge!'
+}
+
 export function buildShareDescription(contest) {
     const explainer = contest?.config?.prop_explainer?.opponent
     if (explainer) return explainer

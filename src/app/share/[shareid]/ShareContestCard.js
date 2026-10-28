@@ -41,6 +41,12 @@ function formatPropLabel(prop) {
         .join(' ')
 }
 
+function splitStackedPropLabel(label) {
+    const match = String(label ?? '').match(/^(.*(?:Overall|Defensive))\s+(Performance Points)$/i)
+    if (!match) return null
+    return { line1: match[1], line2: match[2] }
+}
+
 function formatEventTime(iso) {
     if (!iso) return null
     const date = new Date(iso)
@@ -181,6 +187,9 @@ export default function ShareContestCard({
     const winners = contest?.winners ?? []
     const losers = contest?.losers ?? []
     const propLabel = formatPropLabel(contest?.config?.prop ?? contest?.prop)
+    const stackedProp = Math.max(winners.length, losers.length) >= 2
+        ? splitStackedPropLabel(propLabel)
+        : null
     const creator = contest?.creator
     const opponents = contest?.opponents ?? []
     const joinCta = getJoinCta(contest)
@@ -206,13 +215,26 @@ export default function ShareContestCard({
                             backgroundColor: colors.primaryOpaque,
                             border: `1px solid ${colors.primaryLight}`,
                             px: 1.5,
-                            py: 0.6,
-                            borderRadius: 1000,
+                            py: stackedProp ? 0.75 : 0.6,
+                            borderRadius: stackedProp ? '12px' : 1000,
+                            flexShrink: 0,
+                            textAlign: 'center',
                         }}
                     >
-                        <Typography sx={{ color: colors.primaryLight, fontWeight: 700, fontSize: 14 }}>
-                            {propLabel}
-                        </Typography>
+                        {stackedProp ? (
+                            <>
+                                <Typography sx={{ color: colors.primaryLight, fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>
+                                    {stackedProp.line1}
+                                </Typography>
+                                <Typography sx={{ color: colors.primaryLight, fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>
+                                    {stackedProp.line2}
+                                </Typography>
+                            </>
+                        ) : (
+                            <Typography sx={{ color: colors.primaryLight, fontWeight: 700, fontSize: 14 }}>
+                                {propLabel}
+                            </Typography>
+                        )}
                     </Box>
                     <Box sx={{ flex: 1, height: '1px', backgroundColor: colors.subgray }} />
                 </Stack>

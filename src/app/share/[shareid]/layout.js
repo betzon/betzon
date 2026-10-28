@@ -3,6 +3,7 @@ import {
     OG_IMAGE_WIDTH,
     buildShareDescription,
     buildShareTitle,
+    buildShareLinkTitle,
     fetchShareContest,
     parseShareContestId,
     shareContestImageUrl,
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }) {
     const contestId = parseShareContestId(params?.shareid)
     const shareUrl = contestId ? shareContestUrl(contestId) : 'https://www.betzon.com'
     const contest = contestId ? await fetchShareContest(contestId) : null
-    const title = contest ? buildShareTitle(contest) : 'Betzon Contest'
+    const title = buildShareLinkTitle(contest)
     const description = contest
         ? buildShareDescription(contest)
         : 'Open this contest on Betzon to win.'
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }) {
         width: OG_IMAGE_WIDTH,
         height: OG_IMAGE_HEIGHT,
         type: 'image/png',
-        alt: title,
+        alt: buildShareTitle(contest),
     }
 
     return {
