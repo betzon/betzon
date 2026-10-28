@@ -34,14 +34,20 @@ function sideLabel(item) {
     return String(item?.athlete_name ?? item?.team_name ?? item?.name ?? '').trim()
 }
 
-function sideList(items) {
-    return (items ?? []).map(sideLabel).filter(Boolean)
+export function shareSideNames(items) {
+    const namedItems = (items ?? []).filter((item) => sideLabel(item))
+    return namedItems.map((item) => {
+        const name = sideLabel(item)
+        if (namedItems.length < 2 || !item?.athlete_name) return name
+        const parts = name.split(/\s+/)
+        return parts.length > 1 ? `${parts[0]} ${Array.from(parts[parts.length - 1])[0]}.` : name
+    })
 }
 
 export function buildShareTitle(contest) {
     if (!contest) return 'Betzon Contest'
-    const winners = sideList(contest.winners).join(' & ')
-    const losers = sideList(contest.losers).join(' & ')
+    const winners = shareSideNames(contest.winners).join(' & ')
+    const losers = shareSideNames(contest.losers).join(' & ')
     const prop = formatPropLabel(contest.config?.prop ?? contest.prop)
     if (winners && losers && prop) return `${winners} vs ${losers} · ${prop}`
     if (winners && losers) return `${winners} vs ${losers}`

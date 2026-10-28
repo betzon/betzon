@@ -3,6 +3,7 @@ import {
     OG_IMAGE_HEIGHT,
     OG_IMAGE_WIDTH,
     buildShareTitle,
+    shareSideNames,
     fetchShareContest,
     formatPropLabel,
     parseShareContestId,
@@ -10,10 +11,6 @@ import {
 } from '../../../../share/[shareid]/shareContestMeta.mjs'
 
 export const runtime = 'edge'
-
-function sideName(item) {
-    return String(item?.athlete_name ?? item?.team_name ?? item?.name ?? '').trim()
-}
 
 function toDataUri(bytes, mime) {
     return `data:${mime};base64,${Buffer.from(bytes).toString('base64')}`
@@ -68,8 +65,8 @@ export async function GET(request, { params }) {
         loadImageSrc(pickContestImage(contest)),
         loadInterBlack(),
     ])
-    const winners = (contest?.winners ?? []).map(sideName).filter(Boolean)
-    const losers = (contest?.losers ?? []).map(sideName).filter(Boolean)
+    const winners = shareSideNames(contest?.winners)
+    const losers = shareSideNames(contest?.losers)
     const prop = formatPropLabel(contest?.config?.prop ?? contest?.prop) || 'Contest'
     const creator = contest?.creator?.username
     const title = contest ? buildShareTitle(contest) : 'Betzon Contest'

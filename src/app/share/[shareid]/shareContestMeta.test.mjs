@@ -62,3 +62,16 @@ test('fetchShareContest returns the contest body', async () => {
     })
     assert.equal(contest.id, 191)
 })
+
+test('abbreviates each multi-athlete side independently', () => {
+    const pair = [{ athlete_name: 'John Doe' }, { athlete_name: 'Jane Doe' }]
+    const single = [{ athlete_name: 'Full Name' }]
+    assert.equal(buildShareTitle({ winners: pair, losers: single }), 'John D. & Jane D. vs Full Name')
+    assert.equal(buildShareTitle({ winners: single, losers: pair }), 'Full Name vs John D. & Jane D.')
+    assert.equal(buildShareTitle({ winners: pair, losers: pair }), 'John D. & Jane D. vs John D. & Jane D.')
+})
+
+test('preserves team names and single-word athlete names', () => {
+    assert.equal(buildShareTitle({ winners: [{ team_name: 'New York Knicks' }, { team_name: 'Boston Celtics' }], losers: [{ athlete_name: 'Pelé' }] }), 'New York Knicks & Boston Celtics vs Pelé')
+    assert.equal(buildShareTitle({ winners: [{ athlete_name: 'Pelé' }, { athlete_name: 'Jane Doe' }], losers: [{ athlete_name: 'Full Name' }] }), 'Pelé & Jane D. vs Full Name')
+})
