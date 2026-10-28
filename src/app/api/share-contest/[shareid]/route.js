@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server'
 
-// Local previews must use the local share endpoint; production may not have it yet.
+// Local previews use the local share endpoint; production uses the live Render API.
 const API_BASE = (process.env.BETZON_API_BASE || (
     process.env.NODE_ENV === 'development'
         ? 'http://localhost:2040/api/v1'
-        : 'https://api.betzon.com/api/v1'
+        : 'https://teams-server-xkro.onrender.com/api/v1'
 )).replace(/\/$/, '')
 
 function parseShareContestId(value) {

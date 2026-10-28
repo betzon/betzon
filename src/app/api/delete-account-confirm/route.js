@@ -13,7 +13,7 @@ export async function POST(request) {
         return NextResponse.json({ message: 'This link is invalid or has expired.' }, { status: 400 })
     }
 
-    const apiResponse = await fetch('https://api.betzon.com/api/v1/landing/delete-account/confirm', {
+    const apiResponse = await fetch('https://teams-server-xkro.onrender.com/api/v1/landing/delete-account/confirm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

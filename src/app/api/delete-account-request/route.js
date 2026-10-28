@@ -30,7 +30,7 @@ export async function POST(request) {
         return NextResponse.json({ message: 'Please provide a valid email address.' }, { status: 400 })
     }
 
-    const apiResponse = await fetch('https://api.betzon.com/api/v1/landing/delete-account/request', {
+    const apiResponse = await fetch('https://teams-server-xkro.onrender.com/api/v1/landing/delete-account/request', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
