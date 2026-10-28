@@ -1,0 +1,6 @@
+{
+    "name": "Betzon",
+    "related_applications": [
+        { "platform": "play", "id": "com.betzon.mobile" }
+    ]
+}
