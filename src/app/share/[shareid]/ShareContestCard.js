@@ -171,6 +171,7 @@ export default function ShareContestCard({
     storeHint,
     storeDisabled = false,
     storePlatform = null,
+    showStore = true,
     joinDisabled = false,
 }) {
     const [explainerOpen, setExplainerOpen] = useState(false)
@@ -270,36 +271,38 @@ export default function ShareContestCard({
                 </Box>
             ) : null}
 
-            <Box
-                component="button"
-                type="button"
-                disabled={storeDisabled}
-                onClick={storeDisabled ? undefined : onCta}
-                sx={{
-                    width: '100%',
-                    border: storePlatform ? '1px solid #FFFFFF' : `1px solid ${colors.primaryLight}`,
-                    backgroundColor: storePlatform ? '#000000' : colors.primaryOpaque,
-                    borderRadius: storePlatform ? '12px' : 1000,
-                    py: 1.5,
-                    px: 3,
-                    cursor: storeDisabled ? 'default' : 'pointer',
-                    textAlign: 'center',
-                }}
-            >
-                <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
-                    {storePlatform ? (
-                        <FontAwesomeIcon icon={storePlatform === 'android' ? faGooglePlay : faApple} color="#FFFFFF" style={{ fontSize: 22 }} />
+            {showStore ? (
+                <Box
+                    component="button"
+                    type="button"
+                    disabled={storeDisabled}
+                    onClick={storeDisabled ? undefined : onCta}
+                    sx={{
+                        width: '100%',
+                        border: storePlatform ? '1px solid #FFFFFF' : `1px solid ${colors.primaryLight}`,
+                        backgroundColor: storePlatform ? '#000000' : colors.primaryOpaque,
+                        borderRadius: storePlatform ? '12px' : 1000,
+                        py: 1.5,
+                        px: 3,
+                        cursor: storeDisabled ? 'default' : 'pointer',
+                        textAlign: 'center',
+                    }}
+                >
+                    <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
+                        {storePlatform ? (
+                            <FontAwesomeIcon icon={storePlatform === 'android' ? faGooglePlay : faApple} color="#FFFFFF" style={{ fontSize: 22 }} />
+                        ) : null}
+                        <Typography sx={{ color: storePlatform ? '#FFFFFF' : colors.primaryLight, fontWeight: 600, fontSize: 18 }}>
+                            {storeLabel}
+                        </Typography>
+                    </Stack>
+                    {storeHint ? (
+                        <Typography sx={{ color: colors.lightestGray, fontWeight: 500, fontSize: 15, mt: 0.5 }}>
+                            {storeHint}
+                        </Typography>
                     ) : null}
-                    <Typography sx={{ color: storePlatform ? '#FFFFFF' : colors.primaryLight, fontWeight: 600, fontSize: 18 }}>
-                        {storeLabel}
-                    </Typography>
-                </Stack>
-                {storeHint ? (
-                    <Typography sx={{ color: colors.lightestGray, fontWeight: 500, fontSize: 15, mt: 0.5 }}>
-                        {storeHint}
-                    </Typography>
-                ) : null}
-            </Box>
+                </Box>
+            ) : null}
 
             <Button
                 variant="text"

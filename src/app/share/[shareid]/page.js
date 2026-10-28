@@ -125,7 +125,6 @@ const BetzonShare = () => {
         }
     }, [contestId, retryCount])
 
-    const isMobile = os === 'apple' || os === 'android'
     const canOpen = preview.installed ?? (installed === true || appOpened)
     const storeLabel = canOpen ? 'Go to App' : os === 'android' ? 'Google Play coming soon' : 'Download on the App Store'
     const storeHint = openHint || 'Open this contest on Betzon to win!'
@@ -162,23 +161,11 @@ const BetzonShare = () => {
                 justifyContent: 'flex-start',
                 minHeight: '100vh',
                 px: 3,
-                pt: 14,
+                pt: 4,
                 pb: 6,
                 backgroundColor: '#0C0D11',
             }}>
-            <Box
-                sx={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    zIndex: 20,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    pt: 2,
-                    pb: 1.5,
-                    backgroundColor: '#0C0D11',
-                }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Image src={logo} width={72} height={72} alt="Betzon" />
             </Box>
             {loadState === 'loading' && <ShareLoader />}
@@ -212,13 +199,14 @@ const BetzonShare = () => {
                     onCta={handleContestCta}
                     storeLabel={storeLabel}
                     storeHint={storeHint}
+                    showStore={Boolean(os) && os !== 'apple'}
                     storeDisabled={!os || opening || (os === 'android' && !canOpen)}
                     joinDisabled={!os || opening}
                     storePlatform={canOpen ? null : os === 'android' ? 'android' : 'apple'}
                 />
             )}
 
-            {isMobile && !canOpen && preview.installed === null && loadState === 'ready' && (
+            {os === 'android' && !canOpen && preview.installed === null && loadState === 'ready' && (
                 <Button
                     variant="contained"
                     fullWidth

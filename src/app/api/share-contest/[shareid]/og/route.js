@@ -31,6 +31,16 @@ async function loadImageSrc(url) {
     }
 }
 
+async function loadInterBlack() {
+    try {
+        const response = await fetch('https://cdn.jsdelivr.net/fontsource/fonts/inter@5.2.5/latin-900-normal.ttf')
+        if (!response.ok) return null
+        return await response.arrayBuffer()
+    } catch {
+        return null
+    }
+}
+
 function NameBlock({ name, align }) {
     if (!name) return null
     return (
@@ -53,9 +63,10 @@ export async function GET(request, { params }) {
     const contestId = parseShareContestId(params?.shareid)
     const contest = contestId ? await fetchShareContest(contestId) : null
     const origin = new URL(request.url).origin
-    const [logoSrc, contestImageSrc] = await Promise.all([
+    const [logoSrc, contestImageSrc, interBlack] = await Promise.all([
         loadImageSrc(`${origin}/icon.png`),
         loadImageSrc(pickContestImage(contest)),
+        loadInterBlack(),
     ])
     const winners = (contest?.winners ?? []).map(sideName).filter(Boolean)
     const losers = (contest?.losers ?? []).map(sideName).filter(Boolean)
@@ -77,7 +88,7 @@ export async function GET(request, { params }) {
                     fontFamily: 'sans-serif',
                 }}
             >
-                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
                     {logoSrc ? (
                         <img
                             src={logoSrc}
@@ -90,10 +101,11 @@ export async function GET(request, { params }) {
                     <div
                         style={{
                             marginLeft: 20,
-                            color: '#FF9539',
-                            fontSize: 36,
-                            fontWeight: 800,
-                            letterSpacing: '4px',
+                            color: '#FFFFFF',
+                            fontSize: 42,
+                            fontWeight: 900,
+                            fontFamily: 'Inter',
+                            letterSpacing: '2px',
                         }}
                     >
                         BETZON
@@ -164,6 +176,9 @@ export async function GET(request, { params }) {
             headers: {
                 'Cache-Control': 'public, max-age=60, s-maxage=300',
             },
+            ...(interBlack ? {
+                fonts: [{ name: 'Inter', data: interBlack, style: 'normal', weight: 900 }],
+            } : {}),
         }
     )
 }
