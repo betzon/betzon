@@ -1,3 +1,5 @@
+import { isShareProcessed } from './shareSettlement.mjs'
+
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.betzon.com').replace(/\/$/, '')
 export const OG_IMAGE_WIDTH = 1200
 export const OG_IMAGE_HEIGHT = 630
@@ -56,6 +58,7 @@ export function buildShareTitle(contest) {
 }
 
 export function buildShareLinkTitle(contest) {
+    if (isShareProcessed(contest)) return contest?.statuses?.result_status === 'refunded' ? 'Contest refunded · Betzon' : 'The results are in! See who won on Betzon.'
     const viewer = contest?.finances?.viewer ?? contest?.viewer
     const raw = String(viewer?.winnings_multiple ?? '').trim()
     const match = raw.match(/^(\d+(?:\.\d+)?)\s*[x×]?$/i)

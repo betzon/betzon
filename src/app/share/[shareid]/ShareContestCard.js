@@ -1,5 +1,6 @@
 "use client"
 import { useId, useState } from 'react'
+import { isShareProcessed, shareParticipantResult } from './shareSettlement.mjs'
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Stack, Typography } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
@@ -138,10 +139,10 @@ function AthleteBlock({ athlete }) {
     )
 }
 
-function ParticipantLine({ username, suffix, userLogo }) {
+function ParticipantLine({ username, suffix, userLogo, result }) {
     if (!username) return null
     return (
-        <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
+        <Stack direction="row" spacing={1} alignItems="center" justifyContent="center" sx={{ flexWrap: 'wrap', rowGap: 1 }}>
             <Box
                 sx={{
                     width: 36,
@@ -166,6 +167,15 @@ function ParticipantLine({ username, suffix, userLogo }) {
                 @{username}
                 <Box component="span" sx={{ fontWeight: 600 }}>{suffix}</Box>
             </Typography>
+            {result ? (
+                <Box component="span" aria-label={`${result.outcome}: ${result.label}`} sx={{
+                    borderRadius: 1000, px: 1.25, py: 0.5, color: colors.light,
+                    fontSize: 16, fontWeight: 700,
+                    backgroundColor: result.outcome === 'won' ? '#186329' : result.outcome === 'lost' ? '#A32626' : colors.subgray,
+                }}>
+                    {result.label}
+                </Box>
+            ) : null}
         </Stack>
     )
 }
@@ -192,7 +202,8 @@ export default function ShareContestCard({
         : null
     const creator = contest?.creator
     const opponents = contest?.opponents ?? []
-    const joinCta = getJoinCta(contest)
+    const processed = isShareProcessed(contest)
+    const joinCta = processed ? null : getJoinCta(contest)
 
     return (
         <Stack
@@ -249,21 +260,17 @@ export default function ShareContestCard({
                     username={creator?.username}
                     userLogo={creator?.userLogo}
                     suffix="'s Pick"
+                    result={shareParticipantResult(contest, creator, 'creator')}
                 />
-                {opponents.length > 1 ? (
-                    <Typography sx={{ color: colors.light, fontWeight: 500, fontSize: 15 }}>
-                        {opponents.length} Opponents
-                    </Typography>
-                ) : (
-                    opponents.map((opponent) => (
-                        <ParticipantLine
-                            key={opponent?.id ?? opponent?.username}
-                            username={opponent?.username}
-                            userLogo={opponent?.userLogo}
-                            suffix=" Challenged"
-                        />
-                    ))
-                )}
+                {opponents.map((opponent) => (
+                    <ParticipantLine
+                        key={opponent?.id ?? opponent?.username}
+                        username={opponent?.username}
+                        userLogo={opponent?.userLogo}
+                        suffix=" Challenged"
+                        result={shareParticipantResult(contest, opponent, 'opponent')}
+                    />
+                ))}
             </Stack>
 
             {joinCta ? (
