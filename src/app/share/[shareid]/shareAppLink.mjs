@@ -1,6 +1,14 @@
 export const APP_STORE_URL = 'https://apps.apple.com/us/app/betzon/id6550891419'
 export const ANDROID_PACKAGE = 'com.betzon.mobile'
 
+// Download is explicit: never probe a custom scheme before opening the store.
+// Android has no public listing yet, so keep its existing coming-soon state.
+export function downloadBetzon({ os, window }) {
+    if (os !== 'apple' && os !== 'desktop') return false
+    window.location.assign(APP_STORE_URL)
+    return true
+}
+
 export function detectOs(navigator) {
     const ua = navigator?.userAgent || ''
     if (/android/i.test(ua)) return 'android'

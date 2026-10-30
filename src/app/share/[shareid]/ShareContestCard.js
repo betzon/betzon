@@ -183,6 +183,7 @@ function ParticipantLine({ username, suffix, userLogo, result }) {
 export default function ShareContestCard({
     contest,
     onCta,
+    onStoreCta = onCta,
     storeLabel,
     storeHint,
     storeDisabled = false,
@@ -305,7 +306,7 @@ export default function ShareContestCard({
                     component="button"
                     type="button"
                     disabled={storeDisabled}
-                    onClick={storeDisabled ? undefined : onCta}
+                    onClick={storeDisabled ? undefined : onStoreCta}
                     sx={{
                         width: '100%',
                         border: storePlatform ? '1px solid #FFFFFF' : `1px solid ${colors.primaryLight}`,
@@ -368,6 +369,14 @@ export default function ShareContestCard({
                     <DialogContentText id={`${explainerId}-description`} sx={{ color: colors.lightestGray, textAlign: 'center', fontSize: 16, lineHeight: 1.6 }}>
                         {explanation}
                     </DialogContentText>
+                    <Box sx={{ mt: 3, textAlign: 'center' }}>
+                        <Typography sx={{ color: colors.successLight, fontWeight: 700, fontSize: 18 }}>
+                            WR · Win Rate
+                        </Typography>
+                        <Typography sx={{ color: colors.lightestGray, fontSize: 16, mt: 1, lineHeight: 1.6 }}>
+                            The percent of settled contests this profile has won. Refunds do not count.
+                        </Typography>
+                    </Box>
                 </DialogContent>
                 <DialogActions sx={{ justifyContent: 'center', pb: 2 }}>
                     <Button

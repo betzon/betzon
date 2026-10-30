@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.betzon.mobile",
+      "sha256_cert_fingerprints": [
+        "01:24:F8:62:FD:A5:9B:A8:B1:72:1D:51:5E:36:05:EB:CD:A2:92:8D:53:1F:AC:38:3B:F9:CD:F3:31:B9:B5:92"
+      ]
+    }
+  }
+]

@@ -7,7 +7,7 @@ import ShareContestCard from './ShareContestCard'
 import { loadShareContest } from './loadShareContest.mjs'
 import logo from '../../assets/logo.svg'
 
-import { detectOs, detectInstalledApp, openSharedContest, parseSharePreview } from './shareAppLink.mjs'
+import { downloadBetzon, detectOs, detectInstalledApp, openSharedContest, parseSharePreview } from './shareAppLink.mjs'
 
 function parseShareContestId(value) {
     const raw = String(value ?? '').trim()
@@ -151,6 +151,11 @@ const BetzonShare = () => {
         if (deviceOs === 'desktop') setOpening(false)
     }
 
+    const handleStoreCta = () => {
+        if (canOpen) return handleContestCta()
+        downloadBetzon({ os: deviceOs, window })
+    }
+
     return (
         <Stack
             spacing={3}
@@ -197,16 +202,17 @@ const BetzonShare = () => {
                 <ShareContestCard
                     contest={contest}
                     onCta={handleContestCta}
+                    onStoreCta={handleStoreCta}
                     storeLabel={storeLabel}
                     storeHint={storeHint}
-                    showStore={Boolean(os) && os !== 'apple'}
+                    showStore={Boolean(os)}
                     storeDisabled={!os || opening || (os === 'android' && !canOpen)}
                     joinDisabled={!os || opening}
                     storePlatform={canOpen ? null : os === 'android' ? 'android' : 'apple'}
                 />
             )}
 
-            {os === 'android' && !canOpen && preview.installed === null && loadState === 'ready' && (
+            {(os === 'apple' || os === 'android') && !canOpen && preview.installed === null && loadState === 'ready' && (
                 <Button
                     variant="contained"
                     fullWidth
@@ -215,7 +221,7 @@ const BetzonShare = () => {
                     sx={buttonSx}
                     disabled={opening}
                     onClick={handleContestCta}>
-                    {opening ? 'Opening Betzon…' : 'Already installed? Go to App'}
+                    {opening ? 'Opening Betzon…' : 'Already installed? Open Betzon'}
                 </Button>
             )}
         </Stack>

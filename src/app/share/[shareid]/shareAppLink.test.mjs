@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { APP_STORE_URL, detectOs, detectInstalledApp, openSharedContest, parseSharePreview } from './shareAppLink.mjs'
+import { APP_STORE_URL, downloadBetzon, detectOs, detectInstalledApp, openSharedContest, parseSharePreview } from './shareAppLink.mjs'
 
 function browser() {
     const document = new EventTarget()
@@ -89,4 +89,16 @@ test('URL previews cover both devices and install states, with safe defaults', (
     assert.deepEqual(parseSharePreview(new URLSearchParams()), { os: null, installed: null })
     assert.deepEqual(parseSharePreview(new URLSearchParams('os=unknown&installed=maybe')), { os: null, installed: null })
     assert.deepEqual(parseSharePreview(new URLSearchParams('os=constructor')), { os: null, installed: null })
+})
+
+test('Download opens the store directly without probing the app or using a timer', () => {
+    for (const os of ['apple', 'desktop']) {
+        const b = browser()
+        assert.equal(downloadBetzon({ os, window: b.window }), true)
+        assert.deepEqual(b.urls, [APP_STORE_URL])
+        assert.equal(b.timers.size, 0)
+    }
+    const b = browser()
+    assert.equal(downloadBetzon({ os: 'android', window: b.window }), false)
+    assert.deepEqual(b.urls, [])
 })
