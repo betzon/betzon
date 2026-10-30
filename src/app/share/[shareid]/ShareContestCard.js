@@ -1,10 +1,11 @@
 "use client"
 import { useId, useState } from 'react'
+import Image from 'next/image'
 import { isShareProcessed, shareParticipantResult } from './shareSettlement.mjs'
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Stack, Typography } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
-import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons'
+import logo from '../../assets/logo.svg'
 
 const colors = {
     dark: '#0C0D11',
@@ -180,15 +181,34 @@ function ParticipantLine({ username, suffix, userLogo, result }) {
     )
 }
 
+const interLabelSx = {
+    color: colors.light,
+    fontFamily: 'Inter, sans-serif',
+    fontWeight: 900,
+    fontSize: 18,
+    lineHeight: 1,
+}
+
+function BetzonCtaLabel({ opening = false }) {
+    return (
+        <Stack direction="row" spacing={0.75} alignItems="center" justifyContent="center">
+            <Typography component="span" sx={interLabelSx}>
+                {opening ? 'Opening' : 'Take me to'}
+            </Typography>
+            <Image src={logo} alt="" width={22} height={22} />
+            <Typography component="span" sx={interLabelSx}>
+                {opening ? 'BETZON…' : 'BETZON'}
+            </Typography>
+        </Stack>
+    )
+}
+
 export default function ShareContestCard({
     contest,
     onCta,
-    onStoreCta = onCta,
-    storeLabel,
-    storeHint,
-    storeDisabled = false,
-    storePlatform = null,
-    showStore = true,
+    ctaOpening = false,
+    ctaHint = '',
+    ctaDisabled = false,
     joinDisabled = false,
 }) {
     const [explainerOpen, setExplainerOpen] = useState(false)
@@ -301,38 +321,30 @@ export default function ShareContestCard({
                 </Box>
             ) : null}
 
-            {showStore ? (
-                <Box
-                    component="button"
-                    type="button"
-                    disabled={storeDisabled}
-                    onClick={storeDisabled ? undefined : onStoreCta}
-                    sx={{
-                        width: '100%',
-                        border: storePlatform ? '1px solid #FFFFFF' : `1px solid ${colors.primaryLight}`,
-                        backgroundColor: storePlatform ? '#000000' : colors.primaryOpaque,
-                        borderRadius: storePlatform ? '12px' : 1000,
-                        py: 1.5,
-                        px: 3,
-                        cursor: storeDisabled ? 'default' : 'pointer',
-                        textAlign: 'center',
-                    }}
-                >
-                    <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
-                        {storePlatform ? (
-                            <FontAwesomeIcon icon={storePlatform === 'android' ? faGooglePlay : faApple} color="#FFFFFF" style={{ fontSize: 22 }} />
-                        ) : null}
-                        <Typography sx={{ color: storePlatform ? '#FFFFFF' : colors.primaryLight, fontWeight: 600, fontSize: 18 }}>
-                            {storeLabel}
-                        </Typography>
-                    </Stack>
-                    {storeHint ? (
-                        <Typography sx={{ color: colors.lightestGray, fontWeight: 500, fontSize: 15, mt: 0.5 }}>
-                            {storeHint}
-                        </Typography>
-                    ) : null}
-                </Box>
-            ) : null}
+            <Box
+                component="button"
+                type="button"
+                aria-label={ctaOpening ? 'Opening BETZON' : 'Take me to BETZON'}
+                disabled={ctaDisabled}
+                onClick={ctaDisabled ? undefined : onCta}
+                sx={{
+                    width: '100%',
+                    border: `1px solid ${colors.light}`,
+                    backgroundColor: colors.dark,
+                    borderRadius: 1000,
+                    py: 1.5,
+                    px: 3,
+                    cursor: ctaDisabled ? 'default' : 'pointer',
+                    textAlign: 'center',
+                }}
+            >
+                <BetzonCtaLabel opening={ctaOpening} />
+                {ctaHint ? (
+                    <Typography sx={{ color: colors.lightestGray, fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 15, mt: 0.5 }}>
+                        {ctaHint}
+                    </Typography>
+                ) : null}
+            </Box>
 
             <Button
                 variant="text"

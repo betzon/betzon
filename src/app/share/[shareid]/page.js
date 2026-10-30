@@ -7,16 +7,12 @@ import ShareContestCard from './ShareContestCard'
 import { loadShareContest } from './loadShareContest.mjs'
 import logo from '../../assets/logo.svg'
 
-import { downloadBetzon, detectOs, detectInstalledApp, openSharedContest, parseSharePreview } from './shareAppLink.mjs'
+import { detectOs, openSharedContest, parseSharePreview } from './shareAppLink.mjs'
 
 function parseShareContestId(value) {
     const raw = String(value ?? '').trim()
     if (!/^[1-9]\d*$/.test(raw)) return null
     return raw
-}
-
-const buttonSx = {
-    maxWidth: '300px',
 }
 
 function ShareLoader() {
@@ -71,8 +67,6 @@ const BetzonShare = () => {
     const preview = parseSharePreview(searchParams)
     const contestId = useMemo(() => parseShareContestId(shareid), [shareid])
     const [deviceOs, setDeviceOs] = useState(null)
-    const [installed, setInstalled] = useState(null)
-    const [appOpened, setAppOpened] = useState(false)
     const [opening, setOpening] = useState(false)
     const [openHint, setOpenHint] = useState('')
     const cancelOpen = useRef(() => {})
@@ -84,16 +78,6 @@ const BetzonShare = () => {
     useEffect(() => {
         setDeviceOs(detectOs(navigator))
     }, [])
-
-    useEffect(() => {
-        let cancelled = false
-        if (preview.installed === null && os === 'android') {
-            detectInstalledApp(navigator).then((value) => {
-                if (!cancelled) setInstalled(value)
-            })
-        }
-        return () => { cancelled = true }
-    }, [os, preview.installed])
 
     useEffect(() => () => cancelOpen.current(), [])
 
@@ -125,9 +109,6 @@ const BetzonShare = () => {
         }
     }, [contestId, retryCount])
 
-    const canOpen = preview.installed ?? (installed === true || appOpened)
-    const storeLabel = canOpen ? 'Go to App' : os === 'android' ? 'Google Play coming soon' : 'Download on the App Store'
-    const storeHint = openHint || 'Open this contest on Betzon to win!'
     const handleContestCta = () => {
         if (!contestId || !deviceOs || opening) return
         cancelOpen.current()
@@ -139,21 +120,14 @@ const BetzonShare = () => {
             window,
             document,
             onLeaving: () => {
-                setAppOpened(true)
                 setOpening(false)
             },
             onFallback: () => {
-                setAppOpened(false)
                 setOpening(false)
                 setOpenHint(os === 'android' ? 'Betzon for Android is coming soon on Google Play.' : 'If Betzon did not open, download it from the App Store.')
             },
         })
         if (deviceOs === 'desktop') setOpening(false)
-    }
-
-    const handleStoreCta = () => {
-        if (canOpen) return handleContestCta()
-        downloadBetzon({ os: deviceOs, window })
     }
 
     return (
@@ -202,27 +176,11 @@ const BetzonShare = () => {
                 <ShareContestCard
                     contest={contest}
                     onCta={handleContestCta}
-                    onStoreCta={handleStoreCta}
-                    storeLabel={storeLabel}
-                    storeHint={storeHint}
-                    showStore={Boolean(os)}
-                    storeDisabled={!os || opening || (os === 'android' && !canOpen)}
+                    ctaOpening={opening}
+                    ctaHint={openHint}
+                    ctaDisabled={!os || opening}
                     joinDisabled={!os || opening}
-                    storePlatform={canOpen ? null : os === 'android' ? 'android' : 'apple'}
                 />
-            )}
-
-            {(os === 'apple' || os === 'android') && !canOpen && preview.installed === null && loadState === 'ready' && (
-                <Button
-                    variant="contained"
-                    fullWidth
-                    color="primary"
-                    size="large"
-                    sx={buttonSx}
-                    disabled={opening}
-                    onClick={handleContestCta}>
-                    {opening ? 'Opening Betzon…' : 'Already installed? Open Betzon'}
-                </Button>
             )}
         </Stack>
     )
